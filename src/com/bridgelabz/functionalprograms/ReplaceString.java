@@ -8,8 +8,7 @@ public class ReplaceString {
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
-		Functionalprograms f1=new
-				  Functionalprograms();
+		Functionalprograms f1=new  Functionalprograms();
 		System.out.println("enter the string");
 		Scanner sc=new Scanner(System.in);
 		int rc=sc.nextInt();

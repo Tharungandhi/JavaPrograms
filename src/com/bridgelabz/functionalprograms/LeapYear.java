@@ -12,7 +12,7 @@ public class LeapYear {
 		System.out.println("enter the year");
 		Scanner sc=new Scanner(System.in);
 		int i1=sc.nextInt();
-		f1.leapyear(i1);
+		f1.leapYear(i1);
 	}
 
 }

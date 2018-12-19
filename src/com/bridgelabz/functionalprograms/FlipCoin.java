@@ -10,12 +10,11 @@ public class FlipCoin {
 		// TODO Auto-generated method stub
   
 
-		Functionalprograms f1=new
-				  Functionalprograms();
+		Functionalprograms f1=new  Functionalprograms();
 		System.out.println("number of time to flip a coin" );
 		Scanner sc=new Scanner(System.in);
-		int rc=sc.nextInt();
-		f1.flipcoin(rc);
+		int times=sc.nextInt();
+		f1.flipCoin(times);
 		
 	}
 
