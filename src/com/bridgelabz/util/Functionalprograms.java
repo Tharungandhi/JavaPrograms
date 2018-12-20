@@ -258,6 +258,62 @@ public class Functionalprograms<E> {
 	}
 	
 	}
+
+
+  //Quadratic
+
+public void quadratic(int a,int b,int c)
+{
+	    double   delta = b*b - 4*a*c;
+		double	Root1  = (-b + Math.sqrt(delta))/(2*a);
+		double	Root2 = (-b - Math.sqrt(delta))/(2*a);
+		System.out.println("first root is "+ Root1);
+		System.out.println("second root is "+Root2);
+	
 }
+   
 
+  //StopWatch
+   Boolean running=false;
+   long startTime;
+   long stopTime;
+   long elapsed;
+   public void startTime(long starttime)
+   {
+	startTime=System.currentTimeMillis();
+	System.out.println(startTime);
+	 running=true;
+   }
 
+   public void stoptime(long stoptime)
+   {
+	   stopTime=System.currentTimeMillis();
+	   System.out.println(stopTime);
+	    running=false;
+   }
+    
+   public long getElapsedTime()
+   {
+	    
+	    if (running) {
+	         elapsed = (System.currentTimeMillis() - startTime);
+	    }
+	    else {
+	        elapsed = (stopTime - startTime);
+	    }
+		return elapsed;
+	   
+   
+   
+   
+   
+   
+   
+   
+   
+   }
+   
+   
+   
+   
+}
