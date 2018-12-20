@@ -10,13 +10,17 @@ public class Functionalprograms<E> {
 
 	// replace
 
-	public void replace(String str11) {
+	public void replace(String str,String uname) 
+	{
 
-		if (str11.length() > 3) {
-			System.out.println("enter 3 letter string");
-		} else {
-			System.out.println("hello " + str11 + " how  are you");
-		}
+		if (uname.length() < 3) {
+			System.out.println("enter string letter which is greater then 3");
+		} else 
+		{
+		// String str2 = str.replace("<<UserName>>",uname);
+      System.out.println(str.replace("<<UserName>>",uname));
+			
+}
 	}
 
 	// leap year
@@ -190,13 +194,13 @@ public class Functionalprograms<E> {
 	//generic function
 	public void display(E[][] genericArray){
 		PrintWriter th=new PrintWriter(System.out,true);
-		for(int i=0;i<genericArray.length;i++)
+		for(int i=0;i<genericArray.length;i++) {
 			for(int j=0;j<genericArray.length;j++)
 			{
 				th.print(genericArray[i][j]+" ");
-			    th.println();
+			   
 			}
-			th.println();
+			th.println();}
 	}
 	
 	//boolean function
@@ -265,8 +269,8 @@ public class Functionalprograms<E> {
 public void quadratic(int a,int b,int c)
 {
 	    double   delta = b*b - 4*a*c;
-		double	Root1  = (-b + Math.sqrt(delta))/(2*a);
-		double	Root2 = (-b - Math.sqrt(delta))/(2*a);
+		double	Root1  = (-b + Math.sqrt(Math.abs(delta)))/(2*a);
+		double	Root2 = (-b - Math.sqrt(Math.abs(delta)))/(2*a);
 		System.out.println("first root is "+ Root1);
 		System.out.println("second root is "+Root2);
 	
@@ -296,24 +300,70 @@ public void quadratic(int a,int b,int c)
    {
 	    
 	    if (running) {
-	         elapsed = (System.currentTimeMillis() - startTime);
+	         elapsed = ((System.currentTimeMillis() - startTime)/1000);
 	    }
 	    else {
-	        elapsed = (stopTime - startTime);
+	        elapsed = ((stopTime - startTime)/1000);
 	    }
 		return elapsed;
+	   }
+   
+   //WindSpeed
+   
+   public void windChill(double t,double s)
+	   {
+	   double w=35.74+.6215*t+(.4275*t-35.75)*Math.pow(s,0.16);
+	   System.out.println("Effective temperature of windchill is"+ w);
 	   
-   
-   
-   
-   
-   
-   
-   
-   
+	   
    }
+  //factorial
    
-   
-   
-   
+   public void permute(String Str,int len,int r)
+   {
+	   if (len == r) 
+           System.out.println(Str); 
+       else
+       { 
+           for (int i = len; i <= r; i++) 
+           { 
+               Str = swap(Str,len,i); 
+               permute(Str, len+1, r); 
+               Str = swap(Str,len,i); 
+           } 
+       } 
+			   
+		   }
+	   public String swap(String a, int i, int j) 
+	    { 
+	        char temp; 
+	        char[] charArray = a.toCharArray(); 
+	        temp = charArray[i] ; 
+	        charArray[i] = charArray[j]; 
+	        charArray[j] = temp; 
+	        return String.valueOf(charArray); 
+	    }
+	   
 }
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+
+   
+   
+

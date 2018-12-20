@@ -16,7 +16,7 @@ public class StopWatch {
 		System.out.println("click to stop the watch");
 		long stoptime=sc.nextLong();
 		f1.stoptime(stoptime);
-		System.out.println("elapsed time is "+f1.getElapsedTime());
+		System.out.println("elapsed time in second is  "+f1.getElapsedTime());
 		
 		
 
