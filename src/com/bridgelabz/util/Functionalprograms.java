@@ -317,7 +317,7 @@ public void quadratic(int a,int b,int c)
 	   
 	   
    }
-  //factorial
+  //permutation
    
    public void permute(String Str,int len,int r)
    {
