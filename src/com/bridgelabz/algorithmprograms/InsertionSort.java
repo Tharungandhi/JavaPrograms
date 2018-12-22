@@ -18,7 +18,7 @@ public class InsertionSort {
             System.out.println("enter "+(i+1)+" string");
             str[i]=sc.next();
         }
-        String[] str2=a1.sortArray(str);
+        String[] str2=a1.insertionsortArray(str);
         int n=str.length;
         for(int i=0;i<n;i++)
         {

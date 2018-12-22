@@ -4,12 +4,15 @@ import java.util.Scanner;
 
 import com.bridgelabz.util.Algorithmprograms;
 
-public class BubbleSort {
+public class ToBinary {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		Algorithmprograms a1= new Algorithmprograms();
-		
-		a1.bubbleSort();
-	}}
+		System.out.println("enter the decimal number");
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		a1.convertBinary(num);
+	}
+
+}

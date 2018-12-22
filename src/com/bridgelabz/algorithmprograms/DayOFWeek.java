@@ -16,6 +16,7 @@ public class DayOFWeek {
 		int month=sc.nextInt();
 		System.out.println("enter the year");
 		int year=sc.nextInt();
+		a1.dayofWeek(date, month, year);
 		
 	}
 

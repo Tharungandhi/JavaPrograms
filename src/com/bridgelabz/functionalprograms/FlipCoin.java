@@ -11,11 +11,13 @@ public class FlipCoin {
   
 
 		Functionalprograms f1=new  Functionalprograms();
+		int i=0;
+		do {
 		System.out.println("number of time to flip a coin" );
 		Scanner sc=new Scanner(System.in);
 		int times=sc.nextInt();
 		f1.flipCoin(times);
-		
+		}while(i<5);
 	}
 
 }

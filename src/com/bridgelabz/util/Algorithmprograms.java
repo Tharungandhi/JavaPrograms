@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Algorithmprograms {
-
+	//anagram
 	public void anagram(String str1,String str2)
 	{
 		//int  len1=str1.length();
@@ -27,14 +27,14 @@ public class Algorithmprograms {
 
 		for(int i=0;i<ch1.length;i++)
 		{
-			if(ch1[i]==ch2[i])
+			if(ch1[i]!=ch2[i])
 			{ 
 				flag=1;
 			}}
 		if(flag==1)
-			System.out.println("the string is anagram");
-		else
 			System.out.println("the string is not anagram");
+		else
+			System.out.println("the string is anagram");
 
 
 	}	
@@ -87,10 +87,9 @@ public class Algorithmprograms {
 
 
 
-	int i=0;
-	int total=0;
-	int[] notes = { 1000,500,100,50,10,5,2,1};
-	int money;
+	static int i=0;
+	static int total=0;
+	static int money;
 	public  int calculate(int money,int[]notes )
 	{
 		int rem;
@@ -117,26 +116,144 @@ public class Algorithmprograms {
 
 	//   insertion
 
-    public String[] sortArray(String str[])
-    {
-        String temp;
-        for (int i = 0; i < str.length; i++) {
-            for(int j = i+1 ; j <str.length; j++){
-                if((str[i].compareTo(str[j]))>0){
-                    temp = str[j];
-                    str[j] = str[j-1];
-                    str[j-1] = temp;
+	public String[] insertionsortArray(String str[])
+	{
+		String temp;
+		for (int i = 0; i < str.length; i++) {
+			for(int j = i+1 ; j <str.length; j++){
+				if((str[i].compareTo(str[j]))>0){
+					temp = str[j];
+					str[j] = str[j-1];
+					str[j-1] = temp;
+				}
+			}
+		}
+		return str;
+	}
+	// Temperature 
+
+	public void celsius(int Celsius)
+	{
+		int F=(Celsius*9/5) + 32;
+		System.out.println("temperature from Celsius to Fahrenheit is"+ F);
+	}
+
+	public void Fahrenheit(int Fahrenheit)
+	{
+		int C=(Fahrenheit-32) *5/9;
+		System.out.println("temperature from Fahrenheit to Celsius is "+C);
+	}
+
+	//Payement
+
+	public void monthlyPayment(double p,double n,double r)
+	{
+		double	y=12*n;
+		double R=r/(12*100);
+		double payement=p*R/1-Math.pow(1+R,-n);
+		System.out.println("total payement is "+ payement);
+	}
+	// NewtonMethod
+	public void newtonMethod(double c)
+	{
+		double t=c;
+		double epsilon = 1e-15;
+		if (t>0) {
+			while(Math.abs(t-c/t) > epsilon*t)
+			{
+				t=((c/t)+t)/2;
+				
+			}System.out.println("squareroot of a number is "+t);
+		}
+		else
+			System.out.println("enter positive number");
+	}
+
+	// DayOfWeek
+	public void dayofWeek(int date,int month,int year)
+	{
+		//		if(date>0 || date<31)
+		//		{ if(month>0 ||month<12)
+		//		{if(year>0000 || year>9999)
+		//			{
+		int year1= year-(14-month)/12;
+		int x = year1+(year1/4)-(year1/100)+year1/400;
+		int	month1 = month+12*((14-month)/12)-2;
+		int date1= (date+x+31*month1/12)%7;
+		//			}
+		String str []= {"Sunday","Monday","Tuesday","wednesday","Thursday","Friday","Sunday"};
+		for(int i=0;i<str.length;i++)
+		{
+			if(i==date1)  
+				System.out.println("the day is"+str[i]);
+		}
+	}
+
+
+	//toBinary
+	
+	public void convertBinary(int num){
+		int binary[] = new int[100];
+		int i = 0;
+		while(num > 0){
+			binary[i] = num%2;
+			num = num/2;
+			i++;}
+		for(int j = i-1;j >= 0;j--){
+			System.out.print(binary[j]);
+		}
+	}
+
+
+	//bubble sort
+	public void bubbleSort()
+    {  
+        Scanner s=new Scanner(System.in);
+        System.out.println("How many numbers you want to insert");
+        int n=s.nextInt();
+        System.out.println("Enter the integer numbers for the array");
+        int[] array=new int[n];
+        int i;
+        for( i=0;i<n;i++)
+        {
+            array[i]=s.nextInt();
+        }   
+        System.out.println("the original array is:");
+        for(i=0;i<n;i++)
+        {
+            System.out.println(array[i]);
+        }
+        for(i=0;i<array.length-1;i++)
+        {
+            for( int j=1;j<array.length-i;j++)
+            {
+                if(array[j-1]>array[j])
+                {
+                    int temp=array[j-1];
+                    array[j-1]=array[j];
+                    array[j]=temp;
                 }
             }
         }
-        return str;
+        System.out.println("Sorted array list is:");
+        for(i=0;i<n;i++)
+        {
+            System.out.println(array[i]);
+        }
+
+
+
     }
+
+
 	
 	
-	
-	
-	
+
 }
+
+
+
+
 
 
 

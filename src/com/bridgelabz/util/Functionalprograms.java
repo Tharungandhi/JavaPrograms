@@ -27,8 +27,9 @@ public class Functionalprograms<E> {
 
 	public void leapYear(int year) {
 		while (String.valueOf(year).length() <= 4) {
-
-			if ((year % 400 == 0) || (year % 4 == 0) && (year % 100 != 0)) {
+     //to find leap year
+			if ((year % 400 == 0) || (year % 4 == 0) && (year % 100 != 0)) // leap year formula
+			{
 				System.out.println("year is leap year");
 
 			} else {
@@ -39,24 +40,22 @@ public class Functionalprograms<E> {
 	}
 
 	// coin
-	public void flipCoin(int times) {
+	public static void flipCoin(int times) {
 
 		int head = 0;
 		int tail = 0;
 		int i = times;
 		Random r = new Random();
-		while (times > 0) {
-			int rn = r.nextInt(2);
+		    int rn = r.nextInt(2); //random variable to take 0,1
 			if (rn == 0) {
 				head++;
 
 			} else {
 				tail++;
 			}
-			times--;
-		}
 		System.out.println("percentage of head" + head * 100 / i);
 		System.out.println("percentage of tail" + tail * 100 / i);
+		
 	}
 
 	// harmonic
@@ -65,25 +64,35 @@ public class Functionalprograms<E> {
 
 		float result = 0;
 		for (int i = 0; i <= s1; i++) {
-			result = result + 1 / s1;
+			result = result + 1 / s1;  //harmonic formula
 
 		}
 
 		System.out.println("result is" + result);
 
 	}
+	
+	
+	//2power
+	  public void pow(double a, double b) {
+	        double c = Math.pow(a, b);
+	        System.out.println("value of 2 power " + b + " is " + c);
+	    }
 
-	// factorail
+
+
+	// primenumber
 
 	public void primeFactors(int n) {
-		while (n % 2 == 0) {
+		while (n % 2 == 0)   // to check that number is divisible by 2 
+		{
 			System.out.print(2 + " ");
 			n /= 2;
 		}
 
 		for (int i = 3; i * i <= n; i += 2) {
 			while (n % i == 0) {
-				System.out.print(i + " ");
+				System.out.print(i + " "); // number to print
 				n /= i;
 			}
 		}
@@ -192,10 +201,11 @@ public class Functionalprograms<E> {
 	}
 	
 	//generic function
-	public void display(E[][] genericArray){
+	public void display(E[][] genericArray,int row,int column)
+	{
 		PrintWriter th=new PrintWriter(System.out,true);
-		for(int i=0;i<genericArray.length;i++) {
-			for(int j=0;j<genericArray.length;j++)
+		for(int i=0;i<row;i++) {
+			for(int j=0;j<column;j++)
 			{
 				th.print(genericArray[i][j]+" ");
 			   
@@ -269,8 +279,8 @@ public class Functionalprograms<E> {
 public void quadratic(int a,int b,int c)
 {
 	    double   delta = b*b - 4*a*c;
-		double	Root1  = (-b + Math.sqrt(Math.abs(delta)))/(2*a);
-		double	Root2 = (-b - Math.sqrt(Math.abs(delta)))/(2*a);
+		double	Root1  = Math.abs(-b + Math.sqrt(Math.abs(delta)))/(2*a);
+		double	Root2 =Math.abs (-b - Math.sqrt(Math.abs(delta)))/(2*a);
 		System.out.println("first root is "+ Root1);
 		System.out.println("second root is "+Root2);
 	
@@ -339,7 +349,7 @@ public void quadratic(int a,int b,int c)
 	        char temp; 
 	        char[] charArray = a.toCharArray(); 
 	        temp = charArray[i] ; 
-	        charArray[i] = charArray[j]; 
+	       charArray[i] = charArray[j]; 
 	        charArray[j] = temp; 
 	        return String.valueOf(charArray); 
 	    }
