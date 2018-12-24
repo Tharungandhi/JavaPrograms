@@ -20,7 +20,7 @@ public class SumOfThreeInt {
 			arr[i]=sc.nextInt();
 		}
 		int n=arr.length;
-		f1.sumofthree(arr,n);
+		f1.sumOfThree(arr,n);
 		
 
 	}

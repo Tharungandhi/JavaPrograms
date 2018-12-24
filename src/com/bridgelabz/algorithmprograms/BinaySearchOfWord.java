@@ -1,5 +1,8 @@
 package com.bridgelabz.algorithmprograms;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,28 +10,49 @@ import com.bridgelabz.util.Algorithmprograms;
 
 public class BinaySearchOfWord {
 
-	public static void main(String[] args) {
+	
+		    public static void main(String[] args) throws FileNotFoundException {
+//		        AlgorithmUtility a1 = new AlgorithmUtility();
+		        Scanner sc = new Scanner(System.in);
+		        // Get scanner instance
+		        String csvFile = "/home/admin1/Desktop/file.csv";
+		        BufferedReader fileReader = new BufferedReader(new FileReader(csvFile));
 
-		Algorithmprograms a1= new Algorithmprograms();
-		Scanner sc = new Scanner(System.in);
-		int i;  
-		System.out.println("Enter number of words you wish to input: ");
-		int no=sc.nextInt();
-		String[] words= new String[no];
-		System.out.println("Enter the words");
-		for ( i = 0; i < words.length; i++)
-		{
-			System.out.print("WORD " + (i + 1) + ": ");
-			words[i] = sc.next();
+		        // Delimiter used in CSV file
+		        final String DELIMITER = ",";
+		        try {
+		            String line = "";
+		            // fileReader = new BufferedReader(new FileReader(csvFile));
+		            // Read the file line by line
+		            while ((line = fileReader.readLine()) != null) {
+		                // Get all tokens available in line
+		                String[] tokens = line.split(DELIMITER);
+		                Algorithmprograms.sort(tokens);
+//		                for(int i=0;i<tokens.length;i++) {
+//		                    System.out.println(tokens[i]);
+//		                }
+		                for (String token : tokens) {
+		                    // Print all tokens
+		                    System.out.println(token);
+		                }
+		                System.out.println("enter the key word which has to be searched ");
+		                String key = sc.next();
+		                int i = Algorithmprograms.binarySearch(tokens, key);
+		                if (i >= 0) {
+		                    System.out.println(tokens[i] + " is present in " + (i + 1) + " position in the array");
+		                } else
+		                    System.out.println(key + " doesnot exists in the given csv file");
+		            }
+		        } catch (Exception e) {
+		            e.printStackTrace();
+		        } finally {
+		            try {
+		                fileReader.close();
+		            } catch (Exception e) {
+		                e.printStackTrace();
+		            }
+		        }
+		    }
+
 		}
-		System.out.println("enter the word you want to search for");
-		String word=sc.next();
-		Arrays.sort(words);
-
-
-		   int index= Arrays.binarySearch(words,word);
-		   System.out.println(word+ " = "+ index);
-
-	}
-
-}
+	}}

@@ -7,7 +7,19 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Algorithmprograms {
-	//anagram
+	//anagram  
+	
+	/******************************************************************************
+	 *  Compilation:  javac -d bin anagram.java
+	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
+	 *  
+	 *  Purpose: Determines whether no is anagram or not.
+	 *
+	 *  @author  BridgeLabz
+	 *  @version 1.0
+	 *  @since   06-08-2017
+	 *
+	 ******************************************************************************/
 	public void anagram(String str1,String str2)
 	{
 		//int  len1=str1.length();
@@ -38,7 +50,19 @@ public class Algorithmprograms {
 
 
 	}	
+	
 	// PrimeNo
+	/******************************************************************************
+	 *  Compilation:  javac -d bin checkPrimeNo.java
+	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
+	 *  
+	 *  Purpose: Determines whether or not n is prime.
+	 *
+	 *  @author  BridgeLabz
+	 *  @version 1.0
+	 *  @since   06-08-2017
+	 *
+	 ******************************************************************************/
 	public boolean checkPrimeNo(long n)
 	{
 		{
@@ -49,28 +73,39 @@ public class Algorithmprograms {
 	}
 
 	// BinaySearch for word
-
-	//	public int binarySearchString(String [] names, String key) 
-	//	{
-	//    	int first = 0;
-	//    	int last  = names.length;
-	// 
-	//    	while (first < last) {
-	//        	int mid = (first + last) / 2;
-	//        	if (key.compareTo(names[mid]) < 0) {
-	//           			last = mid;
-	//        	} else if (key.compareTo(names[mid]) > 0) {
-	//            		first = mid + 1;
-	//        	} else {
-	//            		return mid;
-	//        	}
-	//    	}		
-	//return -1;
-	//	
-	//	}
-
+	/******************************************************************************
+	 *  Compilation:  javac -d bin binarySort.java
+	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
+	 *  
+	 *  Purpose: Determines whether or not n is prime.
+	 *
+	 *  @author  BridgeLabz
+	 *  @version 1.0
+	 *  @since   06-08-2017
+	 *
+	 ******************************************************************************/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//BubbleSort
-
+	/******************************************************************************
+	 *  Compilation:  javac -d bin bubbleSort.java
+	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
+	 *  
+	 *  Purpose: Determines whether or not n is prime.
+	 *
+	 *  @author  BridgeLabz
+	 *  @version 1.0
+	 *  @since   06-08-2017
+	 *
+	 ******************************************************************************/
 	public void  bubbleSort(int[] arr) {
 		int n = arr.length;
 		int temp = 0;
@@ -85,7 +120,17 @@ public class Algorithmprograms {
 			}}}
 	// vending Machine
 
-
+	/******************************************************************************
+	 *  Compilation:  javac -d bin calculate.java
+	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
+	 *  
+	 *  Purpose: Determines whether or not n is prime.
+	 *
+	 *  @author  BridgeLabz
+	 *  @version 1.0
+	 *  @since   06-08-2017
+	 *
+	 ******************************************************************************/
 
 	static int i=0;
 	static int total=0;
@@ -118,18 +163,30 @@ public class Algorithmprograms {
 
 	public String[] insertionsortArray(String str[])
 	{
-		String temp;
-		for (int i = 0; i < str.length; i++) {
-			for(int j = i+1 ; j <str.length; j++){
-				if((str[i].compareTo(str[j]))>0){
-					temp = str[j];
-					str[j] = str[j-1];
-					str[j-1] = temp;
-				}
-			}
-		}
+		//String temp;
+		//	for (int i = 1; i < str.length; i++) {
+		//			for(int j = i+1 ; j <str.length; j++){
+		//				if((str[i].compareTo(str[j]))>0){
+		//					temp = str[j];
+		//					str[j] = str[j-1];
+		//					str[j-1] = temp;
+		//				}{
+		int n1 = str.length; 
+		for (int i=1; i<n1; i++) 
+		{ 
+			String key = str[i]; 
+			int j = i-1; 
+			while (j>=0 && str[j] .compareTo(key)>0) 
+			{ 
+				str[j+1] = str[j]; 
+				j = j-1; 
+			} 
+			str[j+1] = key; 
+		} 
 		return str;
 	}
+
+
 	// Temperature 
 
 	public void celsius(int Celsius)
@@ -162,7 +219,7 @@ public class Algorithmprograms {
 			while(Math.abs(t-c/t) > epsilon*t)
 			{
 				t=((c/t)+t)/2;
-				
+
 			}System.out.println("squareroot of a number is "+t);
 		}
 		else
@@ -191,7 +248,7 @@ public class Algorithmprograms {
 
 
 	//toBinary
-	
+
 	public void convertBinary(int num){
 		int binary[] = new int[100];
 		int i = 0;
@@ -199,7 +256,7 @@ public class Algorithmprograms {
 			binary[i] = num%2;
 			num = num/2;
 			i++;}
-		for(int j = i-1;j >= 0;j--){
+		for(int j = i;j >= 0;j--){
 			System.out.print(binary[j]);
 		}
 	}
@@ -207,49 +264,136 @@ public class Algorithmprograms {
 
 	//bubble sort
 	public void bubbleSort()
-    {  
-        Scanner s=new Scanner(System.in);
-        System.out.println("How many numbers you want to insert");
-        int n=s.nextInt();
-        System.out.println("Enter the integer numbers for the array");
-        int[] array=new int[n];
-        int i;
-        for( i=0;i<n;i++)
-        {
-            array[i]=s.nextInt();
-        }   
-        System.out.println("the original array is:");
-        for(i=0;i<n;i++)
-        {
-            System.out.println(array[i]);
-        }
-        for(i=0;i<array.length-1;i++)
-        {
-            for( int j=1;j<array.length-i;j++)
-            {
-                if(array[j-1]>array[j])
-                {
-                    int temp=array[j-1];
-                    array[j-1]=array[j];
-                    array[j]=temp;
-                }
-            }
-        }
-        System.out.println("Sorted array list is:");
-        for(i=0;i<n;i++)
-        {
-            System.out.println(array[i]);
-        }
+	{  
+		Scanner sc=new Scanner(System.in);
+		System.out.println("How many numbers you want to insert");
+		int n=sc.nextInt();
+		System.out.println("Enter the integer numbers for the array");
+		int[] array=new int[n];
+		int i;
+		for( i=0;i<n;i++)
+		{
+			array[i]=sc.nextInt();
+		}   
+		System.out.println("the original array is:");
+		for(i=0;i<n;i++)
+		{
+			System.out.println(array[i]);
+		}
+		for(i=0;i<array.length-1;i++)
+		{
+			for( int j=1;j<array.length-i;j++)
+			{
+				if(array[j-1]>array[j])
+				{
+					int temp=array[j-1];
+					array[j-1]=array[j];
+					array[j]=temp;
+				}
+			}
+		}
+		System.out.println("Sorted array list is:");
+		for(i=0;i<n;i++)
+		{
+			System.out.println(array[i]);
+		}
 
 
 
-    }
+	}
+
+	//FindNumber
+
+	static int range,count,lower,upper,middle;
+
+	public  static int findNumber(int lower,int upper,int middle,int count,String input1,int n)
+	{
+		Scanner rc=new Scanner(System.in);
+		System.out.println("Is your number:"+middle);
+		System.out.println();
+		System.out.println("Enter your answer in 'yes' or 'high' or 'low'");
+		input1=rc.nextLine();
+		do
+		{
+			if (input1.equals("high"))
+			{
+				lower= middle;
+				count++;
+			}
+			else if (input1.equals("yes"))
+			{
+				System.out.println("The number you thought was: "+middle);
+				int no=count+1;
+				System.out.println("It takes "+no+" times to find your exact number");
+				break;
+			}
+
+			else if(input1.equals("low"))
+			{
+				upper=middle;
+				count++;
+			}
+			if(count<n)
+			{
+				middle=(lower+ upper+1)/2;
+				System.out.println("Is your number "+middle+":");
+				input1=rc.nextLine();
+			}
+		}
+		while(lower<=upper);
+		if (count>n)
+		{
+			System.out.println("Number not found");
+		}
+		else
+		{
+			System.exit(0);
+		}
+		return middle;
+	}
 
 
-	
-	
+	//mergsort
+
+	public static void mergSort(String arr[],int low,int high)
+	{
+		int n=high-low;
+		if(n<=1)
+			return;
+		int middle=low=n/2;
+		mergSort(arr,low,middle);
+		mergSort(arr,middle,high);
+		String[] temparr=new String[n];
+		int i=low,j=middle;
+		for(int k=0;k<n;k++)
+		{
+			if(i==middle)
+				temparr[k]=arr[j++];
+			else if(j==high)
+				temparr[k]=arr[i++];
+			else if(arr[j].compareToIgnoreCase(arr[i])<0)
+				temparr[k]=arr[j++];
+			else
+				temparr[k]=arr[i++]; 
+		}
+
+		for(int k=0;k<n;k++)
+		{
+			arr[low +k]=temparr[k];
+		}
+	}
+
+
+
+
+
+
 
 }
+
+
+
+
 
 
 

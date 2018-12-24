@@ -236,7 +236,11 @@ public class Functionalprograms<E> {
 
 	// Prints all triplets in arr[] with 0 sum
 
-	public static void sumofthree(int[] arr, int n) {
+	/**
+	 * @param arr
+	 * @param n
+	 */
+	public static void sumOfThree(int[] arr, int n) {
 		boolean found = false;
 		for (int i = 0; i < n - 2; i++) {
 			for (int j = i + 1; j < n - 1; j++) {
