@@ -15,7 +15,7 @@ public class BinaySearchOfWord {
 //		        AlgorithmUtility a1 = new AlgorithmUtility();
 		        Scanner sc = new Scanner(System.in);
 		        // Get scanner instance
-		        String csvFile = "/home/admin1/Desktop/file.csv";
+		        String csvFile = "/home/admin1/Desktop/Tharun.csv";
 		        BufferedReader fileReader = new BufferedReader(new FileReader(csvFile));
 
 		        // Delimiter used in CSV file
@@ -54,5 +54,5 @@ public class BinaySearchOfWord {
 		        }
 		    }
 
-		}
-	}}
+		
+	}
