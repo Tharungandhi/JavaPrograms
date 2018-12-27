@@ -1,17 +1,15 @@
 	/******************************************************************************
-	 *  Compilation:  javac -d bin anagram.java
-	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
+	 *  Compilation:  javac -d bin Primeno.java
+	 *  Execution:    java -cp bin com.bridgelabz.util.Primeno n
 	 *  
-	 *  Purpose: Determines whether no is anagram or not.
+	 *  Purpose:  To Determine the Prime numbers in that range
 	 *
-	 *  @author  BridgeLabz
+	 *  @author  Tharun Kumar 
 	 *  @version 1.0
-	 *  @since   06-08-2017
+	 *  @since   18-12-2018
 	 *
 	 ******************************************************************************/
 package com.bridgelabz.algorithmprograms;
-
-import java.util.Scanner;
 
 import com.bridgelabz.util.Algorithmprograms;
 
@@ -19,19 +17,15 @@ public class Primeno {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Algorithmprograms a1= new Algorithmprograms();
-		System.out.println("enter the number");
-		Scanner sc=new Scanner(System.in);
-		int num=sc.nextInt();
-
+		System.out.println("enter the number");  //user input
+		int num=Algorithmprograms.readInteger();  //storing the value to ref variable
 			for (long i=2;i<=num;i++)
 			{
-				boolean nu=a1.checkPrimeNo(i);
+				boolean nu=Algorithmprograms.checkPrimeNo(i); //method calling
 				if(nu==true)
-					System.out.println(i);
-			}}
+					 System.out.println("prime numbers are " +i);
+			}
 
-
-	}
+	}}
 
 

@@ -1,17 +1,15 @@
 	/******************************************************************************
-	 *  Compilation:  javac -d bin anagram.java
-	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
+	 *  Compilation:  javac -d bin Payment.java
+	 *  Execution:    java -cp bin com.bridgelabz.util.Payment n
 	 *  
-	 *  Purpose: Determines whether no is anagram or not.
+	 *  Purpose: To calculate monthlyPayment.
 	 *
-	 *  @author  BridgeLabz
+	 *  @author  Tharun Kumar
 	 *  @version 1.0
-	 *  @since   06-08-2017
+	 *  @since   18-12-2018
 	 *
 	 ******************************************************************************/
 package com.bridgelabz.algorithmprograms;
-
-import java.util.Scanner;
 
 import com.bridgelabz.util.Algorithmprograms;
 
@@ -19,15 +17,13 @@ public class Payment {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Algorithmprograms a1= new Algorithmprograms();
-		System.out.println("enter the principle amount");
-		Scanner sc=new Scanner(System.in);
-		double p=sc.nextDouble();
-		System.out.println("enter the rate");
-		double r=sc.nextDouble();
-		System.out.println("enter the no of year");
-		double n=sc.nextDouble();
-		a1.monthlyPayment(p, n, r);
+		System.out.println("enter the principle amount");   //user input
+		double p=Algorithmprograms.readdouble();   //storing the value to ref variable
+		System.out.println("enter the rate");    //user input
+		double r=Algorithmprograms.readdouble();   //storing the value to ref variable
+		System.out.println("enter the no of year");  //user input
+		double n=Algorithmprograms.readdouble();   //storing the value to ref variable
+		Algorithmprograms.monthlyPayment(p, n, r);   //method calling
 	}
 
 }

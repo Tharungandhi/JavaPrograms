@@ -1,43 +1,39 @@
 
-	/******************************************************************************
-	 *  Compilation:  javac -d bin anagram.java
-	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
-	 *  
-	 *  Purpose: Determines whether no is anagram or not.
-	 *
-	 *  @author  BridgeLabz
-	 *  @version 1.0
-	 *  @since   06-08-2017
-	 *
-	 ******************************************************************************/package com.bridgelabz.algorithmprograms;
+/******************************************************************************
+ *  Compilation:  javac -d bin InsertionSort.java
+ *  Execution:    java -cp bin com.bridgelabz.util.InsertionSort n
+ *  
+ *  Purpose: InsertionSort
+ *
+ *  @author  Tharun Kumar
+ *  @version 1.0
+ *  @since   18-12-2018
+ *
+ ******************************************************************************/package com.bridgelabz.algorithmprograms;
 
-import java.util.Scanner;
+ import com.bridgelabz.util.Algorithmprograms;
 
-import com.bridgelabz.util.Algorithmprograms;
+ public class InsertionSort {
 
-public class InsertionSort {
+	 public static void main(String[] args) {
+		 // TODO Auto-generated method stub
+		 System.out.println("enter the number of string to be entered");//user input
+		 int num=Algorithmprograms.readInteger();  //storing the value to ref variable
+		 String[] str=new String[num];              //creating a string of num size
+		 for(int i=0;i<str.length;i++)
+		 {
+			 System.out.println("enter "+(i+1)+" string");
+			 str[i]=Algorithmprograms.readString();   //storing the value to ref variable
+		 }
+		 String[] str2=Algorithmprograms.insertionsortArray(str);   //calling a method storing in ref variable
+		 int n=str.length;
+		 for(int i=0;i<n;i++)
+		 {
+			 System.out.println(str2[i]+" in the position " + i);
+		 }
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Algorithmprograms a1= new Algorithmprograms();
-        Scanner sc=new Scanner(System.in);
-        System.out.println("enter the number of string to be entered");
-        int num=sc.nextInt();
-        String[] str=new String[num];
-        for(int i=0;i<str.length;i++)
-        {
-            System.out.println("enter "+(i+1)+" string");
-            str[i]=sc.next();
-        }
-        String[] str2=a1.insertionsortArray(str);
-        int n=str.length;
-        for(int i=0;i<n;i++)
-        {
-            System.out.println(str2[i]+" in the position " + i);
-        }
+	 } 
 
-        } 
-
-	}
+ }
 
 

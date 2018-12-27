@@ -1,14 +1,14 @@
-	/******************************************************************************
-	 *  Compilation:  javac -d bin anagram.java
-	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
-	 *  
-	 *  Purpose: Determines whether no is anagram or not.
-	 *
-	 *  @author  BridgeLabz
-	 *  @version 1.0
-	 *  @since   06-08-2017
-	 *
-	 ******************************************************************************/
+/******************************************************************************
+ *  Compilation:  javac -d bin SwapNibble.java
+ *  Execution:    java -cp bin com.bridgelabz.util.SwapNibble n
+ *  
+ *  Purpose: Swap nibbles and find the new number.
+ *
+ *  @author  Tharun Kumar
+ *  @version 1.0
+ *  @since   18-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelabz.algorithmprograms;
 
 import com.bridgelabz.util.Algorithmprograms;
@@ -19,11 +19,11 @@ public class SwapNibble {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int flag=0;
-		System.out.println("enter the Value of n");
-		int x =Functionalprograms.readInteger();
-		int c=Algorithmprograms.swapNibbles(x);
+		System.out.println("enter the Value of n"); //user input
+		int x =Functionalprograms.readInteger();   //storing the value to ref variable
+		int c=Algorithmprograms.swapNibbles(x);   //method calling
 		System.out.println(c);
-		int[] d=Algorithmprograms.toNibbleBinary(c);
+		int[] d=Algorithmprograms.toNibbleBinary(c);  //method calling
 		for(int j=7;j>=0;j--)
 		{
 			System.out.print(d[j]);

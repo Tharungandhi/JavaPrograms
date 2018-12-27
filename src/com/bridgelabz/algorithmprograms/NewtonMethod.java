@@ -1,17 +1,15 @@
 	/******************************************************************************
-	 *  Compilation:  javac -d bin anagram.java
-	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
+	 *  Compilation:  javac -d bin NewtonMethod.java
+	 *  Execution:    java -cp bin com.bridgelabz.util.NewtonMethod n
 	 *  
-	 *  Purpose: Determines whether no is anagram or not.
+	 *  Purpose: Determines square root of a non negative number.
 	 *
-	 *  @author  BridgeLabz
+	 *  @author  Tharun Kumar
 	 *  @version 1.0
-	 *  @since   06-08-2017
+	 *  @since   18-12-2018
 	 *
 	 ******************************************************************************/
 package com.bridgelabz.algorithmprograms;
-
-import java.util.Scanner;
 
 import com.bridgelabz.util.Algorithmprograms;
 
@@ -19,11 +17,10 @@ public class NewtonMethod {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Algorithmprograms a1= new Algorithmprograms();
-		System.out.println("enter the number");
-		Scanner sc=new Scanner(System.in);
-		double c=sc.nextDouble();
-		a1.newtonMethod(c);
+		
+		System.out.println("enter the number");  //user input
+		double c=Algorithmprograms.readdouble();  //storing the value to ref variable
+		Algorithmprograms.newtonMethod(c); //method calling
 		
 	}
 

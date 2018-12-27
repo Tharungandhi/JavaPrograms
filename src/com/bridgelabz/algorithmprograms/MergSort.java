@@ -1,17 +1,15 @@
 	/******************************************************************************
-	 *  Compilation:  javac -d bin anagram.java
-	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
+	 *  Compilation:  javac -d bin MergSort.java
+	 *  Execution:    java -cp bin com.bridgelabz.util.MergSort n
 	 *  
-	 *  Purpose: Determines whether no is anagram or not.
+	 *  Purpose: MergSort.
 	 *
-	 *  @author  BridgeLabz
+	 *  @author  Tharun Kumar
 	 *  @version 1.0
-	 *  @since   06-08-2017
+	 *  @since   18-12-2018
 	 *
 	 ******************************************************************************/
 package com.bridgelabz.algorithmprograms;
-
-import java.util.Scanner;
 
 import com.bridgelabz.util.Algorithmprograms;
 
@@ -19,22 +17,19 @@ public class MergSort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		   Scanner sc=new Scanner(System.in);
+		   
 	        System.out.println("Merge sort");
 	        int i;
-	        System.out.println("Enter the size of your array");
-	        int n=sc.nextInt();
+	        System.out.println("Enter the size of your array"); //user input
+	        int n=Algorithmprograms.readInteger(); //storing the value to ref variable
 	        String arr[]=new String[n];
-	        System.out.println("Enter the elements");
+	        System.out.println("Enter the elements"); //user input
 
 	        for( i=0;i<n;i++)
 	        {   
-	            arr[i]=sc.next();
+	            arr[i]=Algorithmprograms.readString();  //storing the value to ref variable
 	        }
-	        //String temparr[]=new String[n];
-	        //int mid = low + (high - low) / 2;
-	        Algorithmprograms a1= new Algorithmprograms();
-	        a1.mergSort(arr,0,n);
+	        Algorithmprograms.mergSort(arr,0,n);  //method calling
 	        System.out.println("Elements after sorting");
 	        for(i=0;i<n;i++)
 	        {

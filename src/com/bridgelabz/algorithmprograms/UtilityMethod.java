@@ -1,30 +1,26 @@
-	/******************************************************************************
-	 *  Compilation:  javac -d bin anagram.java
-	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
-	 *  
-	 *  Purpose: Determines whether no is anagram or not.
-	 *
-	 *  @author  BridgeLabz
-	 *  @version 1.0
-	 *  @since   06-08-2017
-	 *
-	 ******************************************************************************/
+/******************************************************************************
+ *  Compilation:  javac -d bin UtilityMethod.java
+ *  Execution:    java -cp bin com.bridgelabz.util.UtilityMethod n
+ *  
+ *  Purpose:To the Utility Class write the following static methods
+ *
+ *  @author  Tharun Kumar
+ *  @version 1.0
+ *  @since   18-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelabz.algorithmprograms;
 
-import java.util.Scanner;
-
 import com.bridgelabz.util.Algorithmprograms;
-import com.bridgelabz.util.Functionalprograms;
 
 public class UtilityMethod {
 
 	public static void main(String[] args) {
-		// binary search
 		System.out.println("1:binarySearch   2:insertionSort for 3:bubbleSort ");
 		int choice=Algorithmprograms.readInteger();
 		switch(choice) {
 		case 1:{
-			
+
 			System.out.println("1:binarySearch in integer 2:binarySearch in String ");
 			int choice1=Algorithmprograms.readInteger();
 			switch(choice1) {
@@ -94,7 +90,7 @@ public class UtilityMethod {
 					arr[i]= Algorithmprograms.readInteger();
 				}
 				long startTime=System.nanoTime();
-				int[] arr2= Algorithmprograms.insertionSortInteger(arr);
+				//int[] arr2= Algorithmprograms.insertionSortInteger(arr);
 				long stopTime=System.nanoTime();
 				int n=len;
 				for(int i=0;i<n;i++)
@@ -127,7 +123,7 @@ public class UtilityMethod {
 			int choice3=Algorithmprograms.readInteger();
 			switch(choice3){
 			//bubble Sort
-			
+
 			case 1:
 			{
 				System.out.println("How many numbers you want to insert");

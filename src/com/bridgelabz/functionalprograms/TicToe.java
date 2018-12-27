@@ -1,6 +1,15 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin TicToe.java
+ *  Execution:    java -cp bin com.bridgelabz.util.TicToe n
+ *  
+ *  Purpose:Cross Game or Tic­Tac­Toe Game.
+ *
+ *  @author  Tharun Kumar
+ *  @version 1.0
+ *  @since   18-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelabz.functionalprograms;
-
-import java.util.Scanner;
 
 import com.bridgelabz.util.Functionalprograms;
 /**
@@ -10,6 +19,6 @@ import com.bridgelabz.util.Functionalprograms;
  */
 public class TicToe {
 	public static void main(String[] args) {
-	Functionalprograms.play();
-}}
+		Functionalprograms.play(); //method calling
+	}}
 

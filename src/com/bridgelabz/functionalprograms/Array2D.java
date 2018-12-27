@@ -1,6 +1,16 @@
+/******************************************************************************
+	 *  Compilation:  javac -d bin Array2D.java
+	 *  Execution:    java -cp bin com.bridgelabz.util. Array2D n
+	 *  
+	 *  Purpose: A library for reading in 2D arrays of integers, doubles, or booleans from
+     *            standard input and printing them out to standard output.
+	 *
+	 *  @author  Tharun Kumar
+	 *  @version 1.0
+	 *  @since   18-12-2018
+	 *
+	 ******************************************************************************/
 package com.bridgelabz.functionalprograms;
-
-import java.util.Scanner;
 
 import com.bridgelabz.util.Functionalprograms;
 
@@ -8,15 +18,14 @@ public class Array2D {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		Functionalprograms f1=new Functionalprograms();
+		Functionalprograms<Object> f1=new Functionalprograms<Object>();
+		//Scanner sc=new Scanner(System.in);
 		System.out.println("enter the no of rows");
-		Scanner sc=new Scanner(System.in);
-		int row=sc.nextInt();
+		int row=Functionalprograms.readInteger();
 		System.out.println("enter the no column");
-		int column=sc.nextInt();
+		int column=Functionalprograms.readInteger();
 		System.out.println("1:Interger 2:Double 3:Boolean");
-		 int choice=sc.nextInt();
+		 int choice=Functionalprograms.readInteger();
 		 
 		switch(choice)
 		{

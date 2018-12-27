@@ -1,17 +1,15 @@
 
 	/******************************************************************************
-	 *  Compilation:  javac -d bin anagram.java
-	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
+	 *  Compilation:  javac -d bin ToBinary.java
+	 *  Execution:    java -cp bin com.bridgelabz.util.ToBinary n
 	 *  
-	 *  Purpose: Determines whether no is anagram or not.
+	 *  Purpose: Decimal to Binary.
 	 *
-	 *  @author  BridgeLabz
+	 *  @author  Tharun Kumar
 	 *  @version 1.0
-	 *  @since   06-08-2017
+	 *  @since   18-12-2018
 	 *
 	 ******************************************************************************/package com.bridgelabz.algorithmprograms;
-
-import java.util.Scanner;
 
 import com.bridgelabz.util.Algorithmprograms;
 
@@ -19,15 +17,9 @@ public class ToBinary {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Algorithmprograms a1= new Algorithmprograms();
-		System.out.println("enter the decimal number");
-		Scanner sc=new Scanner(System.in);
-		int num=sc.nextInt();
-		a1.convertBinary(num);
-//		int [] binary=a1.convertBinary(num);
-//		int length=binary.length;
-//		for(int j = length-1;j >= 0;j--){
-//			System.out.print(binary[j]);
+		System.out.println("enter the decimal number"); //user input 
+		int num=Algorithmprograms.readInteger(); //storing the value to ref variable
+		Algorithmprograms.convertBinary(num);  //method calling
 	}
 
 }

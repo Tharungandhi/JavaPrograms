@@ -1,17 +1,15 @@
 	/******************************************************************************
-	 *  Compilation:  javac -d bin anagram.java
-	 *  Execution:    java -cp bin com.bridgelabz.util.PrimeChecker n
+	 *  Compilation:  javac -d bin BubbleSort.java
+	 *  Execution:    java -cp bin com.bridgelabz.util.BubbleSort n
 	 *  
-	 *  Purpose: Determines whether no is anagram or not.
+	 *  Purpose: BubbleSort.
 	 *
-	 *  @author  BridgeLabz
+	 *  @author  Tharun Kumar M B
 	 *  @version 1.0
-	 *  @since   06-08-2017
+	 *  @since   10-12-2018
 	 *
 	 ******************************************************************************/
 package com.bridgelabz.algorithmprograms;
-
-import java.util.Scanner;
 
 import com.bridgelabz.util.Algorithmprograms;
 
@@ -19,8 +17,11 @@ public class BubbleSort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		Algorithmprograms a1= new Algorithmprograms();
 		
-		a1.bubbleSort();
+		System.out.println("How many numbers you want to insert");//user input
+		int n=Algorithmprograms.readInteger();//storing the value to ref variable
+		System.out.println("Enter the array elements");//user input
+		int[] array=new int[n];//storing the value to ref variable
+		
+		Algorithmprograms.bubbleSort(n, array);//method calling
 	}}
