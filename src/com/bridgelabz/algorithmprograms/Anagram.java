@@ -14,14 +14,17 @@ package com.bridgelabz.algorithmprograms;
 import com.bridgelabz.util.Algorithmprograms;
 
 public class Anagram {
+	/*
+	* The main function is written to take input from the user and and 
+	* call the isAnagram function that checks anagram of two strings
+	*/
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("eneter the string1");//user input
-		String str1=Algorithmprograms.readString();//storing the value to ref variable
-		System.out.println("eneter the string2");//user input 
-		String str2=Algorithmprograms.readString();//storing the value to ref variable
-		Algorithmprograms.anagram(str1, str2);//method call
-	}
-
-}
+		System.out.println("eneter the string1");
+		String str1=Algorithmprograms.readString();
+		System.out.println("eneter the string2");
+		String str2=Algorithmprograms.readString();
+		//Method 1- using static function of AlgorithmUtility class of
+		//com.bridgelabz.util package
+		Algorithmprograms.anagram(str1, str2);}}

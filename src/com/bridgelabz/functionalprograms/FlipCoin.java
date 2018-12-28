@@ -14,14 +14,21 @@ package com.bridgelabz.functionalprograms;
 import com.bridgelabz.util.*;
 
 public class FlipCoin {
-
+	/*
+	* The main function is written to take input from the user and
+	* call distance function that calculates the euclidean distance
+	*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int i=0;
 		do {
-		System.out.println("number of time to flip a coin" );//user input
-		int times=Functionalprograms .readInteger(); //storing the value to ref variable
-		Functionalprograms .flipCoin(times);   //method calling 
+			//Reading input number from the user
+		System.out.println("number of time to flip a coin" );//Reading input number from the user
+		int times=Functionalprograms .readInteger(); 
+		
+		//Method 1- using static function of FunctionalUtilty class
+        //of com.bridgelabz.util package
+		Functionalprograms .flipCoin(times);   
 		}while(i<5);
 	}
 

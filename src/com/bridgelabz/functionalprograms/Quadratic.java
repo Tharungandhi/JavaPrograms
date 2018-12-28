@@ -14,19 +14,24 @@ package com.bridgelabz.functionalprograms;
 import com.bridgelabz.util.Functionalprograms;
 
 public class Quadratic {
+	/**
+	 * 
+	 * @param args
+	 */
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stud		
-		System.out.println("enter the value of a"); //user input
-		int a=Functionalprograms.readInteger();  //storing the value to ref variable
-		System.out.println("enter the value of b"); //user input
-		int b=Functionalprograms.readInteger();  //storing the value to ref variable
-		System.out.println("enter the value of c"); //user input
-		int c=Functionalprograms.readInteger();  //storing the value to ref variable
-		Functionalprograms.quadratic(a,b,c);  //method calling
+		
+		//Reading input number from the user
+		System.out.println("enter the value of a"); 
+		int a=Functionalprograms.readInteger();  
+		System.out.println("enter the value of b"); 
+		int b=Functionalprograms.readInteger();  
+		System.out.println("enter the value of c"); 
+		int c=Functionalprograms.readInteger(); 
 		
 		
-
-	}
-
-}
+		//Method 1- using static function of FunctionalUtilty class
+    	//of com.bridgelabz.util package
+		Functionalprograms.quadratic(a,b,c);  
+		}}

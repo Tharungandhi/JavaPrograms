@@ -16,16 +16,24 @@ package com.bridgelabz.functionalprograms;
 import com.bridgelabz.util.Functionalprograms;
 
 public class Gambler {
-
+	/*
+	* The main function is written to take input from the user and
+	* call gambler function that calculate win and lose percentage
+	*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("enter the stake");  //user input
-       int stake=Functionalprograms.readInteger(); //storing the value to ref variable
-       System.out.println("enter the goal"); //user input
-       int goal=Functionalprograms.readInteger(); //storing the value to ref variable
-       System.out.println("enter the trails"); //user input
-       int r=Functionalprograms.readInteger(); //storing the value to ref variable
-       Functionalprograms.gambler(stake,goal,r); //method calling
+		
+		//Reading input number from the user
+		System.out.println("enter the stake");  
+       int stake=Functionalprograms.readInteger(); 
+       System.out.println("enter the goal"); 
+       int goal=Functionalprograms.readInteger(); 
+       System.out.println("enter the trails"); 
+       int r=Functionalprograms.readInteger(); 
+       
+       //Method 1- using non-static function of FunctionalUtilty class
+       //of com.bridgelabz.util package
+       Functionalprograms.gambler(stake,goal,r); 
 	}
 	
 

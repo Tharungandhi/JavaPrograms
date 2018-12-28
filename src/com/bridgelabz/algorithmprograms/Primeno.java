@@ -11,20 +11,35 @@
 	 ******************************************************************************/
 package com.bridgelabz.algorithmprograms;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import com.bridgelabz.util.Algorithmprograms;
 
 public class Primeno {
 
+	/*
+	* The main function is written to take input from the user and
+	* call the primeNumber() function that finds prime numbers
+	*/
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("enter the number");  //user input
-		int num=Algorithmprograms.readInteger();  //storing the value to ref variable
-			for (long i=2;i<=num;i++)
-			{
-				boolean nu=Algorithmprograms.checkPrimeNo(i); //method calling
-				if(nu==true)
-					 System.out.println("prime numbers are " +i);
-			}
+
+		System.out.println("Enter the range: say m and n");
+		System.out.println("Enter m");
+		int m=Algorithmprograms.readInteger();
+		System.out.println("Enter n");
+		int n=Algorithmprograms.readInteger();;
+		
+		List<Integer> lst=new ArrayList<>();
+		
+		//Method 1- using static function of AlgorithmUtility class of
+		//com.bridgelabz.util package
+		lst=Algorithmprograms.primeNumbers(m,n);
+		
+		for(int i:lst)
+			System.out.println(i);
 
 	}}
 

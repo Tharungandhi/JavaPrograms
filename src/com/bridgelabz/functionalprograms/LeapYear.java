@@ -12,12 +12,21 @@
 package com.bridgelabz.functionalprograms;
 import com.bridgelabz.util.*;
 public class LeapYear {
+	/*
+	* The main function is written to take input from the user and
+	* to find the leap year that prints leap year
+	*/
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("enter the year"); //user input 
-		int i1=Functionalprograms.readInteger();//storing the value to ref variable
-		Functionalprograms.leapYear(i1);//method calling
+		
+		//Reading input number from the user
+		System.out.println("enter the year"); 
+		int i1=Functionalprograms.readInteger();
+		
+		//Method 1- using static function of FunctionalUtilty class
+	    //of com.bridgelabz.util package
+		Functionalprograms.leapYear(i1);
 	}
 
 }

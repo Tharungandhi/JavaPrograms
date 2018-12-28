@@ -15,11 +15,18 @@ import com.bridgelabz.util.Algorithmprograms;
 
 public class ToBinary {
 
+	/*
+	* The main function is written to take input from the user and
+	* call the toBinary function that converts decimal to binary
+	*/
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("enter the decimal number"); //user input 
-		int num=Algorithmprograms.readInteger(); //storing the value to ref variable
-		Algorithmprograms.convertBinary(num);  //method calling
+		System.out.println("enter the decimal number"); 
+		int num=Algorithmprograms.readInteger(); 
+		//Method 1- using static function of AlgorithmUtility class of
+        //com.bridgelabz.util package
+		Algorithmprograms.convertBinary(num); 
 	}
 
 }

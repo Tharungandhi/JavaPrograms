@@ -1,5 +1,5 @@
 /******************************************************************************
- *  Compilation:  javac -d bin anagram.java
+ *  Compilation:  javac -d bin Functionalprograms.java
  *  Execution:    java -cp bin com.bridgelabz.util.Functionalprograms n
  *  
  *  Purpose: To utilise the different methods present in Functionalprograms class
@@ -14,50 +14,60 @@ package com.bridgelabz.util;
 import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Functionalprograms<E> {
 
-	//private static final int Count = 0;  
+	/**
+	 * static object is created for Scanner class to avoid
+	 * multiple object creations of the same class.
+	 */
+	static Scanner scanner=new Scanner(System.in); //scanner class declaration
 
-
-	static Scanner scanner=new Scanner(System.in);
+	//method for scanner class of integer type 
+	/**
+	 * static function to read integers input from the user
+	 * @return integer values that are read
+	 */
 	public static int readInteger() {
-		try {
-			return scanner.nextInt();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return 0;
-	}
+		return scanner.nextInt();}
+
+	//method for scanner class of double type 
+	/**
+	 * static function to read double input from the user
+	 * @return double values that are read
+	 */
 	public static double readdouble() {
-		try {
-			return scanner.nextDouble();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return 0;
-	}
+		return scanner.nextDouble();}
+
+	//method for scanner class of String type 
+	/**
+	 * static function to read string input from the user
+	 * @return strings that are read
+	 */
 	public static String readString() {
-		try {
-			return scanner.next();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return null;
-	}
+		return scanner.next();}
 
 
-
+	/**
+	 * static function to read boolean input from the user
+	 * @return boolean values that are read
+	 */
+	public static boolean userBoolean(){
+		return scanner.nextBoolean();}
 
 
 	// replace
-
+	/**
+	 * static function that is used to replace a string in a given template
+	 * 
+	 * @param str the string template whose substring is to be replaced
+	 * 			  with the another string
+	 * @param uname the string with which the string in the template
+	 * 		  is replaced
+	 * @return string the string template that is modified.
+	 */
 	public static String replace(String str,String uname) 
 	{
 
@@ -66,14 +76,24 @@ public class Functionalprograms<E> {
 		} else 
 		{
 			// String str2 = str.replace("<<UserName>>",uname);
-			System.out.println(str.replace("<<UserName>>",uname));
-
+			String message;
+			final String REGEX_NAME="<<UserName>>";
+			Pattern p = Pattern.compile(REGEX_NAME);
+			Matcher m = p.matcher(str);
+			message = m.replaceAll(uname);
+			return message;
+			//System.out.println(str.replace("<<UserName>>",uname));
 		}
 		return uname;
 	}
 
 	// leap year
-
+	/**
+	 *  static function to check if the given year is a leap year or not
+	 * 
+	 * @param year the year to be checked whether it is a leap year or not
+	 * @return true if leap year else false
+	 */
 	public static void leapYear(int year) {
 		while (String.valueOf(year).length() <= 4) {
 			//to find leap year
@@ -89,6 +109,12 @@ public class Functionalprograms<E> {
 	}
 
 	// coin
+	/**
+	 * static function to find the head vs tail percentage after 
+	 * flipping the coin n times
+	 * 
+	 * @param n the number of times to flip a coin
+	 */
 	public static void flipCoin(int times) {
 
 		int head = 0;
@@ -108,6 +134,11 @@ public class Functionalprograms<E> {
 	}
 
 	// harmonic
+	/**
+	 * static function to print the harmonic value of the float value 
+	 * @param n
+	 * @return
+	 */
 
 	public static float harmonic(float s1) {
 
@@ -124,6 +155,11 @@ public class Functionalprograms<E> {
 
 
 	//2power
+	/**
+	 * static function to print all the values of the 2 power of N
+	 * 
+	 * @param n the number that is taken to the power of 2
+	 */
 	public static double pow(double a, double b) {
 		double c = Math.pow(a, b);
 		System.out.println("value of 2 power " + b + " is " + c);
@@ -133,7 +169,10 @@ public class Functionalprograms<E> {
 
 
 	// primenumber
-
+	/**
+	 * 
+	 * @param n the number whose prime factors are to be found
+	 */
 	public static int primeFactors(int n) {
 		while (n % 2 == 0)   // to check that number is divisible by 2 
 		{
@@ -154,7 +193,13 @@ public class Functionalprograms<E> {
 	}
 
 	// gambler
-
+	/**
+	 * static function to gamble 
+	 * 
+	 * @param stake the amount that is at stake
+	 * @param goal the amount to be obtained
+	 * @param no_of_times the number of times gambled
+	 */
 	public static void gambler(int stake, int goal, int r) {
 
 		int wins = 0;
@@ -181,7 +226,13 @@ public class Functionalprograms<E> {
 	}
 
 	// coupon
-
+	/**
+	 * static function to generate distinct coupon numbers
+	 * 
+	 * @param num the number of coupon numbers to be generated
+	 * @return the count of random numbers of generated to obtain 
+	 * 			distinct coupon numbers
+	 */
 	public static int coupon(int n) {
 		boolean[] isCollected = new boolean[n];
 
@@ -202,8 +253,13 @@ public class Functionalprograms<E> {
 	}
 
 	// 2D Array
-
-	public Integer[][] arrayInt(int row, int column) {
+	/**
+	 * static function that returns a generic array of integer type
+	 * @param row
+	 * @param column
+	 * @return
+	 */
+	public  static Integer[][] arrayInt(int row, int column) {
 		Integer[][] genericArray = new Integer[row][column];
 		int i, j = 0;
 		@SuppressWarnings("resource")
@@ -217,30 +273,14 @@ public class Functionalprograms<E> {
 		return genericArray;
 	}
 
-	//public void display(int[][] a1,double [][] a2, int row, int column) {
-
-	//PrintWriter th = new PrintWriter(System.out, true);
-	//int i, j = 0;
-	//th.println("integer array");
-	//for (i = 0; i < row; i++) {
-	//for (j = 0; j < column; j++) {
-	//th.print(a1[i][j] + " ");
-	//}
-	//th.println();
-
-	//}
-	//th.println("double array");
-	//for (i = 0; i < row; i++) {
-	//for (j = 0; j < column; j++) {
-	//th.print(a2[i][j] + " ");
-	//}
-	//th.println();
-
-	//}
-	//}
-
 	// 2darray for double
-	public Double[][] arrayDouble(int row, int column) {
+	/**
+	 * static function that returns a generic array of double type
+	 * @param row
+	 * @param column
+	 * @return
+	 */
+	public static  Double[][] arrayDouble(int row, int column) {
 		Double[][] genericArray = new Double[row][column];
 		int i, j = 0;
 		@SuppressWarnings("resource")
@@ -254,9 +294,36 @@ public class Functionalprograms<E> {
 		return genericArray;
 
 	}
+	//boolean function
+	/**
+	 * static function that returns a generic array of boolean type
+	 * @param row
+	 * @param column
+	 * @return
+	 */
+	
+		public static Boolean[][] arrayBoolean(int row,int column){
+			@SuppressWarnings("resource")
+			Scanner sc=new Scanner(System.in);
+			Boolean[][] genericArray=new Boolean[row][column];
+			System.out.println("enter the bollean value");
+			System.out.println("enter the value between 0 and 1");
+			for (int i = 0; i < row; i++) {
+				for (int j = 0; j < column; j++) {
+					System.out.println("row[" + i + "]column[" + j + "]");
+					genericArray[i][j] = sc.nextBoolean();
+				}	}
+			return genericArray;
+		}
+
 
 
 	//generic function
+	/**
+	 * static function that prints the array of generic type
+	 * 
+	 * @param genericArray array of any data type 
+	 */
 	public void display(E[][] genericArray,int row,int column)
 	{
 		PrintWriter th=new PrintWriter(System.out,true);
@@ -269,33 +336,11 @@ public class Functionalprograms<E> {
 			th.println();}
 	}
 
-	//boolean function
-	public Boolean[][] arrayBoolean(int row,int column){
-		@SuppressWarnings("resource")
-		Scanner sc=new Scanner(System.in);
-		Boolean[][] genericArray=new Boolean[row][column];
-		System.out.println("enter the bollean value");
-		System.out.println("enter the value between 0 and 1");
-		for (int i = 0; i < row; i++) {
-			for (int j = 0; j < column; j++) {
-				System.out.println("row[" + i + "]column[" + j + "]");
-				genericArray[i][j] = sc.nextBoolean();
-			}	}
-		return genericArray;
-	}
-
-
-
-
-
-
-
-
 	// Prints all triplets in arr[] with 0 sum
-
 	/**
-	 * @param arr
-	 * @param n
+	 * static function to obtain triplet integers that gives 0 upon addition
+	 * 
+	 * @param num the number of integers in an array
 	 */
 	public static void sumOfThree(int[] arr, int n) {
 		boolean found = false;
@@ -316,14 +361,18 @@ public class Functionalprograms<E> {
 		}
 
 		if (found == false)
-
-		{
 			System.out.println(" sum of 3 number is not equal to 0 ");
-		}
 	}
 
 	//distance
-
+	/**
+	 * static function that calculates the distance between the
+	 * two points (x,y)
+	 * 
+	 * @param x the integer that represents a point
+	 * @param y the integer that represents a point 
+	 * @return distance the distance between the two points
+	 */
 	public static double distance(int x,int y){
 
 		{
@@ -336,7 +385,14 @@ public class Functionalprograms<E> {
 
 
 	//Quadratic
-
+	/**
+	 * static function that is used to find the roots of a 
+	 * given quadratic equation 
+	 * 
+	 * @param a the number of x*x
+	 * @param b the number of x
+	 * @param c the constant of the equation
+	 */
 	public static void quadratic(int a,int b,int c)
 	{
 		double   delta = b*b - 4*a*c;
@@ -349,6 +405,12 @@ public class Functionalprograms<E> {
 
 
 	//StopWatch
+	/**
+	 * static function to program a stop watch 
+	 * 
+	 * @param start_end the boolean value to stop or start the watch
+	 * @param end the integer value to end the watch when started
+	 */
 	static Boolean running=false;
 	static long startTime;
 	static long stopTime;
@@ -380,7 +442,13 @@ public class Functionalprograms<E> {
 	}
 
 	//WindSpeed
-
+	/**
+	 * static function that calculates the efficient temperature 
+	 * 
+	 * @param temp the temperature
+	 * @param wind_speed the speed of the wind
+	 * @return efficient temperature calculated
+	 */
 	public static double  windChill(double t,double s)
 	{
 		double w=35.74+.6215*t+(.4275*t-35.75)*Math.pow(s,0.16);
@@ -390,7 +458,15 @@ public class Functionalprograms<E> {
 
 	}
 	//permutation
-
+	/**
+	 * static function to find the permutation of a string recursively
+	 * 
+	 * @param array the array of characters 
+	 * @param startIndex the start index of the array
+	 * @param endIndex the end index of the array
+	 * @return array the array of strings that contains all the possible 
+	 * 				 permutation of the string.
+	 */
 	public static String permute(String Str,int len,int r)
 	{
 		if (len == r) 
@@ -420,7 +496,7 @@ public class Functionalprograms<E> {
 
 
 	static int player = 0;
-	static int[][] BOARD = new int[3][3];
+	static int[][] BOARD = new int[4][4];
 	static boolean isEmpty = true;
 
 

@@ -17,16 +17,22 @@ public class StopWatch {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("click to start the watch");		//user defined
-		long starttime=(long) Functionalprograms.readdouble(); //storing the value to ref variable
-		Functionalprograms.startTime(starttime);   //method calling
-		System.out.println("click to stop the watch");  //user defined
-		long stoptime=(long) Functionalprograms.readdouble();//storing the value to ref variable
-		Functionalprograms.stoptime(stoptime);   //mathod calling
+		
+		//Reading input from the user
+		System.out.println("click to start the watch");		
+		long starttime=(long) Functionalprograms.readdouble();
+		
+		//Method 1- using static function of FunctionalUtilty class
+    	//of com.bridgelabz.util package
+		Functionalprograms.startTime(starttime); 
+		
+		//Reading input from the user
+		System.out.println("click to stop the watch");  
+		long stoptime=(long) Functionalprograms.readdouble();
+		
+		//Method 2- using static function of FunctionalUtilty class
+    	//of com.bridgelabz.util package
+		Functionalprograms.stoptime(stoptime);   
 		System.out.println("elapsed time in second is  "+Functionalprograms.getElapsedTime());
 		
-		
-
-	}
-
-}
+		}}

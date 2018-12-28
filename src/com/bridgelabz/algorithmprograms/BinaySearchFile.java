@@ -14,17 +14,15 @@ package com.bridgelabz.algorithmprograms;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Scanner;
-
 import com.bridgelabz.util.Algorithmprograms;
 
-public class BinaySearchOfWord {
-
-
+public class BinaySearchFile {
+	/*
+	 * The main function is written to take input from the user and
+	 * calls binarySeacrhFile function to search word from list
+	 */
 	public static void main(String[] args) throws FileNotFoundException {
-		//		        AlgorithmUtility a1 = new AlgorithmUtility();
-		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(System.in);
+
 		// Get scanner instance
 		String csvFile = "/home/admin1/Desktop/Tharun.csv";
 		BufferedReader fileReader = new BufferedReader(new FileReader(csvFile));
@@ -46,9 +44,12 @@ public class BinaySearchOfWord {
 					// Print all tokens
 					System.out.println(token);
 				}
+
+				//Method 1- using static function of AlgorithmUtility class of
+				//com.bridgelabz.util package
 				System.out.println("enter the key word which has to be searched ");
-				String key = sc.next();
-				int i = Algorithmprograms.binarySearch(tokens, key);
+				String key =Algorithmprograms.readString();
+				int i = Algorithmprograms.binarySearchFile(tokens, key);
 				if (i >= 0) {
 					System.out.println(tokens[i] + " is present in " + (i + 1) + " position in the array");
 				} else

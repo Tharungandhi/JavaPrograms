@@ -13,16 +13,22 @@ package com.bridgelabz.algorithmprograms;
 
 import com.bridgelabz.util.Algorithmprograms;
 
-public class Payment {
-
+public class MonthlyPayment {
+	/*
+	* The main function is written to take input from the user and
+	* call the monthlyPayment() function calculates monthly payment
+	*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("enter the principle amount");   //user input
-		double p=Algorithmprograms.readdouble();   //storing the value to ref variable
-		System.out.println("enter the rate");    //user input
-		double r=Algorithmprograms.readdouble();   //storing the value to ref variable
-		System.out.println("enter the no of year");  //user input
-		double n=Algorithmprograms.readdouble();   //storing the value to ref variable
+		System.out.println("enter the principle amount");   
+		double p=Algorithmprograms.readdouble();   
+		System.out.println("enter the rate");    
+		double r=Algorithmprograms.readdouble();   
+		System.out.println("enter the no of year");  
+		double n=Algorithmprograms.readdouble();   
+		
+		//Method 1- using static function of AlgorithmUtility class of
+		//com.bridgelabz.util package
 		Algorithmprograms.monthlyPayment(p, n, r);   //method calling
 	}
 

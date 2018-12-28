@@ -16,12 +16,21 @@ import com.bridgelabz.util.Functionalprograms;
 
 public class Coupen {
 
+	/*
+	* The main function is written to take input from the user and
+	* calls couponNumber function that generates distinct coupon
+	*  numbers
+	*/
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.out.println("enter the n distinct coupen"); //user input
-		int n=Functionalprograms.readInteger(); //storing the value to ref variable
-		int count=Functionalprograms.coupon(n); //storing the value to ref variable
+		System.out.println("enter the n distinct coupen"); 
+		int n=Functionalprograms.readInteger(); 
+		
+		//Method 1- using non-static function of FunctionalUtilty class
+		//of com.bridgelabz.util package
+		int count=Functionalprograms.coupon(n); 
 		System.out.println(count);
 		
 	}

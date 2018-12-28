@@ -19,6 +19,9 @@ import com.bridgelabz.util.Functionalprograms;
  */
 public class TicToe {
 	public static void main(String[] args) {
-		Functionalprograms.play(); //method calling
+		
+		//Method 1- using static function of FunctionalUtilty class
+    	//of com.bridgelabz.util package
+		Functionalprograms.play();
 	}}
 

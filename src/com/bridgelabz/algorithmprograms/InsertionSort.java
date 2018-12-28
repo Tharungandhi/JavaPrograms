@@ -14,17 +14,22 @@
  import com.bridgelabz.util.Algorithmprograms;
 
  public class InsertionSort {
-
+	    /*
+		* The main function is written to take input from the user and calls 
+		* the function insertionSort that sorts the array
+		*/
 	 public static void main(String[] args) {
 		 // TODO Auto-generated method stub
-		 System.out.println("enter the number of string to be entered");//user input
-		 int num=Algorithmprograms.readInteger();  //storing the value to ref variable
-		 String[] str=new String[num];              //creating a string of num size
+		 System.out.println("enter the number of string to be entered");
+		 int num=Algorithmprograms.readInteger();  
+		 String[] str=new String[num];              
 		 for(int i=0;i<str.length;i++)
 		 {
 			 System.out.println("enter "+(i+1)+" string");
-			 str[i]=Algorithmprograms.readString();   //storing the value to ref variable
+			 str[i]=Algorithmprograms.readString();   
 		 }
+		//Method 1- using static function of AlgorithmUtility class of
+		//com.bridgelabz.util package
 		 String[] str2=Algorithmprograms.insertionsortArray(str);   //calling a method storing in ref variable
 		 int n=str.length;
 		 for(int i=0;i<n;i++)

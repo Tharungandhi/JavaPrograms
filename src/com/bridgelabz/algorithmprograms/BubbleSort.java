@@ -14,14 +14,19 @@ package com.bridgelabz.algorithmprograms;
 import com.bridgelabz.util.Algorithmprograms;
 
 public class BubbleSort {
+	/*
+	* The main function is written to take input from the user and and 
+	* call the bubbleSort function that sorts array of integers
+	*/
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		System.out.println("How many numbers you want to insert");//user input
-		int n=Algorithmprograms.readInteger();//storing the value to ref variable
-		System.out.println("Enter the array elements");//user input
-		int[] array=new int[n];//storing the value to ref variable
-		
+		System.out.println("How many numbers you want to insert");
+		int n=Algorithmprograms.readInteger();
+		System.out.println("Enter the array elements");
+		int[] array=new int[n];
+		//Method 1- using static function of AlgorithmUtility class of
+		//com.bridgelabz.util package
 		Algorithmprograms.bubbleSort(n, array);//method calling
 	}}

@@ -17,11 +17,18 @@ public class ReplaceString {
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
-		System.out.println("Hello (username here) How are you"); //user input 
-		String str="hello <<UserName>>, How are you";  //string declare
-		System.out.print("Enter the username ");  //user input
-		String uname=Functionalprograms.readString();  //storing the value to ref variable
-		Functionalprograms.replace(str,uname);  //method calling
+		//System.out.println("Hello (username here) How are you"); //user input 
+		
+		
+		//Reading input number from the user
+		String str="hello <<UserName>>, How are you";  
+		System.out.print("Enter the username ");  
+		String uname=Functionalprograms.readString(); 
+		
+		 //Method 1- using static function of FunctionalUtilty class
+	     //of com.bridgelabz.util package
+		 String str1=Functionalprograms.replace(str,uname);
+		 System.out.println(str1);
 		
 		
 	}

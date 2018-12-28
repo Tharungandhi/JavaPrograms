@@ -17,16 +17,21 @@ public class SumOfThreeInt {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("enter the number of array element"); //user input
-		int r=Functionalprograms.readInteger(); //storing the value to ref variable
-		int []arr=new int[r];  //storing the element in array
+		
+		//Reading input from the user
+		System.out.println("enter the number of array element"); 
+		int r=Functionalprograms.readInteger(); 
+		int []arr=new int[r];  
 		for(int i=0;i<r;i++)
 		{
-			System.out.println("enter "+i+" element of an array"); //user input
-			arr[i]=Functionalprograms.readInteger();  //storing the value to ref variable
+			System.out.println("enter "+i+" element of an array"); 
+			arr[i]=Functionalprograms.readInteger();  
 		}
 		int n=arr.length;
-		Functionalprograms.sumOfThree(arr,n);  //method calling
+		
+		//Method 1- using static function of FunctionalUtilty class
+    	//of com.bridgelabz.util package
+		Functionalprograms.sumOfThree(arr,n);  
 		
 
 	}

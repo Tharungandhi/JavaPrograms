@@ -18,21 +18,30 @@ import java.util.Set;
 
 import com.bridgelabz.util.Algorithmprograms;
 
-public class AnagramPalindrom {
+public class PrimeNoAnagramPalindrom {
+	/*
+	* The main function is written to take input from the user and
+	* call the anagramPalindrom function that finds prime numbers 
+	* that are anagram and palindrome
+	*/
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//Method 1- using static function of AlgorithmUtility class of
+		//com.bridgelabz.util package
 		System.out.println("The prime numbers between 0-1000 are");
 		int num=Algorithmprograms.readInteger();//storing the value to ref variable
 		List<String> primeList=new ArrayList<>();//declaration
 		primeList=Algorithmprograms.findPrime(num);//method call
 
-		
+		//Method 2- using static function of AlgorithmUtility class of
+		//com.bridgelabz.util package
 		Set<String> primeAnagramSet=new HashSet<>();//declaration
 		System.out.println("The prime numbers which are anagrams are");
 		primeAnagramSet=Algorithmprograms.primeAnagram(primeList);//method call
 
-
+		//Method 3- using static function of AlgorithmUtility class of
+		//com.bridgelabz.util package
 		Set<String> primePalindromeSet=new HashSet<>();//Set declaration
 		System.out.println("The prime numbers which are anagram and palindrome are");
 		primePalindromeSet=Algorithmprograms.primePalindrome(primeAnagramSet);//method call

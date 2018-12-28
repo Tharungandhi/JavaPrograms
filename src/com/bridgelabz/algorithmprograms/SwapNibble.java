@@ -15,15 +15,27 @@ import com.bridgelabz.util.Algorithmprograms;
 import com.bridgelabz.util.Functionalprograms;
 
 public class SwapNibble {
+	
+	/*
+	* The main function is written to take input from the user and
+	* calls swapNibble function to find the result after swapping
+	* nibbles
+	*/
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int flag=0;
-		System.out.println("enter the Value of n"); //user input
-		int x =Functionalprograms.readInteger();   //storing the value to ref variable
-		int c=Algorithmprograms.swapNibbles(x);   //method calling
+		System.out.println("enter the Value of n"); 
+		int x =Functionalprograms.readInteger();  
+		
+		//Method 1- using static function of AlgorithmUtility class of
+		//com.bridgelabz.util package
+		int c=Algorithmprograms.swapNibbles(x);   
 		System.out.println(c);
-		int[] d=Algorithmprograms.toNibbleBinary(c);  //method calling
+		
+		//Method 2- using static function of AlgorithmUtility class of
+		//com.bridgelabz.util package
+		int[] d=Algorithmprograms.toNibbleBinary(c);  
 		for(int j=7;j>=0;j--)
 		{
 			System.out.print(d[j]);

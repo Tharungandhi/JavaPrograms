@@ -13,14 +13,20 @@ package com.bridgelabz.algorithmprograms;
 
 import com.bridgelabz.util.Algorithmprograms;
 
-public class NewtonMethod {
-
+public class SquareRoot {
+	/*
+	* The main function is written to take input from the user and
+	* call the squareRoot() function that finds square root of a number
+	*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		System.out.println("enter the number");  //user input
-		double c=Algorithmprograms.readdouble();  //storing the value to ref variable
-		Algorithmprograms.newtonMethod(c); //method calling
+		System.out.println("enter the number"); 
+		double c=Algorithmprograms.readdouble();  
+		
+		//Method 1- using static function of AlgorithmUtility class of
+		//com.bridgelabz.util package
+		Algorithmprograms.newtonMethod(c); 
 		
 	}
 

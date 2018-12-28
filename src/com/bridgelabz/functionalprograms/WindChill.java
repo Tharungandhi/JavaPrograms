@@ -18,12 +18,17 @@ public class WindChill {
 	public static void main(String[] args) {
 		
 		// TODO Auto-generated method stub
-		System.out.println("enter the temperature");//user input 
-		double t=Functionalprograms.readdouble();  //storing the value to ref variable
-		System.out.println("enter the wind speed"); //user input
-		double s=Functionalprograms.readdouble(); //storing the value to ref variable
+		
+		//Reading input from the user
+		System.out.println("enter the temperature");
+		double t=Functionalprograms.readdouble();  
+		System.out.println("enter the wind speed"); 
+		double s=Functionalprograms.readdouble(); 
 		if(t<50 && s<120||s>3)
-			Functionalprograms.windChill(t,s); //method calling
+			
+			//Method 1- using static function of FunctionalUtilty class
+	    	//of com.bridgelabz.util package
+			Functionalprograms.windChill(t,s); 
 		else
 			System.out.println("enter the valid temperature and speed");
 

@@ -17,10 +17,15 @@ public class Permutation {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("enter the string");//user input
-		String str=Functionalprograms.readString(); //storing the value to ref variable
+		
+		//Reading input number from the user
+		System.out.println("enter the string");
+		String str=Functionalprograms.readString(); 
 		int n = str.length(); 
-		Functionalprograms.permute(str, 0, n-1); //method calling
+		
+		//Method 1- using static function of FunctionalUtilty class
+	    //of com.bridgelabz.util package
+		Functionalprograms.permute(str, 0, n-1); 
 	    } 
 	}
 
