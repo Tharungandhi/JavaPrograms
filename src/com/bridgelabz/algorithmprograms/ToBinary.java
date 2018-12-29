@@ -26,7 +26,4 @@ public class ToBinary {
 		int num=Algorithmprograms.readInteger(); 
 		//Method 1- using static function of AlgorithmUtility class of
         //com.bridgelabz.util package
-		Algorithmprograms.convertBinary(num); 
-	}
-
-}
+		Algorithmprograms.convertBinary(num);}}

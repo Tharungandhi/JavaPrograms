@@ -40,10 +40,9 @@ public class BinaySearchFile {
 				//		                for(int i=0;i<tokens.length;i++) {
 				//		                    System.out.println(tokens[i]);
 				//		                }
-				for (String token : tokens) {
+				for (String token : tokens) 
 					// Print all tokens
 					System.out.println(token);
-				}
 
 				//Method 1- using static function of AlgorithmUtility class of
 				//com.bridgelabz.util package
@@ -61,10 +60,4 @@ public class BinaySearchFile {
 			try {
 				fileReader.close();
 			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
-
-}
+				e.printStackTrace();}}}}

@@ -33,7 +33,4 @@ public class FindNumber {
 		
 		//Method 1- using static function of AlgorithmUtility class of
 		//com.bridgelabz.util package
-		Algorithmprograms.findNumber(lower,upper,middle,count,input1,n);//method calling
-	}
-
-}
+		Algorithmprograms.findNumber(lower,upper,middle,count,input1,n); }}

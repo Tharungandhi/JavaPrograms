@@ -29,7 +29,4 @@ public class MonthlyPayment {
 		
 		//Method 1- using static function of AlgorithmUtility class of
 		//com.bridgelabz.util package
-		Algorithmprograms.monthlyPayment(p, n, r);   //method calling
-	}
-
-}
+		Algorithmprograms.monthlyPayment(p, n, r);  }}

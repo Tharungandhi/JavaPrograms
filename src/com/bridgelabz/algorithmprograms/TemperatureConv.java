@@ -25,16 +25,10 @@ public class TemperatureConv {
 
 		System.out.println("Enter the choice to convert to the following:");
 		System.out.println("1-Celcius1 2-Fahrenheit");
-		
-		int choice=Algorithmprograms.readInteger(); //Reading the choice of the user
+		int choice=Algorithmprograms.readInteger();
 		System.out.println("Enter the temp");
-		
-		double temp=Algorithmprograms.readdouble();//Reading the input from the user
-		
+		double temp=Algorithmprograms.readdouble();
 		//Method 1- using static function of AlgorithmUtility class of
 		//com.bridgelabz.util package
 		double conv_temp=Algorithmprograms.temperatureConversion(choice,temp);
-         System.out.println(conv_temp);
-	}
-
-}
+         System.out.println(conv_temp);}}

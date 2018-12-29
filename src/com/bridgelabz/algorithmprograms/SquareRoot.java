@@ -22,12 +22,7 @@ public class SquareRoot {
 		// TODO Auto-generated method stub
 		
 		System.out.println("enter the number"); 
-		double c=Algorithmprograms.readdouble();  
-		
+		double c=Algorithmprograms.readdouble();  	
 		//Method 1- using static function of AlgorithmUtility class of
 		//com.bridgelabz.util package
-		Algorithmprograms.newtonMethod(c); 
-		
-	}
-
-}
+		Algorithmprograms.newtonMethod(c); }}

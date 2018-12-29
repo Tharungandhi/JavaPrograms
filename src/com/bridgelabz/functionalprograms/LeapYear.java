@@ -19,14 +19,9 @@ public class LeapYear {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 		//Reading input number from the user
 		System.out.println("enter the year"); 
 		int i1=Functionalprograms.readInteger();
-		
 		//Method 1- using static function of FunctionalUtilty class
 	    //of com.bridgelabz.util package
-		Functionalprograms.leapYear(i1);
-	}
-
-}
+		Functionalprograms.leapYear(i1);}}

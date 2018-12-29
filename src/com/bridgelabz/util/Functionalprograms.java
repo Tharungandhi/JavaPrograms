@@ -11,6 +11,9 @@
  ******************************************************************************/
 package com.bridgelabz.util;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
@@ -69,21 +72,15 @@ public class Functionalprograms<E> {
 	 * @return string the string template that is modified.
 	 */
 	public static String replace(String str,String uname) 
-	{
-
-		if (uname.length() < 3) {
+	{	if (uname.length() < 3)
 			System.out.println("enter string letter which is greater then 3");
-		} else 
-		{
-			// String str2 = str.replace("<<UserName>>",uname);
+		else {
 			String message;
 			final String REGEX_NAME="<<UserName>>";
 			Pattern p = Pattern.compile(REGEX_NAME);
 			Matcher m = p.matcher(str);
 			message = m.replaceAll(uname);
-			return message;
-			//System.out.println(str.replace("<<UserName>>",uname));
-		}
+			return message;}
 		return uname;
 	}
 
@@ -98,15 +95,11 @@ public class Functionalprograms<E> {
 		while (String.valueOf(year).length() <= 4) {
 			//to find leap year
 			if ((year % 400 == 0) || (year % 4 == 0) && (year % 100 != 0)) // leap year formula
-			{
 				System.out.println("year is leap year");
-
-			} else {
+				else 
 				System.out.println("year is not leap year");
-			}
 			break;
-		}
-	}
+		}}
 
 	// coin
 	/**
@@ -116,22 +109,18 @@ public class Functionalprograms<E> {
 	 * @param n the number of times to flip a coin
 	 */
 	public static void flipCoin(int times) {
-
 		int head = 0;
 		int tail = 0;
 		int i = times;
 		Random r = new Random();
 		int rn = r.nextInt(2); //random variable to take 0,1
-		if (rn == 0) {
+		if (rn == 0)
 			head++;
-
-		} else {
+			else 
 			tail++;
-		}
 		System.out.println("percentage of head" + head * 100 / i);
 		System.out.println("percentage of tail" + tail * 100 / i);
-
-	}
+      }
 
 	// harmonic
 	/**
@@ -141,17 +130,11 @@ public class Functionalprograms<E> {
 	 */
 
 	public static float harmonic(float s1) {
-
 		float result = 0;
-		for (int i = 0; i <= s1; i++) {
+		for (int i = 0; i <= s1; i++) 
 			result = result + 1 / s1;  //harmonic formula
-
-		}
-
 		System.out.println("result is" + result);
-		return result;
-
-	}
+		return result;}
 
 
 	//2power
@@ -179,18 +162,14 @@ public class Functionalprograms<E> {
 			System.out.print(2 + " ");
 			n /= 2;
 		}
-
 		for (int i = 3; i * i <= n; i += 2) {
 			while (n % i == 0) {
 				System.out.print(i + " "); // number to print
 				n /= i;
-			}
-		}
-		if (n > 2) {
+			}}
+		if (n > 2) 
 			System.out.println(n);
-		}
-		return n;
-	}
+		return n;}
 
 	// gambler
 	/**
@@ -201,25 +180,21 @@ public class Functionalprograms<E> {
 	 * @param no_of_times the number of times gambled
 	 */
 	public static void gambler(int stake, int goal, int r) {
-
 		int wins = 0;
 		int loss = 0;
 		for (int t = 0; t < r; t++) {
 			int c = stake;
 			while (c > 0 && c < goal) 
 			{
-				if (Math.random() < 0.5) {
+				if (Math.random() < 0.5)
 					c++;
-				} else {
+					else 
 					c--;
-				}
 			}
-			if (c == goal) {
+			if (c == goal) 
 				wins++;
-			} else {
-				loss++;
-			}
-		}
+				else 
+				loss++;}
 		System.out.println(wins + " wins of " + r);
 		System.out.println("Percent of games won= " + 100.0 * wins / r);
 		System.out.println("Percent of loss = " + 100.0 * loss / r);
@@ -240,17 +215,13 @@ public class Functionalprograms<E> {
 		int distinct = 0;
 		while (distinct < n) {
 			int value = (int) (Math.random() * n);
-			{
 				count++;
-			}
 			if (!isCollected[value]) {
 				distinct++;
 				System.out.println(distinct);
 				isCollected[value] = true;
-			}
-		}
-		return count;
-	}
+			}}
+		return count;}
 
 	// 2D Array
 	/**
@@ -268,10 +239,8 @@ public class Functionalprograms<E> {
 			for (j = 0; j < column; j++) {
 				System.out.println("row[" + i + "]column[" + j + "]");
 				genericArray[i][j] = sc.nextInt();
-			}
-		}
-		return genericArray;
-	}
+			}}
+		return genericArray;}
 
 	// 2darray for double
 	/**
@@ -289,11 +258,9 @@ public class Functionalprograms<E> {
 			for (j = 0; j < column; j++) {
 				System.out.println("row[" + i + "]column[" + j + "]");
 				genericArray[i][j] = sc.nextDouble();
-			}
-		}
-		return genericArray;
-
-	}
+			}}
+		return genericArray;}
+	
 	//boolean function
 	/**
 	 * static function that returns a generic array of boolean type
@@ -313,11 +280,7 @@ public class Functionalprograms<E> {
 					System.out.println("row[" + i + "]column[" + j + "]");
 					genericArray[i][j] = sc.nextBoolean();
 				}	}
-			return genericArray;
-		}
-
-
-
+			return genericArray;}
 	//generic function
 	/**
 	 * static function that prints the array of generic type
@@ -329,12 +292,8 @@ public class Functionalprograms<E> {
 		PrintWriter th=new PrintWriter(System.out,true);
 		for(int i=0;i<row;i++) {
 			for(int j=0;j<column;j++)
-			{
 				th.print(genericArray[i][j]+" ");
-
-			}
-			th.println();}
-	}
+			th.println();}}
 
 	// Prints all triplets in arr[] with 0 sum
 	/**
@@ -355,10 +314,7 @@ public class Functionalprograms<E> {
 						System.out.print(arr[k]);
 						System.out.print("\n");
 						found = true;
-					}
-				}
-			}
-		}
+					}}}}
 
 		if (found == false)
 			System.out.println(" sum of 3 number is not equal to 0 ");
@@ -373,15 +329,9 @@ public class Functionalprograms<E> {
 	 * @param y the integer that represents a point 
 	 * @return distance the distance between the two points
 	 */
-	public static double distance(int x,int y){
-
-		{
+	public static double distance(int x,int y){{
 			double result=Math.sqrt(Math.pow(x,2)+Math.pow(y, 2));
-
-			return result;
-		}
-
-	}
+			return result;}}
 
 
 	//Quadratic
@@ -393,15 +343,12 @@ public class Functionalprograms<E> {
 	 * @param b the number of x
 	 * @param c the constant of the equation
 	 */
-	public static void quadratic(int a,int b,int c)
-	{
+	public static void quadratic(int a,int b,int c){
 		double   delta = b*b - 4*a*c;
 		double	Root1  = Math.abs(-b + Math.sqrt(Math.abs(delta)))/(2*a);
 		double	Root2 =Math.abs (-b - Math.sqrt(Math.abs(delta)))/(2*a);
 		System.out.println("first root is "+ Root1);
-		System.out.println("second root is "+Root2);
-
-	}
+		System.out.println("second root is "+Root2);}
 
 
 	//StopWatch
@@ -415,31 +362,22 @@ public class Functionalprograms<E> {
 	static long startTime;
 	static long stopTime;
 	static long elapsed;
-	public static void startTime(long starttime)
-	{
+	public static void startTime(long starttime){
 		startTime=System.currentTimeMillis();
 		System.out.println(startTime);
-		running=true;
-	}
+		running=true;}
 
-	public static void stoptime(long stoptime)
-	{
+	public static void stoptime(long stoptime){
 		stopTime=System.currentTimeMillis();
 		System.out.println(stopTime);
-		running=false;
-	}
+		running=false;}
 
-	public static long getElapsedTime()
-	{
-
-		if (running) {
+	public static long getElapsedTime(){
+		if (running) 
 			elapsed = ((System.currentTimeMillis() - startTime)/1000);
-		}
-		else {
+		else 
 			elapsed = ((stopTime - startTime)/1000);
-		}
-		return elapsed;
-	}
+		return elapsed;}
 
 	//WindSpeed
 	/**
@@ -458,39 +396,80 @@ public class Functionalprograms<E> {
 
 	}
 	//permutation
+	
 	/**
-	 * static function to find the permutation of a string recursively
-	 * 
-	 * @param array the array of characters 
-	 * @param startIndex the start index of the array
-	 * @param endIndex the end index of the array
-	 * @return array the array of strings that contains all the possible 
-	 * 				 permutation of the string.
-	 */
-	public static String permute(String Str,int len,int r)
-	{
-		if (len == r) 
-			System.out.println(Str); 
-		else
-		{ 
-			for (int i = len; i <= r; i++) 
-			{ 
-				Str = swap(Str,len,i); 
-				permute(Str, len+1, r); 
-				Str = swap(Str,len,i); 
-			} 
-		}
-		return Str;    
-	}
-	public static String swap(String a, int i, int j) 
-	{ 
+     * static method is used to possible recursion we can do it for a string
+     * @param str string value
+     * @param initial first element
+     * @param last element
+     * @param array list
+     * @return array list
+     */
+    public static List<String> recursionPermutation(String str, int initial, int last,List<String> arr) {
+       
+        if (initial == last) {
+            arr.add(str);
+        } else {
+            for (int i = initial; i < last; i++) {
+                str = swap(str, initial, i);
+                recursionPermutation(str, (initial + 1), last,arr);}
+        }
+        return arr;
+    }
+    public static String swap(String a, int i, int j) { 
 		char temp; 
 		char[] charArray = a.toCharArray(); 
 		temp = charArray[i] ; 
 		charArray[i] = charArray[j]; 
 		charArray[j] = temp; 
-		return String.valueOf(charArray); 
-	}
+		return String.valueOf(charArray); }
+
+	   /**
+     * static method is used to possible iterations we can do it for a string
+     * @param s is the string value
+     * @return arr array of string
+     */
+    public static List<String> iterationPermutation(String str) {
+        List<String> arr = new ArrayList<>();
+        arr.add(String.valueOf(str.charAt(0)));
+        for (int i = 1; i < str.length(); i++) {
+            for (int j = arr.size() - 1; j >= 0; j--) {
+                String s = arr.remove(j);
+                for (int k = 0; k <= s.length(); k++) {
+                    arr.add(s.substring(0, k) + str.charAt(i) + s.substring(k));
+                }
+            }
+        }
+        return arr;
+    }
+   
+    /**
+     * static method is used to sort the array list
+     * @param arr is arraylist
+     * @return arraylist
+     */
+    public static List<String> listSort(List<String> arr)
+    {
+        Collections.sort(arr);
+        return arr;
+    }
+    
+    
+    public static void compareString(List<String> arr2,List<String> arr1) {
+    int flag=1;
+    for(int i=0;i<arr2.size();i++)
+    {
+        if(arr2.get(i).compareTo(arr1.get(i))==0)
+            flag=1;
+        else
+            flag=0;
+    }
+    if(flag==1)
+    System.out.println("arrays returned by two string functions are equal");
+    else
+    System.out.println("arre not same");
+}
+    
 
 	//Tic Tac Toe
 
@@ -501,6 +480,7 @@ public class Functionalprograms<E> {
 
 
 	public static Object play;
+	
 
 	public static void initBoard() {
 		System.out.println("TIC TAC TOE GAME\nComputer is o\nPlayer  is x ");
@@ -510,10 +490,10 @@ public class Functionalprograms<E> {
 			}
 		}
 		System.out.println("Board is this :");
-		dispBoard();
+		displayBoard();
 	}
 
-	public static void dispBoard() {
+	public static void displayBoard() {
 		int count = 0;
 		for (int i = 0; i < BOARD.length; i++) {
 			System.out.println("---------------");
@@ -530,7 +510,7 @@ public class Functionalprograms<E> {
 			}
 			System.out.println("|");
 		}
-		if (count == 9) {
+		if (count == BOARD.length) {
 			isEmpty = false;
 		}
 		System.out.println("---------------");
@@ -540,7 +520,7 @@ public class Functionalprograms<E> {
 	 * BOARD[i][j] = 0; } else BOARD[i][j] = 1; }
 	 */
 
-	public static void putVal() {
+	public static void enterValue() {
 		int i;
 		int j;
 		if (player % 2 == 1) {
@@ -561,7 +541,7 @@ public class Functionalprograms<E> {
 				System.out.println("Coumputer Choosing " + i + " " + j);
 			}
 		} else
-			putVal();
+			enterValue();
 
 	}
 
@@ -576,20 +556,20 @@ public class Functionalprograms<E> {
 				|| (BOARD[2][0] + BOARD[1][1] + BOARD[0][2] == player * 3));
 	}
 
-	public static void play() {
+	public static void ticTacToe() {
 		initBoard();
 		while (isEmpty) {
 			System.out.println("Players turn");
-			putVal();
-			dispBoard();
+			enterValue();
+			displayBoard();
 			if (win()) {
 				System.out.println("Player won");
 				return;
 			}
 			player = 1;
 			System.out.println("Computers turn");
-			putVal();
-			dispBoard();
+			enterValue();
+			displayBoard();
 			if (win()) {
 				System.out.println("Computer won");
 				return;

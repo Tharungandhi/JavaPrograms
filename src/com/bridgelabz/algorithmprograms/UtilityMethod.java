@@ -113,7 +113,6 @@ public class UtilityMethod {
 						arr[i]= Algorithmprograms.readInteger();
 					}
 					long startTime=System.nanoTime();
-					//int[] arr2= Algorithmprograms.insertionSortInteger(arr);
 					long stopTime=System.nanoTime();
 					int n=len;
 					for(int i=0;i<n;i++)

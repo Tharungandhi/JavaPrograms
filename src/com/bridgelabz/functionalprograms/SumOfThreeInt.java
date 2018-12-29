@@ -22,18 +22,10 @@ public class SumOfThreeInt {
 		System.out.println("enter the number of array element"); 
 		int r=Functionalprograms.readInteger(); 
 		int []arr=new int[r];  
-		for(int i=0;i<r;i++)
-		{
+		for(int i=0;i<r;i++){
 			System.out.println("enter "+i+" element of an array"); 
-			arr[i]=Functionalprograms.readInteger();  
-		}
+			arr[i]=Functionalprograms.readInteger();}
 		int n=arr.length;
-		
 		//Method 1- using static function of FunctionalUtilty class
     	//of com.bridgelabz.util package
-		Functionalprograms.sumOfThree(arr,n);  
-		
-
-	}
-
-}
+		Functionalprograms.sumOfThree(arr,n); }}

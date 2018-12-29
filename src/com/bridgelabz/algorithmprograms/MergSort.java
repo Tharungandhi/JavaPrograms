@@ -29,18 +29,10 @@ public class MergSort {
 	        System.out.println("Enter the elements"); 
 
 	        for( i=0;i<n;i++)
-	        {   
 	            arr[i]=Algorithmprograms.readString();  
-	        }
 	       //Method 1- using static function of AlgorithmUtility class of
 	       //com.bridgelabz.util package
 	        Algorithmprograms.mergSort(arr,0,n);  
 	        System.out.println("Elements after sorting");
 	        for(i=0;i<n;i++)
-	        {
-	            System.out.println(arr[i]+"");
-	        }
-
-	    }
-
-}
+	            System.out.println(arr[i]+"");}}

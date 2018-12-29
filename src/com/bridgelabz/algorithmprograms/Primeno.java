@@ -31,16 +31,11 @@ public class Primeno {
 		int m=Algorithmprograms.readInteger();
 		System.out.println("Enter n");
 		int n=Algorithmprograms.readInteger();;
-		
-		List<Integer> lst=new ArrayList<>();
-		
+		List<Integer> lst=new ArrayList<>();	
 		//Method 1- using static function of AlgorithmUtility class of
 		//com.bridgelabz.util package
-		lst=Algorithmprograms.primeNumbers(m,n);
-		
+		lst=Algorithmprograms.primeNumbers(m,n);	
 		for(int i:lst)
-			System.out.println(i);
-
-	}}
+			System.out.println(i);}}
 
 

@@ -25,11 +25,7 @@ public class FlipCoin {
 			//Reading input number from the user
 		System.out.println("number of time to flip a coin" );//Reading input number from the user
 		int times=Functionalprograms .readInteger(); 
-		
 		//Method 1- using static function of FunctionalUtilty class
         //of com.bridgelabz.util package
 		Functionalprograms .flipCoin(times);   
-		}while(i<5);
-	}
-
-}
+		}while(i<5);}}

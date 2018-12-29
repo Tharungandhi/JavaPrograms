@@ -22,7 +22,6 @@ public class DayOFWeek {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//
 		System.out.println("enter the date");
 		int date=Algorithmprograms.readInteger();
 		System.out.println("enter the month");
@@ -32,8 +31,4 @@ public class DayOFWeek {
 		
 		//Method 1- using static function of AlgorithmUtility class of
 		//com.bridgelabz.util package
-		Algorithmprograms.dayofWeek(date, month, year);//method calling
-		
-	}
-
-}
+		Algorithmprograms.dayofWeek(date, month, year);}}

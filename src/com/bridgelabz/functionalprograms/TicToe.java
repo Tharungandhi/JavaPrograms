@@ -22,6 +22,6 @@ public class TicToe {
 		
 		//Method 1- using static function of FunctionalUtilty class
     	//of com.bridgelabz.util package
-		Functionalprograms.play();
+		Functionalprograms.ticTacToe();
 	}}
 

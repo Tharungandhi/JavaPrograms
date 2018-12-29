@@ -45,8 +45,4 @@ public class PrimeNoAnagramPalindrom {
 		Set<String> primePalindromeSet=new HashSet<>();//Set declaration
 		System.out.println("The prime numbers which are anagram and palindrome are");
 		primePalindromeSet=Algorithmprograms.primePalindrome(primeAnagramSet);//method call
-		System.out.println(primePalindromeSet);
-
-	}
-
-}
+		System.out.println(primePalindromeSet);}}

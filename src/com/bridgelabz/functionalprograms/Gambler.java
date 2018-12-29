@@ -29,12 +29,7 @@ public class Gambler {
        System.out.println("enter the goal"); 
        int goal=Functionalprograms.readInteger(); 
        System.out.println("enter the trails"); 
-       int r=Functionalprograms.readInteger(); 
-       
+       int r=Functionalprograms.readInteger();  
        //Method 1- using non-static function of FunctionalUtilty class
        //of com.bridgelabz.util package
-       Functionalprograms.gambler(stake,goal,r); 
-	}
-	
-
-}
+       Functionalprograms.gambler(stake,goal,r); }}

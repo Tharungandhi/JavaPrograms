@@ -30,9 +30,4 @@ public class VendingMachine {
 		System.out.println("the remaining change should be given to customer is "); 
 		//Method 1- using static function of AlgorithmUtility class of
 		//com.bridgelabz.util package
-		Algorithmprograms.calculate(money, notes);  
-		
-		
-	}
-
-}
+		Algorithmprograms.calculate(money, notes);  }}

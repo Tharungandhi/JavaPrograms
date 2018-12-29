@@ -28,5 +28,4 @@ public class BubbleSort {
 		int[] array=new int[n];
 		//Method 1- using static function of AlgorithmUtility class of
 		//com.bridgelabz.util package
-		Algorithmprograms.bubbleSort(n, array);//method calling
-	}}
+		Algorithmprograms.bubbleSort(n, array); }}

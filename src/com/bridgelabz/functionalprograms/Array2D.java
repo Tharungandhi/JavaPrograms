@@ -19,7 +19,6 @@ public class Array2D {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Functionalprograms<Object> f1=new Functionalprograms<Object>();
-		//Scanner sc=new Scanner(System.in);
 		System.out.println("enter the no of rows");
 		int row=Functionalprograms.readInteger();
 		System.out.println("enter the no column");
@@ -30,30 +29,16 @@ public class Array2D {
 		switch(choice)
 		{
 		case 1:
-		
 			Integer[][]a1=Functionalprograms.arrayInt(row,column);
 			f1.display(a1,row,column);
 			break;
-		
 		case 2:
-		{
 			Double[][]a2=Functionalprograms.arrayDouble(row,column);
 			f1.display(a2,row,column);
 			break;
-		}
 		case 3:
-		{
 			Boolean[][]a3=Functionalprograms.arrayBoolean(row,column);
 					f1.display(a3,row,column);
 			break;
-		}
 		default: System.out.println("set choice");
-		break;
-		
-		}
-		
-		
-
-}
-
-}
+		break;}}}

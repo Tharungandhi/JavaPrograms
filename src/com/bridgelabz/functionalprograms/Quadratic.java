@@ -30,7 +30,6 @@ public class Quadratic {
 		System.out.println("enter the value of c"); 
 		int c=Functionalprograms.readInteger(); 
 		
-		
 		//Method 1- using static function of FunctionalUtilty class
     	//of com.bridgelabz.util package
 		Functionalprograms.quadratic(a,b,c);  

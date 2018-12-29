@@ -20,13 +20,8 @@ public class Factors {
 	*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		System.out.println("Number to find the prime factor");  
 		int n=Functionalprograms.readInteger();
-		
 		//Method 1- using static function of FunctionalUtilty class
         //of com.bridgelabz.util package
-		Functionalprograms.primeFactors(n); 
-	}
-
-}
+		Functionalprograms.primeFactors(n); }}
