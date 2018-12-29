@@ -10,8 +10,6 @@ public class Power2 {
 	* call powerOf2 function that prints the table of the powers of 2
 	*/
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		   //Reading input number from the user
             System.out.println("value of n"); 
 		    String i=args[0];

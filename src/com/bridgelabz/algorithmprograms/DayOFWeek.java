@@ -20,7 +20,6 @@ public class DayOFWeek {
 	* representation of the week
 	*/
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		System.out.println("enter the date");
 		int date=Algorithmprograms.readInteger();

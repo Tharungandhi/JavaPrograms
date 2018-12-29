@@ -20,7 +20,6 @@ public class Anagram {
 	*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("eneter the string1");
 		String str1=Algorithmprograms.readString();
 		System.out.println("eneter the string2");

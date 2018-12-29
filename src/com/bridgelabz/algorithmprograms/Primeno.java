@@ -24,8 +24,6 @@ public class Primeno {
 	*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		System.out.println("Enter the range: say m and n");
 		System.out.println("Enter m");
 		int m=Algorithmprograms.readInteger();

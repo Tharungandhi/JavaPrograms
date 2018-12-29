@@ -19,7 +19,6 @@ public class MonthlyPayment {
 	* call the monthlyPayment() function calculates monthly payment
 	*/
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("enter the principle amount");   
 		double p=Algorithmprograms.readdouble();   
 		System.out.println("enter the rate");    

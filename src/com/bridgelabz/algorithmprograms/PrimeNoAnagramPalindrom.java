@@ -26,7 +26,6 @@ public class PrimeNoAnagramPalindrom {
 	*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		//Method 1- using static function of AlgorithmUtility class of
 		//com.bridgelabz.util package
 		System.out.println("The prime numbers between 0-1000 are");

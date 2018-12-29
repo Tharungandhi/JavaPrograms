@@ -19,8 +19,6 @@ public class Distancejava {
 	 * function that calculates the euclidean distance
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		// Reading input number from the user
 		System.out.println("enter the value of x");
 		int x = Functionalprograms.readInteger();

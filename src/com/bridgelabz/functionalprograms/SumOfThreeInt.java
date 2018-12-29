@@ -21,8 +21,6 @@ public class SumOfThreeInt {
 	*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		//Reading input from the user
 		System.out.println("enter the number of array element"); 
 		int r=Functionalprograms.readInteger(); 

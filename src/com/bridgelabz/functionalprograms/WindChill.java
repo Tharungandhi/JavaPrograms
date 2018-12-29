@@ -19,8 +19,6 @@ public class WindChill {
 	* call WindChill function that calculates the effective temperature
 	*/
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		//Reading input from the user
 		System.out.println("enter the temperature");
 		double t=Functionalprograms.readdouble();  

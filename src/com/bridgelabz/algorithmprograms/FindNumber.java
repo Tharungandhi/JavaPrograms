@@ -20,7 +20,6 @@ public class FindNumber {
 	*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("Enter any Number:"); 
 		int n=Algorithmprograms.readInteger();  
 		int range=(int)(Math.pow(2,n-1));      //range calculation for the number

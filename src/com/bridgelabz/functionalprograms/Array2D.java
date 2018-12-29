@@ -21,7 +21,6 @@ public class Array2D {
 	*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Functionalprograms<Object> f1=new Functionalprograms<Object>();
 		System.out.println("enter the no of rows");
 		int row=Functionalprograms.readInteger();

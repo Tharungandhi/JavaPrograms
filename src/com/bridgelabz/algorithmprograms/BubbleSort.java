@@ -20,7 +20,6 @@ public class BubbleSort {
 	*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		System.out.println("How many numbers you want to insert");
 		int n=Algorithmprograms.readInteger();

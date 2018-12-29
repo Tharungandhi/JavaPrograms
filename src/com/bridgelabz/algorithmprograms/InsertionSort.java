@@ -19,7 +19,6 @@
 		* the function insertionSort that sorts the array
 		*/
 	 public static void main(String[] args) {
-		 // TODO Auto-generated method stub
 		 System.out.println("enter the number of string to be entered");
 		 int num=Algorithmprograms.readInteger();  
 		 String[] str=new String[num];              

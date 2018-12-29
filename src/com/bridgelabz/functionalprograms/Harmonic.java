@@ -20,7 +20,6 @@ public class Harmonic {
 	* call harmonicValue function that prints harmonic value
 	*/
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		//Reading input number from the user
 		System.out.println("enter the value of n");
 		int s1=Functionalprograms.readInteger();

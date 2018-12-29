@@ -19,7 +19,6 @@ public class Factors {
 	* call the primefactors method that calculate factors
 	*/
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("Number to find the prime factor");  
 		int n=Functionalprograms.readInteger();
 		//Method 1- using static function of FunctionalUtilty class

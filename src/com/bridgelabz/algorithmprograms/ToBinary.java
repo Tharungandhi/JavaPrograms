@@ -21,7 +21,6 @@ public class ToBinary {
 	*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("enter the decimal number"); 
 		int num=Algorithmprograms.readInteger(); 
 		//Method 1- using static function of AlgorithmUtility class of

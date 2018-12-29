@@ -19,8 +19,6 @@ public class SquareRoot {
 	* call the squareRoot() function that finds square root of a number
 	*/
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		System.out.println("enter the number"); 
 		double c=Algorithmprograms.readdouble();  	
 		//Method 1- using static function of AlgorithmUtility class of

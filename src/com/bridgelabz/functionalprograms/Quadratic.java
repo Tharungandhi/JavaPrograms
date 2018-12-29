@@ -20,8 +20,6 @@ public class Quadratic {
 	*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stud		
-		
 		//Reading input number from the user
 		System.out.println("enter the value of a"); 
 		int a=Functionalprograms.readInteger();  

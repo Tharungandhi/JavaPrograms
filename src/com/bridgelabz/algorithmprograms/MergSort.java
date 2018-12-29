@@ -19,8 +19,6 @@ public class MergSort {
 	* call mergeSort functions that sorts the given array.
 	*/
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		   
 	        System.out.println("Merge sort");
 	        int i;
 	        System.out.println("Enter the size of your array"); 

@@ -19,7 +19,6 @@ public class FlipCoin {
 	* call distance function that calculates the euclidean distance
 	*/
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int i=0;
 		do {
 			//Reading input number from the user

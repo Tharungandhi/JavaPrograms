@@ -18,9 +18,7 @@ public class ReplaceString {
 	* call replaceString function that replaces the template with user
 	* input
 	*/
-	public static void main(String[] args) 
-	{
-		// TODO Auto-generated method stub
+	public static void main(String[] args) {
 		//Reading input number from the user
 		String str="hello <<UserName>>, How are you";  
 		System.out.print("Enter the username ");  

@@ -20,8 +20,6 @@ public class StopWatch {
 	*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		//Reading input from the user
 		System.out.println("click to start the watch");		
 		long starttime=(long) Functionalprograms.readdouble();

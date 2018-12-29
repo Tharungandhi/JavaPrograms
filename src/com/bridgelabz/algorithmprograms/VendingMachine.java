@@ -22,8 +22,7 @@ public class VendingMachine {
 	* to be returned to the vending machine
 	*/
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) {		
 		System.out.println("enter the money to be drawed"); 
 		int money=Algorithmprograms.readInteger();  
 		int[] notes = { 2000,500,100,50,10,5,2,1}; //declaring different notes in array

@@ -23,7 +23,6 @@ public class SwapNibble {
 	*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int flag=0;
 		System.out.println("enter the Value of n"); 
 		int x =Functionalprograms.readInteger();  

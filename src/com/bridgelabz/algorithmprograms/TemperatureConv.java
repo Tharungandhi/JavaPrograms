@@ -21,8 +21,6 @@ public class TemperatureConv {
 	*/
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		System.out.println("Enter the choice to convert to the following:");
 		System.out.println("1-Celcius1 2-Fahrenheit");
 		int choice=Algorithmprograms.readInteger();
