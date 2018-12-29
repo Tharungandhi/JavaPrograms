@@ -15,6 +15,10 @@ package com.bridgelabz.functionalprograms;
 import com.bridgelabz.util.Functionalprograms;
 
 public class Array2D {
+	/*
+	* The main function is written to take input from the user and
+	* call displayArray function that displays array of any type
+	*/
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

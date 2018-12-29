@@ -14,6 +14,10 @@ package com.bridgelabz.functionalprograms;
 import com.bridgelabz.util.Functionalprograms;
 
 public class StopWatch {
+	/*
+	* The main function is written to take input from the user and
+	* call stopWatch function that measures elapsed time
+	*/
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

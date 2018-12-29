@@ -13,7 +13,11 @@ package com.bridgelabz.functionalprograms;
 import com.bridgelabz.util.*;
 
 public class ReplaceString {
-
+	/*
+	* The main function is written to take input from the user and
+	* call replaceString function that replaces the template with user
+	* input
+	*/
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub

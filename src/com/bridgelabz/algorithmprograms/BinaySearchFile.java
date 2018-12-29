@@ -37,9 +37,6 @@ public class BinaySearchFile {
 				// Get all tokens available in line
 				String[] tokens = line.split(DELIMITER);
 				Algorithmprograms.sort(tokens);
-				//		                for(int i=0;i<tokens.length;i++) {
-				//		                    System.out.println(tokens[i]);
-				//		                }
 				for (String token : tokens) 
 					// Print all tokens
 					System.out.println(token);

@@ -17,7 +17,11 @@ import java.util.List;
 import com.bridgelabz.util.Functionalprograms;
 
 public class Permutation {
-
+	/*
+	* The main function is written to take input from the user and
+	* call permute function that compares the permutation resulted 
+	* by two methods
+	*/
 		public static void main(String[] args) {
 	        System.out.println("enter a string");
 	        String str = Functionalprograms.readString();
@@ -48,25 +52,6 @@ public class Permutation {
 	        System.out.println(arr2);
 	        System.out.println();
 	        Functionalprograms.compareString(arr2,arr1);
-//	        int flag=1;
-//	        for(int i=0;i<arr1.size();i++)
-//	        {
-//	            if(arr1.get(i).compareTo(arr2.get(i))==0)
-//	            {
-//	                flag=1;
-//	            }
-//	            else
-//	                flag=0;
-//	        }
-//	        if(flag==1)
-//	        {
-//	        System.out.println("arrays returned by two string functions are equal");
-//	        }
-//	        else
-//	        System.out.println("arre not same");
-//	        sc.close();
-//	    }
-//	}
 		}}
 
 

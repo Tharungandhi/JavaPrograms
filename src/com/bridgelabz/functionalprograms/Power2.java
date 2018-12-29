@@ -5,7 +5,10 @@ package com.bridgelabz.functionalprograms;
 import com.bridgelabz.util.Functionalprograms;
 
 public class Power2 {
-
+	/*
+	* The main function is written to take input from the user and
+	* call powerOf2 function that prints the table of the powers of 2
+	*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		

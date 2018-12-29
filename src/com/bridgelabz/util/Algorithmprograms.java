@@ -13,7 +13,6 @@ package com.bridgelabz.util;
 
 import java.util.List;
 import java.util.Map;
-//import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -109,7 +108,6 @@ public class Algorithmprograms {
 	 */
 	public static int binarySearchStr(String [] str,String key)
 	{
-		//int n=str.length;
 		int first  = 0;
 		int last   = str.length - 1;
 		int middle = (first + last)/2;
@@ -344,7 +342,6 @@ public class Algorithmprograms {
 			binary[i] = num%2;
 			num = num/2;
 			i++;}
-		//	int [] binary=a1.convertBinary(num);
 		int length=binary.length;
 		for(int j = length-1;j >= 0;j--){
 			System.out.print(binary[j]);}
@@ -423,7 +420,6 @@ public class Algorithmprograms {
 			{
 				lower= middle;
 				count++;
-				//Algorithmprograms.findNumber(lower,upper,middle,count,input1,n);
 			}
 			else if (input1.equals("yes"))
 			{
@@ -437,7 +433,6 @@ public class Algorithmprograms {
 			{
 				upper=middle;
 				count++;
-				//Algorithmprograms.findNumber(lower,upper,middle,count,input1,n);
 			}
 			if(count<n)
 			{
@@ -463,7 +458,6 @@ public class Algorithmprograms {
   
 	public static int binarySearchFile(String [] str,String key)
 	{
-		//int n=str.length;
 		int first  = 0;
 		int last   = str.length - 1;
 		int middle = (first + last)/2;
@@ -754,7 +748,6 @@ public class Algorithmprograms {
 			{
 				if(Algorithmprograms.anagram(primeList.get(i), primeList.get(j)))
 				{
-					//                    primeAnagramList.add(Integer.toString(i));
 					primeAnagramSet.add(primeList.get(i));
 					primeAnagramSet.add(primeList.get(j));
 					System.out.println(primeList.get(i)+"    "+primeList.get(j) );

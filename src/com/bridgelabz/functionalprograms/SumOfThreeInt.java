@@ -14,6 +14,11 @@ package com.bridgelabz.functionalprograms;
 import com.bridgelabz.util.Functionalprograms;
 
 public class SumOfThreeInt {
+	/*
+	* The main function is written to take input from the user and
+	* call sumZero function that counts the 
+	* number of triples that sum to exactly 0.
+	*/
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
