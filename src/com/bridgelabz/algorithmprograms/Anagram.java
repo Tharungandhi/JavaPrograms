@@ -22,8 +22,14 @@ public class Anagram {
 	public static void main(String[] args) {
 		System.out.println("eneter the string1");
 		String str1=Algorithmprograms.readString();
+		str1=str1.toLowerCase();
 		System.out.println("eneter the string2");
 		String str2=Algorithmprograms.readString();
+		str2=str2.toLowerCase();
 		//Method 1- using static function of AlgorithmUtility class of
 		//com.bridgelabz.util package
-		Algorithmprograms.anagram(str1, str2);}}
+	    boolean a1=	Algorithmprograms.isAnagram(str1, str2);
+		if(!a1) {
+		System.out.println("String is not a anagram");}
+		else
+			System.out.println("strings are anagram");}}

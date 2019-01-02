@@ -71,31 +71,22 @@ public class Algorithmprograms {
 	 * @param str2 the string to be checked for anagram
 	 * @return true if the strings are anagram else false
 	 */
-	public static boolean anagram(String str1, String str2) {
-		char[] ch1 = str1.toLowerCase().toCharArray();  //convertion of string1 to char array
-		char[] ch2 = str2.toLowerCase().toCharArray();  //convertion of string2 to char array
-		if (ch1.length != ch2.length) {
-			return false;
-		} else {
-			//sort array
-			Arrays.sort(ch1);   
-			Arrays.sort(ch2);   
-			
-			//After sorting, converting the array back to strings
-			str1 = String.valueOf(ch1); 
-			str2 = String.valueOf(ch2); 
-			
-			//If the two strings are equal then return true else
-			//return false
-			boolean b = str1.equals(str2);
-			{
-				if (b == true)
-					return true;
-			}
-		}
-		return false;
-	}
-
+	public static boolean isAnagram(String word, String anagram) {
+        boolean isAnagram = false;
+        if (word != null && anagram != null && word.length() == anagram.length()) {
+            char[] arr = word.toCharArray();
+            StringBuilder temp = new StringBuilder(anagram);
+            //int wordLength = FunctionalUtility.readInteger();
+            for (char ch : arr) {
+                int index = temp.indexOf("" + ch);
+                if (index != -1) {
+                    temp.deleteCharAt(index);
+                }
+            }
+            isAnagram = temp.toString().isEmpty();
+        }
+        return isAnagram;
+    }
 	// Method to BinaySearch for word
 	/**
 	 * static function that search for the given key in a array using 
@@ -270,14 +261,11 @@ public class Algorithmprograms {
 		 * @param rate the interest rate 
 		 * @return monthly payment 
 		 */
-	public static int monthlyPayment(double p,double n,double r)
-	{
-		// double	y=12*n;
+	public static int monthlyPayment(double p,double n,double r){
 		double R=r/(12*100); //percent interest compounded monthly
 		double payment=p*R/1-Math.pow(1+R,-n);  //formula for payment 
 		System.out.println("total payement is "+ payment);
-		return (int) payment;
-	}
+		return (int) payment;}
 
 
 	// Method for square root of a non negative number
@@ -312,20 +300,16 @@ public class Algorithmprograms {
 	 * @return integer the numeric representation of the day 
 	 */
 	static int i=0;
-	public static String dayofWeek(int date,int month,int year)
-	{
+	public static String dayofWeek(int date,int month,int year){
 		int year1= year-(14-month)/12;             //formula for year between 0000 and 9999
 		int x = year1+(year1/4)-(year1/100)+year1/400;  //formula for leap year
 		int	month1 = month+12*((14-month)/12)-2;    //formula for month between 1 and 12
 		int date1= (date+x+31*month1/12)%7;         //formula for date between 1 and 31
 		String str []= {"Sunday","Monday","Tuesday","wednesday","Thursday","Friday","Sunday"}; // declaring string str
-		for(int i=0;i<str.length;i++)
-		{
+		for(int i=0;i<str.length;i++)	{
 			if(i==date1)  
-				System.out.println("the day is "+str[i]);
-		}
-		return str[i];
-	}
+				System.out.println("the day is "+str[i]);}
+		return str[i];}
 
 
 	// method to convert decimal to Binary
@@ -406,54 +390,37 @@ public class Algorithmprograms {
 
 	static int range,count,lower,upper,middle;
 
-	public  static int findNumber(int lower,int upper,int middle,int count,String input1,int n)
-	{
+	public  static int findNumber(int lower,int upper,int middle,int count,String input1,int n){
 		@SuppressWarnings("resource")
 		Scanner rc=new Scanner(System.in);
 		System.out.println("Is your number:"+middle);
 		System.out.println();
 		System.out.println("Enter your answer in 'yes' or 'high' or 'low'");
 		input1=rc.nextLine();
-		do
-		{
-			if (input1.equals("high"))
-			{
+		do{
+			if (input1.equals("high")){
 				lower= middle;
-				count++;
-			}
-			else if (input1.equals("yes"))
-			{
+				count++;}
+			else if (input1.equals("yes")){
 				System.out.println("The number you thought was: "+middle);
 				int no=count+1;
 				System.out.println("It takes "+no+" times to find your exact number");
-				break;
-			}
+				break;}
 
-			else if(input1.equals("low"))
-			{
+			else if(input1.equals("low")){
 				upper=middle;
-				count++;
-			}
-			if(count<n)
-			{
+				count++;}
+			if(count<n){
 				middle=(lower+ upper+1)/2;
 				System.out.println("Is your number "+middle+":");
-				input1=rc.nextLine();
-			}
-		}
+				input1=rc.nextLine();}}
 		while(lower<=upper);
 		if (count>n)
-		{
 			System.out.println("Number not found");
-		}
 		else
-		{
 			System.exit(0);
-		}
-		return middle;
-	}
-	
-	
+		return middle;}
+		
 	//binarySearch of word
   
 	public static int binarySearchFile(String [] str,String key)
@@ -488,8 +455,7 @@ public class Algorithmprograms {
 	 * @param mid the mid index of the array
 	 * @param high the higher bound of the array
 	 */
-	public static int mergSort(String arr[],int low,int high)
-	{
+	public static int mergSort(String arr[],int low,int high){
 		int n=high-low;
 		if(n<=1)
 			return 0;
@@ -498,8 +464,7 @@ public class Algorithmprograms {
 		mergSort(arr,mid,high);
 		String[] temparr=new String[n];
 		int i=low,j=mid;
-		for(int k=0;k<n;k++)
-		{
+		for(int k=0;k<n;k++){
 			if(i==mid)
 				temparr[k]=arr[j++];
 			else if(j==high)
@@ -507,15 +472,11 @@ public class Algorithmprograms {
 			else if(arr[j].compareToIgnoreCase(arr[i])<0)
 				temparr[k]=arr[j++];
 			else
-				temparr[k]=arr[i++];
-		}
+				temparr[k]=arr[i++];}
 
 		for(int k=0;k<n;k++)
-		{
 			arr[low +k]=temparr[k];
-		}
-		return middle;
-	} 
+		return middle;} 
 
 	//SwapNibble
 	
@@ -699,36 +660,25 @@ public class Algorithmprograms {
 		if(m>n) {
 			temp=m;
 			m=n;
-			n=temp;
-		}
+			n=temp;}
 		int flag=1;
-
 		//try all the possible values from lower bound to upper bound
 		//if the number has the factor then it must be checked within lower bound
 		for(int i=m;i<=n;i++){
 			for(int j=2;j<i;j++){
-
 				//If the number is divisible by any of the number then 
 				//initializing flag to zero and break
 				//else flag is initialized to one
-				if(i%j==0)
-				{
+				if(i%j==0){
 					flag=0;
-					break;
-				}
+					break;}
 				else
-					flag=1;
-			}
-
+					flag=1;}
 			//If the number is prime which is indicated by the flag,
 			//then adds the number into an ArrayList.
 			if(flag==1)
-			{
-				lst.add(i);
-			}
-		}//End of Loop
-		return lst;
-	}
+				lst.add(i);}
+		return lst;}
 	
 	
 	// anagram
@@ -741,23 +691,13 @@ public class Algorithmprograms {
 	 */ 
 	public static Set<String> primeAnagram(List<String> primeList) {
 		Set<String> primeAnagramSet=new HashSet<>();
-		for(int i=0;i<primeList.size();i++)
-		{
-
-			for(int j=i+1;j<primeList.size();j++)
-			{
-				if(Algorithmprograms.anagram(primeList.get(i), primeList.get(j)))
-				{
+		for(int i=0;i<primeList.size();i++) {
+			for(int j=i+1;j<primeList.size();j++){
+				if(Algorithmprograms.isAnagram(primeList.get(i), primeList.get(j))) {
 					primeAnagramSet.add(primeList.get(i));
 					primeAnagramSet.add(primeList.get(j));
-					System.out.println(primeList.get(i)+"    "+primeList.get(j) );
-				}
-			}
-		}
-
-		return primeAnagramSet;
-
-	}
+					System.out.println(primeList.get(i)+"    "+primeList.get(j) ); }}}
+		return primeAnagramSet;}
 
 	//palindrom
 	/**
@@ -767,58 +707,35 @@ public class Algorithmprograms {
 	 * @param set the set of prime numbers that are anagram
 	 * @return set the set of prime numbers that are anagram and palindrom
 	 */
-	public static Set<String> primePalindrome(Set<String> primeAnagramSet)
-	{
+	public static Set<String> primePalindrome(Set<String> primeAnagramSet){
 		java.util.Iterator<String> iter = primeAnagramSet.iterator();
 		Set<String> resultSet=new HashSet<>();
-
 		String a;
-		while (iter.hasNext())
-		{
+		while (iter.hasNext()){
 			a=(String) iter.next();
 			int a1=Integer.parseInt(a);
 			int lk=reverse(a1);
-
-			if(primeAnagramSet.contains(Integer.toString(lk)))
-
-			{
+			if(primeAnagramSet.contains(Integer.toString(lk))) {
 				String b=Integer.toString(lk);
-				resultSet.add(b);
-			}
+				resultSet.add(b);		}}
+		return resultSet;}
 
 
-		}
-		return resultSet;
-	}
-
-
-	public static int reverse(int n)
-	{
-
+	public static int reverse(int n){
 		int reverse=0;
-		while(n!=0)
-		{
+		while(n!=0){
 			reverse = reverse * 10;
 			reverse = reverse + n%10;
-			n = n/10;
-		}
-		return reverse;
-	}
+			n = n/10;}
+		return reverse;}
 	
 	
 	
 	
 	//mapping method 
-	public static Map<String,Double> mapCall(Map<String,Double> map)
-	{
+	public static Map<String,Double> mapCall(Map<String,Double> map){
 		Map<String ,Double> sortMap=new LinkedHashMap<>();
 		map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
 		.forEachOrdered(x -> sortMap.put(x.getKey(), x.getValue()));
-		return sortMap;
-
+		return sortMap;}
 	}
-
-	
-}
-
-

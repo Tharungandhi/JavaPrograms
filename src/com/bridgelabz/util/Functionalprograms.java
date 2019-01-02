@@ -475,7 +475,7 @@ public class Functionalprograms<E> {
 
 
 	static int player = 0;
-	static int[][] BOARD = new int[4][4];
+	static int[][] B = new int[3][3];
 	static boolean isEmpty = true;
 
 
@@ -484,9 +484,9 @@ public class Functionalprograms<E> {
 
 	public static void initBoard() {
 		System.out.println("TIC TAC TOE GAME\nComputer is o\nPlayer  is x ");
-		for (int i = 0; i < BOARD.length; i++) {
-			for (int j = 0; j < BOARD[i].length; j++) {
-				BOARD[i][j] = -10;
+		for (int i = 0; i < B.length; i++) {
+			for (int j = 0; j < B[i].length; j++) {
+				B[i][j] = 10;
 			}
 		}
 		System.out.println("Board is this :");
@@ -495,14 +495,14 @@ public class Functionalprograms<E> {
 
 	public static void displayBoard() {
 		int count = 0;
-		for (int i = 0; i < BOARD.length; i++) {
+		for (int i = 0; i < B.length; i++) {
 			System.out.println("---------------");
 			System.out.print("||");
-			for (int j = 0; j < BOARD[i].length; j++) {
-				if (BOARD[i][j] == 0) {
+			for (int j = 0; j < B[i].length; j++) {
+				if (B[i][j] == 0) {
 					count++;
 					System.out.print(" o |");
-				} else if (BOARD[i][j] == 1) {
+				} else if (B[i][j] == 1) {
 					count++;
 					System.out.print(" x |");
 				} else
@@ -510,7 +510,7 @@ public class Functionalprograms<E> {
 			}
 			System.out.println("|");
 		}
-		if (count == BOARD.length) {
+		if (count == B.length) {
 			isEmpty = false;
 		}
 		System.out.println("---------------");
@@ -533,11 +533,11 @@ public class Functionalprograms<E> {
 			i = s.nextInt();
 			j = s.nextInt();
 		}
-		if (BOARD[i][j] == -10) {
+		if (B[i][j] == 10) {
 			if (player % 2 == 0) {
-				BOARD[i][j] = 0;
+				B[i][j] = 0;
 			} else {
-				BOARD[i][j] = 1;
+				B[i][j] = 1;
 				System.out.println("Coumputer Choosing " + i + " " + j);
 			}
 		} else
@@ -546,14 +546,14 @@ public class Functionalprograms<E> {
 	}
 
 	public static boolean win() {
-		return ((BOARD[0][0] + BOARD[0][1] + BOARD[0][2] == player * 3)
-				|| (BOARD[1][0] + BOARD[1][1] + BOARD[1][2] == player * 3)
-				|| (BOARD[2][0] + BOARD[2][1] + BOARD[2][2] == player * 3)
-				|| (BOARD[0][0] + BOARD[1][0] + BOARD[2][0] == player * 3)
-				|| (BOARD[0][1] + BOARD[1][1] + BOARD[2][1] == player * 3)
-				|| (BOARD[0][2] + BOARD[1][2] + BOARD[2][2] == player * 3)
-				|| (BOARD[0][0] + BOARD[1][1] + BOARD[2][2] == player * 3)
-				|| (BOARD[2][0] + BOARD[1][1] + BOARD[0][2] == player * 3));
+		return ((B[0][0] + B[0][1] + B[0][2] == player * 3)
+				|| (B[1][0] + B[1][1] + B[1][2] == player * 3)
+				|| (B[2][0] + B[2][1] + B[2][2] == player * 3)
+				|| (B[0][0] + B[1][0] + B[2][0] == player * 3)
+				|| (B[0][1] + B[1][1] + B[2][1] == player * 3)
+				|| (B[0][2] + B[1][2] + B[2][2] == player * 3)
+				|| (B[0][0] + B[1][1] + B[2][2] == player * 3)
+				|| (B[2][0] + B[1][1] + B[0][2] == player * 3));
 	}
 
 	public static void ticTacToe() {

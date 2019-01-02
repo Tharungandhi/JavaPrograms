@@ -20,6 +20,6 @@ public class Power2 {
 	        else
 	        //Method 1- using static function of FunctionalUtilty class
 	    	//of com.bridgelabz.util package
-	        	Functionalprograms.pow(base, exp); }}
-
+	        	Functionalprograms.pow(base, exp); 
+	}}
 
