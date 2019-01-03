@@ -5,9 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
 import java.util.*;
 
 public  class DataStructurePrograms {
@@ -254,7 +251,63 @@ public  class DataStructurePrograms {
 	            }
 	            return i;
 	        }	        
+	       
+	        public static void usingFileWriter(DataStructurePrograms list,String[] fileContent,String path) throws IOException
+	            {
+	                //String[] fileContent = DataStructureUtility.toStrinConv(list);
+	                FileWriter fileWriter = new FileWriter(path);   
+	                for(String s:fileContent)
+	                {
+	                    if(s!=null) {
+	                        fileWriter.write(s);
+	                        fileWriter.write(" ");
+	                    }
+	                }
+	                fileWriter.close();}
+	        
+	        
+	        public static int[] stringSort(int[] myArray) {
+	            for(int i = 0; i<myArray.length; i++) {
+	                for (int j = i+1; j<myArray.length-1; j++) {
+	                    if(myArray[i]!=0 && myArray[j]!=0 ) {
+	                        if(myArray[i]>myArray[j]){
+	                            int temp = myArray[i];
+	                            myArray[i] = myArray[j];
+	                            myArray[j] = temp;
+	                        }
+	                    }
+	                }
+	            }
+	            return myArray;
+	        }
+	    	
+  public static boolean simpleBalancedParentheses(String exp) {
+	  int len=exp.length();
+		int i=0;
+		     while(i<len)
+		     {
+		         if(exp.charAt(i)==')'&&Stack.isEmpty())
+		          return false;
+		         else if(exp.charAt(i)==')')
+		          Stack.pop();
+		         else if(exp.charAt(i)=='(')
+		          Stack.push(i);
+		         ++i;
+		     }
+	     if (Stack.isEmpty())
+	    	 return true;
+	     else
+	    	 return false;  }
 
 
 
+
+  
+  
+  
+  
+  
+  
+  
+  
 }
