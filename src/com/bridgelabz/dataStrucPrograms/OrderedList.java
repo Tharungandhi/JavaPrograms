@@ -12,13 +12,13 @@ import com.bridgelabz.util.DataStructurePrograms;
 
 public class OrderedList {
    
-	    static String sortFile="/home/admin1/Desktop/Files/sorted.txt";
-	    static String fName="/home/admin1/Desktop/Files/num.txt";
+	   static String sortFile="/home/admin1/Desktop/sortedfile.txt";
+	    //static String fName="/home/admin1/Desktop/Files/num.txt";
 	    public static void main(String[] args) throws IOException
 	    {
 	    	DataStructurePrograms LinkedList=new DataStructurePrograms();
 	        LinkedList=DataStructurePrograms.readFileInt(LinkedList);
-	        DataStructurePrograms.printList(LinkedList);
+	       // DataStructurePrograms.printList(LinkedList);
 	        while(true)
 	        {
 	            System.out.println("please select one option");
