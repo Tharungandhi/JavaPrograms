@@ -59,11 +59,22 @@ public  class DataStructurePrograms {
 			nextref = null;
 		}
 	}
-	public static DataStructurePrograms insert(DataStructurePrograms list, String String)
+	public static String[] intTostring(int[] abc) {
+        String strarray[]=new String[abc.length];
+        int l=0;
+        for(int i=0;i<abc.length;i++) {
+            if(abc[i]!=0) {
+            String str=String.valueOf(abc[i]);
+            strarray[l]=str;
+            l++;
+        }}
+        return strarray;
+    }
+	public static DataStructurePrograms insert(DataStructurePrograms list, String Str)
 	{
 		// Create a new node with given data
-		Node new_node = new Node(String);
-		new_node.nextref = null;
+		Node new_node = new Node(Str);
+		//new_node.nextref = null;
 		if (list.head == null) {
 			list.head = new_node;
 		}
@@ -76,9 +87,35 @@ public  class DataStructurePrograms {
 		}
 		return list;
 	}
+	public static DataStructurePrograms readFile(DataStructurePrograms list)
+    {
+        System.out.println("Enter the path of the file");
+        String csvFile = readString();
+        //String csvFile="/home/admin1/Desktop/Files/example.txt";
+        String line = " ";
+        String name[]=new String[1000];
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile)))
+        {
+            while ((line = br.readLine()) != null)
+            {
+                name = line.split(" ");
+                for(int i=0;i<name.length;i++){
+                    String name1=name[i];
+                    insert(list, name1);               
+                }
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(list);
+        return list;
+    }
+
+
 	public static void printList(DataStructurePrograms list)
 	{
-		Node currNode = DataStructurePrograms.head;
+		Node currNode = list.head;
 		System.out.print("LinkedList: ");
 		while (currNode != null) {
 			if(currNode.value!=null)
@@ -105,9 +142,9 @@ public  class DataStructurePrograms {
 
 		return flag;            
 	}
-	public static void usingFileWriter(DataStructurePrograms list) throws IOException
+	public static void usingFileWriter(DataStructurePrograms list,String[] fileContent) throws IOException
 	{
-		String[] fileContent = DataStructurePrograms.toStrinConv(list);
+		//String[] fileContent = DataStructurePrograms.toStrinConv(list);
 		FileWriter fileWriter = new FileWriter("/home/admin1/Desktop/OderedFile.txt");
 		for(String s:fileContent)
 		{
@@ -123,7 +160,7 @@ public  class DataStructurePrograms {
 	{
 		Node currNode = list.head;
 		int i=0;
-		String[] str =new String[1000];
+		String[] str =new String[100000];
 		while (currNode != null) {
 			if(currNode.value!=null)
 				str[i]=currNode.value ;
@@ -134,11 +171,11 @@ public  class DataStructurePrograms {
 	}    
 
 
-	public static DataStructurePrograms readFileStr(DataStructurePrograms linkedList) throws FileNotFoundException, IOException
+	public static DataStructurePrograms readFileStr(DataStructurePrograms list) throws FileNotFoundException, IOException
 	{
-		// System.out.println("Enter the path of the file");
-		// String csvFile = readString();
-		String csvFile="/home/admin1/Desktop/UnOderedList.csv";
+		 System.out.println("Enter the path of the file");
+		 String csvFile = readString();
+		//String csvFile="/home/admin1/Desktop/UnOderedList.csv";
 		String line = "";
 		String name[]=new String[100];
 		int size=0;
@@ -149,12 +186,16 @@ public  class DataStructurePrograms {
 				name = line.split(" ");
 				for(int i=0;i<name.length;i++){
 					String name1=name[i];
-					insert(linkedList, name1);
-					size++;
+					insert(list, name1);
+				//	size++;
 				}
 			}
 		}
-		return linkedList;	   
+		catch(IOException e) {
+			e.printStackTrace();}
+		System.out.println(list);
+		return list;
+	
 	}
 
 
@@ -205,12 +246,12 @@ public  class DataStructurePrograms {
 
 
 
-	public static int[] toIntConv(DataStructurePrograms LinkedList)
+	public static int[] toIntConv(DataStructurePrograms list)
 	{
 		int kz=0;
-		Node currNode = LinkedList.head;
+		Node currNode = list.head;
 		int i=0;
-		int[] str =new int[LinkedList.size()];
+		int[] str =new int[1000];
 		while (currNode != null) {
 			if(currNode.value!=null)
 			{    
@@ -388,16 +429,18 @@ public  class DataStructurePrograms {
 
 	public static  class Calender2DArray {
 
-		static int[][] calender = new int[5][7];
-		static int[] month = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
+		static int[][] calender = new int[6][7];
+		static int[] month = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+     
 		public	static void initCal() {
 			for (int i = 0; i < calender.length; i++) {
 				for (int j = 0; j < calender[i].length; j++) {
 					calender[i][j] = -10;
 				}
 			}
+			
 		}
+		
 
 		public	static void display(int m) {
 			System.out.println("     Sunday  Monday  Tueday  Wednesday Thuday Friday Saturday");
@@ -446,9 +489,31 @@ public  class DataStructurePrograms {
 		}}
 
 
+	public static Stack primeAnagram1(List<Integer> primeList) {
+		Set<Integer> primeAnagram = new HashSet<>();
+		for (int i = 0; i < primeList.size(); i++) {
+			for (int j = i+1; j < primeList.size(); j++) {
+				if (Algorithmprograms.isAnagram(String.valueOf(primeList.get(i)), String.valueOf(primeList.get(j)))) {
+					primeAnagram.add(primeList.get(i));
+					primeAnagram.add(primeList.get(j));
+				}
+			}
+		}
+		return (Stack) primeAnagram;
+	}
 
-
-
+	public static Queue primeAnagram2(List<Integer> primeList) {
+		Set<Integer> primeAnagram = new HashSet<>();
+		for (int i = 0; i < primeList.size(); i++) {
+			for (int j = i+1; j < primeList.size(); j++) {
+				if (Algorithmprograms.isAnagram(String.valueOf(primeList.get(i)), String.valueOf(primeList.get(j)))) {
+					primeAnagram.add(primeList.get(i));
+					primeAnagram.add(primeList.get(j));
+				}
+			}
+		}
+		return (Queue) primeAnagram;
+	}
 
 
 

@@ -1,24 +1,22 @@
 package com.bridgelabz.dataStrucPrograms;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
 
 import com.bridgelabz.util.DataStructurePrograms;
+import com.bridgelabz.util.Linkedlist;
 
-public class OrderedList {
-   
-	   static String sortFile="/home/admin1/Desktop/sortedfile.txt";
-	    //static String fName="/home/admin1/Desktop/Files/num.txt";
+
+	public class OderedList {
+	    static String sortFile="/home/admin1/Desktop/OderedList.csv";
+	    static String fName="/home/admin1/Desktop/sortedfile.txt";
 	    public static void main(String[] args) throws IOException
 	    {
 	    	DataStructurePrograms LinkedList=new DataStructurePrograms();
-	        LinkedList=DataStructurePrograms.readFileInt(LinkedList);
-	       // DataStructurePrograms.printList(LinkedList);
+	        LinkedList=DataStructurePrograms.readFile(LinkedList);
+	        DataStructurePrograms.printList(LinkedList);
 	        while(true)
 	        {
 	            System.out.println("please select one option");
@@ -36,18 +34,10 @@ public class OrderedList {
 	            	DataStructurePrograms.insert(LinkedList, key1);
 	            }
 	            int[] fileContent = DataStructurePrograms.toIntConv(LinkedList);   
-	            String[] fileContent1 = DataStructurePrograms.toStrinConv(LinkedList);
-	            int[] arr=DataStructurePrograms.stringSort(fileContent);
-	            String[] sarray=new String[arr.length];
-	            //int[] arry = DataStructureUtility.toIntConv(LinkedList);
-	            for(int i=0;i<arr.length;i++) {
-	                if(arr[i]!=0) {
-	                     sarray[i]=String.valueOf(arr[i]);
-	                    i++;
-	                }
-	            }
-	            DataStructurePrograms.usingFileWriter(LinkedList,sarray,sortFile);
-	            //DataStructureUtility.writeIntFile(fName,arr);
+	            int[] sortedarr=DataStructurePrograms.stringSort(fileContent);
+	            String sortedString[]=DataStructurePrograms.intTostring(sortedarr);
+	            //String[] sarray=new String[sortedarr.length];
+	            DataStructurePrograms.usingFileWriter(LinkedList,sortedString,sortFile);
 	            break;}
 	            case 3:    DataStructurePrograms.dispFile(sortFile);
 	            break;
@@ -58,5 +48,3 @@ public class OrderedList {
 	    }
 
 	}
-	
-

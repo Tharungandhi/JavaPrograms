@@ -25,9 +25,11 @@ public class PrimeNoin2D {
 		n+=100;
 		}
 //		 List<Integer> list=new ArrayList<Integer>();
-//		 {
-//			 for()
-//		 }
 //		 
+//			 for(int i=0;i<innerlist.size();i++)
+//		 {
+//		     System.out.println(innerlist);
+//		}
+	 
 
 }}

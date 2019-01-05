@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.bridgelabz.util.DataStructurePrograms;
 
 public class UnOrderedList {
+	static String fname="/home/admin1/Desktop/UnOderedList.csv";
 	public static void main(String[] args) throws IOException {
 		DataStructurePrograms LinkedList=new DataStructurePrograms();
 	        
@@ -25,14 +26,15 @@ public class UnOrderedList {
 	            String key=DataStructurePrograms.readString();
 	            int k=DataStructurePrograms.delete(LinkedList, key);
 	            System.out.println(k);
-	            if(k==0)
-	            	DataStructurePrograms.insert(LinkedList, key);
+	            if(k==0) {
+	            	DataStructurePrograms.insert(LinkedList, key);}
+	            String[] fileContent=DataStructurePrograms.toStrinConv(LinkedList);
 	            System.out.println("the " + key + " element doesnot found and it is added to the list ");
-	            DataStructurePrograms.usingFileWriter(LinkedList);
+	            DataStructurePrograms.usingFileWriter(LinkedList,fileContent,fname);
 	            break;
 	            case 3:    
-	                String fName="/home/admin1/Desktop/UnOderedList.csv";                
-	                DataStructurePrograms.dispFile(fName);
+	              //  String fName="/home/admin1/Desktop/UnOderedList.csv";                
+	                DataStructurePrograms.dispFile(fname);
 	                break;
 	            default:System.out.println("Please enter an valid option");
 	            break;

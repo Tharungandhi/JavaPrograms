@@ -1,7 +1,7 @@
 package com.bridgelabz.util;
 
 
-	class  Stack
+	public class  Stack
 	{
 	    private static int maxSize;
 	    private static long[] stackArray;
@@ -39,6 +39,10 @@ package com.bridgelabz.util;
 	    {
 	    return (top == maxSize - 1);
 	}
+		public boolean size() {
+			// TODO Auto-generated method stub
+			return (top==maxSize);
+		}
 
 	}
 
