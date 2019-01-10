@@ -390,36 +390,33 @@ public class Algorithmprograms {
 
 	static int range,count,lower,upper,middle;
 
-	public  static int findNumber(int lower,int upper,int middle,int count,String input1,int n){
-		@SuppressWarnings("resource")
-		Scanner rc=new Scanner(System.in);
-		System.out.println("Is your number:"+middle);
+	public static void findNumber(int first, int last, int middle, int count, int num) {
+		// TODO Auto-generated method stub
 		System.out.println();
+		System.out.println("is your number " + middle);
 		System.out.println("Enter your answer in 'yes' or 'high' or 'low'");
-		input1=rc.nextLine();
-		do{
-			if (input1.equals("high")){
-				lower= middle;
-				count++;}
-			else if (input1.equals("yes")){
-				System.out.println("The number you thought was: "+middle);
-				int no=count+1;
-				System.out.println("It takes "+no+" times to find your exact number");
-				break;}
+		String temp = readString();
+		do {
+			if (temp.equals("low")) {
+				last = middle - 1;
+				count++;
+				middle = (first + last) / 2;
+				findNumber(first, last, middle, count, num);
 
-			else if(input1.equals("low")){
-				upper=middle;
-				count++;}
-			if(count<n){
-				middle=(lower+ upper+1)/2;
-				System.out.println("Is your number "+middle+":");
-				input1=rc.nextLine();}}
-		while(lower<=upper);
-		if (count>n)
-			System.out.println("Number not found");
-		else
-			System.exit(0);
-		return middle;}
+			} else if (temp.equals("high")) {
+				first = middle + 1;
+				count++;
+				middle = (first + last) / 2;
+				findNumber(first, last, middle, count, num);
+			} else {
+				System.out.println("your number is " + middle);
+				System.out.println("Total number of times it took to find your number is " + (count + 1));
+				break;
+			}
+			break;
+		} while (first < last);
+
+	}
 		
 	//binarySearch of word
   
@@ -738,4 +735,7 @@ public class Algorithmprograms {
 		map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
 		.forEachOrdered(x -> sortMap.put(x.getKey(), x.getValue()));
 		return sortMap;}
+
+	
 	}
+	

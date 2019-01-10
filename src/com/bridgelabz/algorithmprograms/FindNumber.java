@@ -20,16 +20,21 @@ public class FindNumber {
 	*/
 
 	public static void main(String[] args) {
-		System.out.println("Enter any Number:"); 
-		int n=Algorithmprograms.readInteger();  
-		int range=(int)(Math.pow(2,n-1));      //range calculation for the number
-		System.out.println("Take number between '0' to "+(range-1));
-		int count=0;
-		String input1 = null;
-		int lower=0;
-		int upper=range;
-		int middle=(lower+upper/2);
+
+		String i=args[0];
+		int num=Integer.parseInt(i);
+
+		int range=(int)(Math.pow(2, num-1));
+		System.out.println("Take number between 0 to "+(range-1));
+		System.out.println();
+		System.out.println("Is the number selected");
+		Algorithmprograms.userBoolean();
+		int first=0;
+		int last=range-1;
+		int middle=(first+last)/2;
+		int count=0; 
 		
 		//Method 1- using static function of AlgorithmUtility class of
 		//com.bridgelabz.util package
-		Algorithmprograms.findNumber(lower,upper,middle,count,input1,n); }}
+		Algorithmprograms.findNumber(first,last,middle,count,num); 
+		}}
