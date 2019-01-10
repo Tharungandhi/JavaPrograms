@@ -1,3 +1,14 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin HashingFunction.java
+ *  Execution:    java -cp bin com.bridgelabz.algorithmprogram.HashingFunction n
+ *  
+ *  Purpose: Hashing Function to search a Number in a slot
+ *
+ *  @author  Tharun Kumar
+ *  @version 1.0
+ *  @since   4-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelabz.dataStrucPrograms;
 
 import java.io.BufferedReader;

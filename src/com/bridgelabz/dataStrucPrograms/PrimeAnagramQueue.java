@@ -1,3 +1,16 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin PrimeAnagramQueue.java
+ *  Execution:    java -cp bin com.bridgelabz.algorithmprogram.PrimeAnagramQueue n
+ *  
+ *  Purpose: Add the Prime Numbers that are Anagram in the Range of 0 � 1000 
+ *  			in a Queue using the Linked List and Print the Anagrams from 
+ *  			the Queue.
+ *
+ *  @author  Tharun Kumar
+ *  @version 1.0
+ *  @since   5-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelabz.dataStrucPrograms;
 
 import java.util.ArrayList;
@@ -23,8 +36,8 @@ public class PrimeAnagramQueue {
 			System.out.println("Elements in a queue are :");
 			while(!queue.isQueueEmpty())
 			{
-				queue.removes();
-				queue.removes();
+				queue.remove();
+				queue.remove();
 				System.out.println();
 			}
 	}

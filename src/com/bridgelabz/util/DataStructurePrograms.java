@@ -379,58 +379,7 @@ public  class DataStructurePrograms {
 		}
 		return isAnagram;
 	}
-// Calendar
-	public static  class Calender2DArray {
 
-		static int[][] calender = new int[6][7];
-		static int[] month = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-     
-		public	static void initCal() {
-			for (int i = 0; i < calender.length; i++) {
-				for (int j = 0; j < calender[i].length; j++) {
-					calender[i][j] = -10;
-				}
-			}
-			
-		}
-		
-
-		public	static void display(int m) {
-			System.out.println("     Sunday  Monday  Tueday  Wednesday Thuday Friday Saturday");
-
-			for (int i = 0; i < calender.length; i++) {
-				for (int j = 0; j < calender[i].length; j++) {
-					if (calender[i][j] < 0 || calender[i][j] > month[m - 1]) {
-						System.out.print("\t ");
-					} else if (calender[i][j] > 0) {
-						System.out.print("\t" + calender[i][j] + " ");
-					}
-				}
-				System.out.println("\t");
-			}
-		}
-
-		public	static void putCalender(int d) {
-			int d1 = 1;
-			for (int i = d; i < calender[0].length; i++) {
-				// System.out.print(d1);
-				calender[0][i] = d1++;
-			}
-			for (int i = 1; i < calender.length; i++) {
-				for (int j = 0; j < calender[i].length; j++) {
-					calender[i][j] = d1++;
-				}
-			}
-
-		}
-
-		public static void dispCalender(int m, int y) {
-			int d = dayOfWeek(m, y);
-			initCal();
-			putCalender(d);
-			display(m);
-
-		}
 		
 		/**
 		 * to find day of that date
@@ -446,7 +395,7 @@ public  class DataStructurePrograms {
 			int m0 = m + 12 * ((14 - m) / 12) - 2;
 			int d0 = (d + x + (31 * m0) / 12) % 7;
 			return d0;
-		}}
+		}
 
 	/**
 	 * to find prime numbers which are anagram and store in stack
@@ -509,4 +458,24 @@ public  class DataStructurePrograms {
 			res /= (i + 1);
 		}
 		return res;
-	}}
+	}
+	public static int dayWeek(int month, int i, int year)
+	{ 
+	int y = year - (14 - month) / 12;
+	int x = y + y/4 - y/100 + y/400;
+	int m = month + 12 * ((14 - month) / 12) - 2;
+	int d = (i + x + (31*m)/12) % 7;
+	return d;
+	}
+	
+	/**
+	 * to find leap year or not
+	 * @param year of integer type
+	 * @return of boolean type
+	 */
+	public static boolean isLeapYear(int year)
+	{
+	        if  (((year % 4 == 0) && (year % 100 != 0))||year % 400 == 0) return true;
+	        else return false;
+}	
+}

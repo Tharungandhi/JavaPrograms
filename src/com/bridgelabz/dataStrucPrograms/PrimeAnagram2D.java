@@ -1,3 +1,15 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin PrimeAnagram2D.java
+ *  Execution:    java -cp bin com.bridgelabz.algorithmprogram.PrimeAnagram2D n
+ *  
+ *  Purpose: 2D Array the numbers that are Anagram and numbers that are not 
+ *  			Anagram
+ *
+ *  @author  Tharun Kumar
+ *  @version 1.0
+ *  @since   4-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelabz.dataStrucPrograms;
 
 import java.util.ArrayList;
@@ -10,6 +22,10 @@ import com.bridgelabz.util.DataStructurePrograms;
 
 public class PrimeAnagram2D {
 
+	/*
+	* The main function is to print the 2 dimension representation
+	* of the prime numbers from 0-1000 that anagram and not anagram
+	*/
 	public static void main(String[] args) {
 	    List<List<Integer>> totalprime = new ArrayList<List<Integer>>();
         List<Integer> primenumbers= new ArrayList<Integer>();

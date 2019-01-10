@@ -17,7 +17,7 @@ public class Queue<T> {
 	 * this method adds element at the end of the queue.
 	 * @param item
 	 */
-	public void addelement(T item) {
+	public void insert(T item) {
 		if (isQueueFull()) {
 			System.out.println("Overflow ! Unable to add element: "+item);
 		} else {
@@ -37,7 +37,7 @@ public class Queue<T> {
 	/**
 	 * this method removes an element from the top of the queue
 	 */
-	public void removes() {
+	public void remove() {
 		if (isQueueEmpty()) {
 			System.out.println("Underflow ! Unable to remove element from Queue");
 		} else {

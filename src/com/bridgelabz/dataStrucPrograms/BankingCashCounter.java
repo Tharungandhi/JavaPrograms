@@ -1,10 +1,28 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin SimulateBankingCashCounter.java
+ *  Execution:    java -cp bin com.bridgelabz.algorithmprogram.SimulateBankingCashCounter n
+ *  
+ *  Purpose: reate a Program which creates Banking Cash Counter where people
+ *  come in to deposit Cash and withdraw Cash. Have an input panel to add people
+ *  to Queue to either deposit or withdraw money and dequeue the people. Maintain
+ *  the Cash Balance.
+ *
+ *  @author  Tharun Kumar
+ *  @version 1.0
+ *  @since   3-12-2018
+ *
+ ******************************************************************************/
+
 package com.bridgelabz.dataStrucPrograms;
 
 import com.bridgelabz.util.DataStructurePrograms;
 import com.bridgelabz.util.Queue;
 
 public class BankingCashCounter {
-
+	/*
+	* The main function is written to take input from the user
+	* to perform transactions by using customized queue
+	*/
 	public static void main(String[] args) {
 		System.out.println("--------Welcome to banking counter--------");
 	   Queue<Object> banking=new Queue<Object>(100);
