@@ -83,6 +83,7 @@ public class Algorithmprograms {
                 }
             }
             isAnagram = temp.toString().isEmpty();
+            
         }
         return isAnagram;
     }
@@ -396,13 +397,15 @@ public class Algorithmprograms {
 		System.out.println("Enter your answer in 'yes' or 'high' or 'low'");
 		String temp = readString();
 		do {
-			if (temp.equals("low")) {
-				last = middle - 1;
+			if (temp.equals("low")) 
+			{
+				last = middle-1;
 				count++;
 				middle = (first + last) / 2;
 				findNumber(first, last, middle, count, num);
 
-			} else if (temp.equals("high")) {
+			} else if (temp.equals("high"))
+			{
 				first = middle + 1;
 				count++;
 				middle = (first + last) / 2;

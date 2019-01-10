@@ -84,11 +84,5 @@ package com.bridgelabz.util;
 	            while(tNode!=null){
 	                System.out.print(tNode.getValue()+" ");
 	                tNode=tNode.getNextRef();
-	            }
-	           
-	        }
-	    }
-	     
-	     
-	}
+	            }}}}
 
