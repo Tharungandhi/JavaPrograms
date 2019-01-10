@@ -1,20 +1,32 @@
 package com.bridgelabz.dataStrucPrograms;
 
 import com.bridgelabz.util.DataStructurePrograms;
-import com.bridgelabz.util.DataStructurePrograms.BinaryTree;
 
 public class BinayTree {
-
-	public static void main(String[] args) {
-		System.out.println("enter the number of nodes ");
-		int nodes=DataStructurePrograms.readInteger();
-        int count1;
-        
-        // find count of BST and  
-        count1 = BinaryTree.countBST(nodes); 
-      
-        // print count of BST  with n nodes
-        System.out.println("Count of BST with "+ nodes +" nodes is "+ count1);
-    }
+	/*
+	* The main function is written to take input from the user
+	* and to find how many binary search trees can be formed
+	* from the entered number of nodes
+	*/
+	  public static void main(String[] args) { 
+	        System.out.println("Enter the number of nodes");
+	        int num=DataStructurePrograms.readInteger();
+	        int[] intArr=new int[num];
+	        for(int i=0;i<intArr.length;i++)
+	        {
+	        	System.out.println("Enter the "+i+" th number:");
+	        	intArr[i]=DataStructurePrograms.readInteger();
+	        }
+	        double [] count=new double[intArr.length];
+	        for(int i=0;i<intArr.length;i++)
+	        {
+	        	//Method 1- using function of Utility class of com.bridgelabz.util package
+	        	count[i] = DataStructurePrograms.binaryCount(intArr[i]);
+	        }
+	         for(int i=0;i<count.length;i++)
+	         {
+	        	 System.out.println("Count of BST possibilities for "+  intArr[i] +" nodes is "+count[i]);
+	         }
+	} 
 
 }

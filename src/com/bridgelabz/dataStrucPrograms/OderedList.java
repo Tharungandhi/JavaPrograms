@@ -1,12 +1,8 @@
 package com.bridgelabz.dataStrucPrograms;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 
 import com.bridgelabz.util.DataStructurePrograms;
-import com.bridgelabz.util.Linkedlist;
 
 
 	public class OderedList {

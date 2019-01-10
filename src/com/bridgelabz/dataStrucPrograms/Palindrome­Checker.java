@@ -6,6 +6,7 @@ import com.bridgelabz.util.Deque;
 public class Palindrome­Checker {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("rawtypes")
 		Deque<Comparable> deque=new Deque<Comparable>(100);
 	  System.out.println("enter the String to check Palindrome­ or not ");
 	  String string=DataStructurePrograms.readString();

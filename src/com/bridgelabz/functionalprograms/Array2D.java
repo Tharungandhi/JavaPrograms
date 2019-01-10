@@ -12,6 +12,8 @@
 	 ******************************************************************************/
 package com.bridgelabz.functionalprograms;
 
+import java.util.Scanner;
+
 import com.bridgelabz.util.Functionalprograms;
 
 public class Array2D {
@@ -21,27 +23,38 @@ public class Array2D {
 	*/
 
 	public static void main(String[] args) {
-		Functionalprograms<Object> f1=new Functionalprograms<Object>();
-		System.out.println("enter the no of rows");
-		int row=Functionalprograms.readInteger();
-		System.out.println("enter the no column");
-		int column=Functionalprograms.readInteger();
-		System.out.println("1:Interger 2:Double 3:Boolean");
-		 int choice=Functionalprograms.readInteger();
-		 
-		switch(choice)
-		{
+		Functionalprograms<Object> func = new Functionalprograms<>();
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Input total row : ");
+		//Reading the input from the user
+		int row = sc.nextInt();
+		System.out.print("Input total column : ");
+		//Reading the input from the user
+		int column = sc.nextInt();
+		System.out.println("1:Integer Array\n" + "2:Double Array\n" + "3:Boolean Array");
+		//Reading the input from the user
+		int choice = sc.nextInt();
+		switch (choice) {
 		case 1:
-			Integer[][]a1=Functionalprograms.arrayInt(row,column);
-			f1.display(a1,row,column);
+			//Method 1- using static function of FunctionalUtilty class of com.bridgelabz.util package
+			Integer[][] arr1 = Functionalprograms.arrayInt(row, column);
+			func.display(arr1,row,column);
 			break;
 		case 2:
-			Double[][]a2=Functionalprograms.arrayDouble(row,column);
-			f1.display(a2,row,column);
+			//Method 2- using static function of FunctionalUtilty class of com.bridgelabz.util package
+			Double[][] arr2 = func.arrayDouble(row, column);
+			func.display(arr2,row,column);
 			break;
 		case 3:
-			Boolean[][]a3=Functionalprograms.arrayBoolean(row,column);
-					f1.display(a3,row,column);
+			//Method 3- using static function of FunctionalUtilty class of com.bridgelabz.util package
+			Boolean[][] arr3 = Functionalprograms.arrayBoolean(row, column);
+			func.display(arr3,row,column);
 			break;
-		default: System.out.println("set choice");
-		break;}}}
+		default:
+			System.out.println("Please select any option between 1, 2 and 3");
+			break;
+		}
+		sc.close();
+
+		// func.display(arr1,arr2,arr3,0 row, column);
+}}

@@ -9,7 +9,7 @@ public class UnOrderedList {
 	public static void main(String[] args) throws IOException {
 		DataStructurePrograms LinkedList=new DataStructurePrograms();
 	        
-	        LinkedList=DataStructurePrograms.readFileStr(LinkedList);
+	        LinkedList=DataStructurePrograms.readFile(LinkedList);
 	        DataStructurePrograms.printList(LinkedList);
 
 	        while(true)

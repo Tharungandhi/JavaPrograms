@@ -16,7 +16,8 @@ public class Deque<E> {
         this.pre=null;
     }
    
-    public void addFront(E c)
+    @SuppressWarnings("null")
+	public void addFront(E c)
     {
         if(front==null)
         {

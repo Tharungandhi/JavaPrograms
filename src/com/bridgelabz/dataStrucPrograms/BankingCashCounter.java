@@ -7,7 +7,7 @@ public class BankingCashCounter {
 
 	public static void main(String[] args) {
 		System.out.println("--------Welcome to banking counter--------");
-	   Queue banking=new Queue(100);
+	   Queue<Object> banking=new Queue<Object>(100);
 	   long totalcash=100000;
 	   int ch = 0;
 	do {

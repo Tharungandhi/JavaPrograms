@@ -1,114 +1,80 @@
 package com.bridgelabz.util;
-
-import java.util.NoSuchElementException;
-		public class Queue {
-		    protected int Queue[],front,rear,size,len;
-
-		    /* Constructor */
-
-		    public Queue(int n)
-		    {
-		        size = n;
-		        len = 0;
-		        Queue = new int[size];
-		        front = -1;
-		        rear = -1;
-		    }    
-
-		    /*  Function to check if queue is empty */
-
-		    public boolean isEmpty()
-
-		    {
-		        return front == -1;
-		    }    
-
-		    /*  Function to check if queue is full */
-
-		    public boolean isFull()
-		    {
-		        return front==0 && rear == size -1 ;
-		    }    
-
-		    /*  Function to get the size of the queue */
-
-		    public int getSize()
-
-		    {
-		        return len ;
-		    }    
-
-		    /*  Function to check the front element of the queue */
-
-		    public int peek()
-		    {
-		        if (isEmpty())
-
-		            throw new NoSuchElementException("Underflow Exception");
-
-		        return Queue[front];
-		    }    
-
-		    /*  Function to insert an element to the queue */
-
-		    public void insert(int i)
-		    {
-		        if (rear == -1)
-
-		        {
-		            front = 0;
-
-		            rear = 0;
-
-		            Queue[rear] =  i;
-		        }
-
-		        else if (rear + 1 >= size)
-
-		            throw new IndexOutOfBoundsException("Overflow Exception");
-
-		        else if ( rear + 1 < size)
-
-		            Queue[++rear] =i;    
-
-		        len++ ; 
-
-		    }    
-		    /*  Function to remove front element from the queue */
-		    public int remove()
-		    {
-		        if (isEmpty())
-		            throw new NoSuchElementException("Underflow Exception");
-		        else
-		        {
-		            len-- ;
-		            int ele = Queue[front];
-		            if ( front == rear)
-		            {
-		                front = -1;
-		                rear = -1;
-		            }
-		            else
-		                front++;                
-		            return ele;
-		        }        
-		    }
-
-		    /*  Function to display the status of the queue */
-
-		    public void display()
-		    {
-		        System.out.print("the total amount present is = ");
-		        if (len == 0)
-		        {
-		            System.out.print("Empty\n");
-		            return ;
-		        }
-		        for (int i = front; i <= rear; i++)
-		            System.out.print(Queue[i]+" ");
-		        System.out.println();        
-		    }
-		
+public class Queue<T> {
+	
+	private int capacity;
+	T queueArr[];
+	int front = 0;
+	int rear = -1;
+	int currentSize = 0;
+	
+	@SuppressWarnings("unchecked")
+	public Queue(int queueSize){
+		this.capacity = queueSize;
+		queueArr = (T[]) new Object[this.capacity];
 	}
+
+	/**
+	 * this method adds element at the end of the queue.
+	 * @param item
+	 */
+	public void addelement(T item) {
+		if (isQueueFull()) {
+			System.out.println("Overflow ! Unable to add element: "+item);
+		} else {
+			rear++;
+			if(rear == capacity-1){
+				rear = 0;
+			}
+			queueArr[rear] = item;
+			currentSize++;
+//			System.out.println("Element " + item+ " is pushed to Queue !");
+		}
+	}
+   public int getSize()
+   {
+	   return currentSize;
+   }
+	/**
+	 * this method removes an element from the top of the queue
+	 */
+	public void removes() {
+		if (isQueueEmpty()) {
+			System.out.println("Underflow ! Unable to remove element from Queue");
+		} else {
+			front++;
+			if(front == capacity-1){
+				System.out.print(queueArr[front-1]+" ");
+				front = 0;
+			} else {
+				System.out.print(queueArr[front-1]+" ");
+			}
+			currentSize--;
+		}
+	}
+	
+	/**
+	 * This method checks whether the queue is full or not
+	 * @return boolean
+	 */
+	public boolean isQueueFull(){
+		boolean status = false;
+		if (currentSize == capacity){
+			status = true;
+		}
+		return status;
+	}
+	
+	/**
+	 * This method checks whether the queue is empty or not
+	 * @return
+	 */
+	public boolean isQueueEmpty(){
+		boolean status = false;
+		if (currentSize == 0){
+			status = true;
+		}
+		return status;
+}
+}
 
 

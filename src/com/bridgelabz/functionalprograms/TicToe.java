@@ -13,8 +13,6 @@ package com.bridgelabz.functionalprograms;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
-import com.bridgelabz.util.Functionalprograms;
 /**
  * Tic-Tac-Toe: Two-player console, non-graphics, non-OO version.
  * All variables/methods are declared as static (belong to the class)

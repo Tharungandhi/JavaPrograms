@@ -249,7 +249,7 @@ public class Functionalprograms<E> {
 	 * @param column
 	 * @return
 	 */
-	public static  Double[][] arrayDouble(int row, int column) {
+	public  Double[][] arrayDouble(int row, int column) {
 		Double[][] genericArray = new Double[row][column];
 		int i, j = 0;
 		@SuppressWarnings("resource")
@@ -471,117 +471,111 @@ public class Functionalprograms<E> {
 }
     
 
-	//Tic Tac Toe
+ // tic tack toe
+ 	/**
+ 	 * static data member of boolean type is used
+ 	 */
+ 	static boolean isEmpty = true;
+ 	/**
+ 	 * @param BOARD
+ 	 */
+ 	public static void initialBoard(int [][] BOARD) {
+ 		System.out.println("CROSS GAME\nComputer is o     &     Player  is x ");
+ 		for (int i = 0; i < BOARD.length; i++) {
+ 			for (int j = 0; j < BOARD[i].length; j++) {
+ 				BOARD[i][j] = -6;
+ 			}
+ 		}
+ 		System.out.println("Demo board is this :");
+ 		displayBoard(BOARD);
+ 	}
+ 	/**
+ 	 * @param BOARD
+ 	 */
+ 	public static void displayBoard(int [][] BOARD) {
+ 		int count = 0;
+ 		for (int i = 0; i < BOARD.length; i++) {
+ 			System.out.println("-----------------");
+ 			System.out.print("||");
+ 			for (int j = 0; j < BOARD[i].length; j++) {
+ 				if (BOARD[i][j] == 0) {
+ 					count++;
+ 					System.out.print(" o ||");
+ 				} else if (BOARD[i][j] == 1) {
+ 					count++;
+ 					System.out.print(" x ||");
+ 				} else
+ 					System.out.print("   ||");
+ 			}
+ 			System.out.println(" ");
+ 		}
+ 		if (count == 9) {
+ 			isEmpty = false;
+ 		}
+ 		System.out.println("-----------------");
+ 	}
+ 	/**
+ 	 * @param player
+ 	 * @param BOARD
+ 	 * @return
+ 	 */
+ 	public static boolean checkWinner(int player,int [][] BOARD) {
+ 		return ((BOARD[0][0] + BOARD[0][1] + BOARD[0][2] == player * 3)
+ 				|| (BOARD[1][0] + BOARD[1][1] + BOARD[1][2] == player * 3)
+ 				|| (BOARD[2][0] + BOARD[2][1] + BOARD[2][2] == player * 3)
+ 				|| (BOARD[0][0] + BOARD[1][0] + BOARD[2][0] == player * 3)
+ 				|| (BOARD[0][1] + BOARD[1][1] + BOARD[2][1] == player * 3)
+ 				|| (BOARD[0][2] + BOARD[1][2] + BOARD[2][2] == player * 3)
+ 				|| (BOARD[0][0] + BOARD[1][1] + BOARD[2][2] == player * 3)
+ 				|| (BOARD[2][0] + BOARD[1][1] + BOARD[0][2] == player * 3));
+ 	}
+ 	/**
+ 	 * @param player
+ 	 * @param BOARD
+ 	 */
+ 	public static void putVal(int player,int [][] BOARD) {
+ 		try {
+ 		int i=0;
+ 		int j=0;
+ 		if (player % 2 == 1) {
+ 			i = (int) (Math.random() * 10) % 3;
+ 			j = (int) (Math.random() * 10) % 3;
+ 		} else {
+ 			@SuppressWarnings("resource")
+ 			Scanner s = new Scanner(System.in);
+ 			System.out.println("enter value of row and column by space");
+ 			if(i<=2 && j<=2)
+ 			{
+ 			i = s.nextInt();
+ 			j = s.nextInt();
+ 			}
+ 			else
+ 			{
+ 				System.out.println("choose according to board matrix ");
+ 			}
+ 		}
+ 		if (BOARD[i][j] == -6) {
+ 			if (player % 2 == 0) {
+ 				BOARD[i][j] = 0;
+ 			} else {
+ 				BOARD[i][j] = 1;
+ 				System.out.println("Coumputer Choosing " + i + " th row & " + j+" th column ");
+ 			}
+ 		} else
+ 			putVal(player,BOARD);
+ 		}
+ 		catch(Exception e){
+ 			System.out.println("Please choose according to board matrix");
+ 			putVal(player,BOARD);
+ 		}
 
-
-	static int player = 0;
-	static int[][] B = new int[3][3];
-	static boolean isEmpty = true;
-
-
-	public static Object play;
-	
-
-	public static void initBoard() {
-		System.out.println("TIC TAC TOE GAME\nComputer is o\nPlayer  is x ");
-		for (int i = 0; i < B.length; i++) {
-			for (int j = 0; j < B[i].length; j++) {
-				B[i][j] = 10;
-			}
-		}
-		System.out.println("Board is this :");
-		displayBoard();
-	}
-
-	public static void displayBoard() {
-		int count = 0;
-		for (int i = 0; i < B.length; i++) {
-			System.out.println("---------------");
-			System.out.print("||");
-			for (int j = 0; j < B[i].length; j++) {
-				if (B[i][j] == 0) {
-					count++;
-					System.out.print(" o |");
-				} else if (B[i][j] == 1) {
-					count++;
-					System.out.print(" x |");
-				} else
-					System.out.print("   |");
-			}
-			System.out.println("|");
-		}
-		if (count == B.length) {
-			isEmpty = false;
-		}
-		System.out.println("---------------");
-	}
-	/*
-	 * static void putVal(int i, int j, int player) { if if (player % 2 == 0) {
-	 * BOARD[i][j] = 0; } else BOARD[i][j] = 1; }
-	 */
-
-	public static void enterValue() {
-		int i;
-		int j;
-		if (player % 2 == 1) {
-			i = (int) (Math.random() * 10) % 3;
-			j = (int) (Math.random() * 10) % 3;
-		} else {
-			@SuppressWarnings("resource")
-			Scanner s = new Scanner(System.in);
-			System.out.println("enter value of x and y by space");
-			i = s.nextInt();
-			j = s.nextInt();
-		}
-		if (B[i][j] == 10) {
-			if (player % 2 == 0) {
-				B[i][j] = 0;
-			} else {
-				B[i][j] = 1;
-				System.out.println("Coumputer Choosing " + i + " " + j);
-			}
-		} else
-			enterValue();
-
-	}
-
-	public static boolean win() {
-		return ((B[0][0] + B[0][1] + B[0][2] == player * 3)
-				|| (B[1][0] + B[1][1] + B[1][2] == player * 3)
-				|| (B[2][0] + B[2][1] + B[2][2] == player * 3)
-				|| (B[0][0] + B[1][0] + B[2][0] == player * 3)
-				|| (B[0][1] + B[1][1] + B[2][1] == player * 3)
-				|| (B[0][2] + B[1][2] + B[2][2] == player * 3)
-				|| (B[0][0] + B[1][1] + B[2][2] == player * 3)
-				|| (B[2][0] + B[1][1] + B[0][2] == player * 3));
-	}
-
-	public static void ticTacToe() {
-		initBoard();
-		while (isEmpty) {
-			System.out.println("Players turn");
-			enterValue();
-			displayBoard();
-			if (win()) {
-				System.out.println("Player won");
-				return;
-			}
-			player = 1;
-			System.out.println("Computers turn");
-			enterValue();
-			displayBoard();
-			if (win()) {
-				System.out.println("Computer won");
-				return;
-			}
-			player = 0;
-		}
+ }
 	}
 
 
 
 
-}
+
 
 
 
