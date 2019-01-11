@@ -35,25 +35,25 @@ package com.bridgelabz.dataStrucPrograms;
 				days[month] = 29;
 			}
 			System.out.println("\t\t " + months[month] + " " + year);
-			System.out.println("Sun\tMon\tTue\tWed\tThu\tFri\tSat");
-			int d = DataStructurePrograms.dayWeek(month, 1, year);
-			StackLinkedList<QueueLinkedList<Integer>> mainStack=new StackLinkedList<>();
-			QueueLinkedList<Integer> queue=new QueueLinkedList<>();
+			System.out.println("Sunday Monday Tuesday Wednesday Thursday Friday Saturday");
+			int dayofWeek = DataStructurePrograms.dayWeek(month, 1, year);
+			StackLinkedList<QueueLinkedList<Integer>> stack=new StackLinkedList<>();
+			QueueLinkedList<Integer> refqueue=new QueueLinkedList<>();
 			for (int i = 1; i <= days[month]; i++) {
-				queue.insert(i);
-				if (((i + d) % 7 == 0 || i==days[month]) ) {
-					mainStack.push(queue);
-					queue=new QueueLinkedList<Integer>();
+				refqueue.insert(i);
+				if (((i + dayofWeek) % 7 == 0 || i==days[month]) ) {
+					stack.push(refqueue);
+					refqueue=new QueueLinkedList<Integer>();
 					continue;
 				}
 			}	
-			for (int i = 0; i < d; i++)
+			for (int i = 0; i < dayofWeek; i++)
 			System.out.print("\t");
-			int size = mainStack.getSize();
+			int size = stack.getSize();
 			StackLinkedList<QueueLinkedList<Integer>> stackNew = new StackLinkedList<>();
 			
 			for(int i=0; i < size; i++){
-				stackNew.push(mainStack.pop());
+				stackNew.push(stack.pop());
 			}
 
 			for (int i = 0; i < size; i++) {

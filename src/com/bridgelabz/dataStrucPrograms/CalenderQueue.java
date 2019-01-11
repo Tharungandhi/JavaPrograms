@@ -35,25 +35,25 @@ public class CalenderQueue {
 					days[month] = 29;
 				}
 				System.out.println("\t\t " + months[month] + " " + year);
-				System.out.println("Sun\tMon\tTue\tWed\tThu\tFri\tSat");
-				int d = DataStructurePrograms.dayWeek(month, 1, year);
-				QueueLinkedList<QueueLinkedList<Integer>> mainQueue=new QueueLinkedList<QueueLinkedList<Integer>>();
-				QueueLinkedList<Integer> queue2=new QueueLinkedList<Integer>();
+				System.out.println("Sunday Monday Tuesday Wednesday Thursday Friday Saturday");
+				int dayofWeek = DataStructurePrograms.dayWeek(month, 1, year);
+				QueueLinkedList<QueueLinkedList<Integer>> queue=new QueueLinkedList<QueueLinkedList<Integer>>();
+				QueueLinkedList<Integer> refqueue=new QueueLinkedList<Integer>();
 				
 				
 				for (int i = 1; i <= days[month]; i++) {
-					queue2.insert(i);
-					if (((i + d) % 7 == 0 || i==days[month]) ) {
-						mainQueue.insert(queue2);
-						queue2=new QueueLinkedList<Integer>();
+					refqueue.insert(i);
+					if (((i + dayofWeek) % 7 == 0 || i==days[month]) ) {
+						queue.insert(refqueue);
+						refqueue=new QueueLinkedList<Integer>();
 						continue;
 					}
 				}	
-				for (int i = 0; i < d; i++)
+				for (int i = 0; i < dayofWeek; i++)
 				System.out.print("\t");
-				for(int i=0;i<=mainQueue.getSize();i++)
+				for(int i=0;i<=queue.getSize();i++)
 				{
-					QueueLinkedList<Integer> week=mainQueue.remove();
+					QueueLinkedList<Integer> week=queue.remove();
 					for(int j=0;j<week.getSize();j++)
 					{
 						System.out.print(week.remove()+"\t");

@@ -21,22 +21,22 @@ public class BinayTree {
 	*/
 	  public static void main(String[] args) { 
 	        System.out.println("Enter the number of nodes");
-	        int num=DataStructurePrograms.readInteger();
-	        int[] intArr=new int[num];
+	        int nodes=DataStructurePrograms.readInteger();
+	        int[] intArr=new int[nodes];
 	        for(int i=0;i<intArr.length;i++)
 	        {
 	        	System.out.println("Enter the "+i+" th number:");
 	        	intArr[i]=DataStructurePrograms.readInteger();
 	        }
-	        double [] count=new double[intArr.length];
+	        double [] numbertimes=new double[intArr.length];
 	        for(int i=0;i<intArr.length;i++)
 	        {
 	        	//Method 1- using function of Utility class of com.bridgelabz.util package
-	        	count[i] = DataStructurePrograms.binaryCount(intArr[i]);
+	        	numbertimes[i] = DataStructurePrograms.binaryCount(intArr[i]);
 	        }
-	         for(int i=0;i<count.length;i++)
+	         for(int i=0;i<numbertimes.length;i++)
 	         {
-	        	 System.out.println("Count of BST possibilities for "+  intArr[i] +" nodes is "+count[i]);
+	        	 System.out.println("Count of BST possibilities for "+  intArr[i] +" nodes is "+numbertimes[i]);
 	         }
 	} 
 

@@ -29,9 +29,9 @@ public class PrimeAnagramQueue {
 	public static void main(String[] args) {
 		
 			Queue<Integer> queue=new Queue<Integer>(1000);
-			List<Integer> list2 = new ArrayList<Integer>();
-			list2 = Algorithmprograms.primeNumbers(0,1000); //finding prime
-			queue = DataStructurePrograms.primeAnagram2(list2); //finding anagram
+			List<Integer> primenumber = new ArrayList<Integer>();
+			primenumber = Algorithmprograms.primeNumbers(0,1000); //finding prime
+			queue = DataStructurePrograms.primeAnagram2(primenumber); //finding anagram
 			System.out.println(queue.getSize()+" is the size of queue");
 			System.out.println("Elements in a queue are :");
 			while(!queue.isQueueEmpty())

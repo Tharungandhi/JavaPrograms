@@ -34,22 +34,24 @@ import com.bridgelabz.util.DataStructurePrograms;
 	        while(true)
 	        {
 	            System.out.println("please select one option");
-	            System.out.println("1.Display list 2.to search element 3.Display modified File  ");
+	            System.out.println("1:To Display the list");
+	            System.out.println("2:to search element");
+	            System.out.println("3:Display modified File ");
 	            int option=DataStructurePrograms.readInteger();
 	            switch(option) {
 	            case 1:DataStructurePrograms.printList(LinkedList);
 	            break;
 	            case 2:{System.out.println("Enter the key element to be searched");
 	            int key=DataStructurePrograms.readInteger();
-	            String key1=String.valueOf(key);
-	            int k=DataStructurePrograms.delete(LinkedList, key1);
-	            System.out.println(k);
-	            if(k==0) {
-	            	DataStructurePrograms.insert(LinkedList, key1);
+	            String refkey=String.valueOf(key);
+	            int found=DataStructurePrograms.delete(LinkedList, refkey);
+	            System.out.println(found);
+	            if(found==0) {
+	            	DataStructurePrograms.insert(LinkedList, refkey);
 	            }
 	            int[] fileContent = DataStructurePrograms.toIntConv(LinkedList);   
-	            int[] sortedarr=DataStructurePrograms.stringSort(fileContent);
-	            String sortedString[]=DataStructurePrograms.intTostring(sortedarr);
+	            int[] sortedArr=DataStructurePrograms.stringSort(fileContent);
+	            String sortedString[]=DataStructurePrograms.intTostring(sortedArr);
 	            //String[] sarray=new String[sortedarr.length];
 	            DataStructurePrograms.usingFileWriter(LinkedList,sortedString,sortFile);
 	            break;}

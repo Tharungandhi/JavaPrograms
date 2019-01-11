@@ -30,8 +30,8 @@ public class Palindrome­Checker {
 	  String string=DataStructurePrograms.readString();
 	  for(int i=0;i<string.length();i++)
 		{
-			char c =string.charAt(i);
-			deque.addRear(c);
+			char cha =string.charAt(i);
+			deque.addRear(cha);
 		}
 		int flag=0;
 

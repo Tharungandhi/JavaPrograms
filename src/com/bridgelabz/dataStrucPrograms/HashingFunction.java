@@ -31,57 +31,58 @@ public class HashingFunction {
 	 */
 	public static <E> void main(String[] args) throws NumberFormatException, IOException {
 		// Customized LinkedList
-		LinkedList<Integer> linkedList1 = new LinkedList<>();
-		LinkedList<Integer> linkedList2 = null;
-		LinkedList<Integer> linkedList3 = new LinkedList<>();
+		LinkedList<Integer> linkedList = new LinkedList<>();
+		LinkedList<Integer> linkedListnew = null;
+		LinkedList<Integer> linkedListint = new LinkedList<>();
 		int n = 0;
 		Map<Integer, LinkedList<Integer>> map = new LinkedHashMap<Integer, LinkedList<Integer>>();
 		for (int i = 0; i <= 10; i++) {
-			linkedList2 = new LinkedList<>();
-			map.put(i, linkedList2);
+			linkedListnew = new LinkedList<>();
+			map.put(i, linkedListnew);
 		}
-		FileReader fr = new FileReader("/home/admin1/Desktop/HashingFile");
+		FileReader file = new FileReader("/home/admin1/Desktop/HashingFile");
 		@SuppressWarnings("resource")
-		BufferedReader br = new BufferedReader(fr);
-		FileWriter w = new FileWriter("/home/admin1/Desktop/HashingFile", true);
-		BufferedWriter writer = new BufferedWriter(w);
-		int rem;
+		BufferedReader buffer = new BufferedReader(file);
+		FileWriter writer = new FileWriter("/home/admin1/Desktop/HashingFile", true);
+		@SuppressWarnings("unused")
+		BufferedWriter bufferwriter = new BufferedWriter(writer);
+		int reminder;
 		String read;
 		String delimitor = " ";
-		while ((read = br.readLine()) != null) {
+		while ((read = buffer.readLine()) != null) {
 			String tokens[] = read.split(delimitor);
 			for (String token : tokens) {
-				linkedList1.add(Integer.parseInt(token));
+				linkedList.add(Integer.parseInt(token));
 			}
 		}
 		System.out.println("The numbers in the file are:");
-		linkedList1.printNew();
+		linkedList.printNew();
 		System.out.println();
-		int len = linkedList1.size();
-		int[] arr = linkedList1.convInteger(linkedList1, len);
-		int[] arr2 = linkedList1.sortArray(arr);
+		int len = linkedList.size();
+		int[] arr = linkedList.convInteger(linkedList, len);
+		int[] arr2 = linkedList.sortArray(arr);
 		System.out.println("after sorting:");
 		for (int i : arr2) {
-			linkedList3.add(i);
+			linkedListint.add(i);
 		}
-		linkedList3.printNew();
+		linkedListint.printNew();
 		System.out.println();
 		System.out.println("Dividing each number by 11 and storing set");
 		for (int i = 0; i < arr2.length; i++) {
-			rem = arr2[i] % 11;
+			reminder = arr2[i] % 11;
 			if (map.isEmpty()) {
-				linkedList2.add(arr2[i]);
-				map.put(rem, linkedList2);
+				linkedListnew.add(arr2[i]);
+				map.put(reminder, linkedListnew);
 			} else {
-				linkedList2 = map.get(rem);
-				if (linkedList2.size() == 0) {
-					linkedList2.add(arr2[i]);
+				linkedListnew = map.get(reminder);
+				if (linkedListnew.size() == 0) {
+					linkedListnew.add(arr2[i]);
 				} else {
-					if (!linkedList2.search(arr2[i])) {
-						linkedList2.add(arr2[i]);
+					if (!linkedListnew.search(arr2[i])) {
+						linkedListnew.add(arr2[i]);
 					}
 				}
-				map.put(rem, linkedList2);
+				map.put(reminder, linkedListnew);
 			}
 		}
 
@@ -94,38 +95,38 @@ public class HashingFunction {
 
 		do {
 			System.out.println();
-			System.out.println(
-					"1.Enter the integer value to be to be searched\n2.Exit the program and display the file ");
+			System.out.println("1.Enter the integer value to be to be searched");
+			System.out.println("2.Exit the program and display the file ");
 			int choice = DataStructurePrograms.readInteger();
 			switch (choice) {
 			case 1:
 				System.out.println("enter the word to be searched from sorted list:");
 				int key = DataStructurePrograms.readInteger();
-				int length = linkedList3.size();
+				int length = linkedListint.size();
 				System.out.println(length);
-				boolean b = linkedList3.findIntegerValue(length, key, linkedList3);
-				if (b) {
+				boolean value = linkedListint.findIntegerValue(length, key, linkedListint);
+				if (value) {
 					System.out.println("name found");
 					System.out.println("number is removed from the file ");
 					System.out.println("new file list is :");
-					linkedList3.printNew();
+					linkedListint.printNew();
 				} else {
 					System.out.println("name not found");
 					System.out.println("seached number added to file ");
-					linkedList3.printNew();
+					linkedListint.printNew();
 				}
 				break;
 
 			case 2:
-				FileOutputStream writer2 = new FileOutputStream("/home/admin1/Desktop/HashingFile");
-				writer2.write(("").getBytes());
-				writer2.close();
-				int len2 = linkedList3.size();
-				linkedList3.printNew();
-				int[] newStr = linkedList3.convertInt(linkedList3, len2);
-				String[] newStringArray = new String[newStr.length];
-				for (int i = 0; i < newStr.length; i++) {
-					newStringArray[i] = String.valueOf(newStr[i]);
+				FileOutputStream update = new FileOutputStream("/home/admin1/Desktop/HashingFile");
+				update.write(("").getBytes());
+				update.close();
+				int len2 = linkedListint.size();
+				linkedListint.printNew();
+				int[] Str = linkedListint.convertInt(linkedListint, len2);
+				String[] newStringArray = new String[Str.length];
+				for (int i = 0; i < Str.length; i++) {
+					newStringArray[i] = String.valueOf(Str[i]);
 				}
 				for (int i = 0; i < newStringArray.length; i++) {
 					writer.write(newStringArray[i]);
