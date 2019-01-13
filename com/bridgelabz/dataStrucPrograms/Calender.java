@@ -26,12 +26,14 @@ public class Calender {
 		String[] months = { "","January", "February", "March", "April", "May", "June", "July", "August", "September",
 				"October", "November", "December" };
 		int[] days = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		
 		 //Method 1- using function of FunctionalUtility class of com.bridgelabz.util package
 		if (month == 2 && DataStructurePrograms.isLeapYear(year)) {
 			days[month] = 29;
 		}
 		System.out.println("\t\t " + months[month] + " " + year);
 		System.out.println("Sun\tMon\tTue\tWed\tThu\tFri\tSat");
+		
 		//Method 2- using function of FunctionalUtility class of com.bridgelabz.util package
 		int d = DataStructurePrograms.dayWeek(month, 1, year);
 		for (int i = 0; i < d; i++)

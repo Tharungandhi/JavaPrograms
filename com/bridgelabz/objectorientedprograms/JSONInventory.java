@@ -16,12 +16,15 @@ import com.bridgelabz.util.ObjectOrientedPrograms;
 public class JSONInventory {
 
 	@SuppressWarnings("static-access")
+	static
+	
+	String str = "/home/admin1/Desktop/JSONInventoryDataManagement.json";
+	static ObjectMapper objectMapper = new ObjectMapper();
+	static List<InventoryList> originfile = new ArrayList<InventoryList>();
+	static InventoryList inventoryList = new InventoryList();
+	static List<Inventory> listOFInventories = new ArrayList<Inventory>();
+	
 	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
-		String str = "/home/admin1/Desktop/JSONInventoryDataManagement.json";
-		ObjectMapper objectMapper = new ObjectMapper();
-		List<InventoryList> originfile = new ArrayList<InventoryList>();
-		InventoryList inventoryList = new InventoryList();
-		List<Inventory> listOFInventories = new ArrayList<Inventory>();
 		String reference = "";
 		int z= 0;
 		do {
@@ -40,10 +43,12 @@ public class JSONInventory {
 				break;
 			case 2:
 				String [] arr= {"","rice","wheat","pulses"};
-				System.out.println("Select the inventory name \n 1.rice 2.wheat 3.pulses");
-				int inventoryname=ObjectOrientedPrograms.readInteger();
 				int ref = 1, flag = 0;
 				while (ref == 1) {
+				System.out.println("Select the inventory name \n 1.rice 2.wheat 3.pulses");
+				int inventoryname=ObjectOrientedPrograms.readInteger();
+				
+				 
 					for (InventoryList nameList : originfile) {
 						if (arr[inventoryname].equals(nameList.getInventoryName())) {
 							listOFInventories = nameList.getListOfInventories();
@@ -60,6 +65,8 @@ public class JSONInventory {
 					}
 					System.out.println("wish to add some more inventorry(1 or 0)");
 					ref = ObjectOrientedPrograms.readInteger();
+					
+					
 				}
 				System.out.println("Entered elements has been added to list");
 				String json = objectMapper.writeValueAsString(originfile);
@@ -81,7 +88,8 @@ public class JSONInventory {
 			System.out.println("Press 1 to continue");
 			z=ObjectOrientedPrograms.readInteger();
 			z++;
-		}  while (z==1);
+		}  while (z<100);
 	}
+
 
 }
