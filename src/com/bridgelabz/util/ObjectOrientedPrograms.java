@@ -76,8 +76,8 @@ public class ObjectOrientedPrograms {
 	//Regex
 
 	public static String modifiedMessage(String name,String fullname,String mobileno, String date,String Message) {
-		final String Regex_1="<<name>>";
-		final String Regex_2="<<fullname>>";
+		final String Regex_1="<{2}+\\\\w+>{2}";
+		final String Regex_2="<{2}+\\\\w+ +\\\\w+>{2}";
 		final String Regex_3="<{2}+x{10}+>{2}";
 		final String Regex_4="\\d{2}+/+\\d{2}+/+\\d{4}";			
 		
