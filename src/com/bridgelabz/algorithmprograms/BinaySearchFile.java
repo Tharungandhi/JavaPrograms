@@ -27,7 +27,6 @@ public class BinaySearchFile {
 		String csvFile = "/home/admin1/Desktop/Tharun.csv";
 		BufferedReader fileReader = new BufferedReader(new FileReader(csvFile));
 
-		// Delimiter used in CSV file
 		final String DELIMITER = ",";
 		try {
 			String line = "";
