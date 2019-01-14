@@ -43,7 +43,7 @@ public class PatientManagement {
 	 int page=ObjectOrientedPrograms.readInteger();
 	 patient.setPatientage(page);
 	 System.out.println("Enter the Phone No");
-	 long phoneno=ObjectOrientedPrograms.readlong();
+	 String phoneno=ObjectOrientedPrograms.readString();
 	 patient.setPhoneno(phoneno);
 	 patientlist.add(patient);
 }
@@ -91,7 +91,7 @@ public class PatientManagement {
  public static void searchByPhoneno()
  {
 	 System.out.println("enter the patient's phone no to be searched");
-	 long ppn=ObjectOrientedPrograms.readlong();
+	 String ppn=ObjectOrientedPrograms.readString();
 	 try {
 		 for(PatientDetails patient : patientlist) {
 			 if(ppn==patient.getPhoneno()) {

@@ -16,8 +16,14 @@ public class AddressManager {
 	static List<PersonalDetails> persondetails=new ArrayList<PersonalDetails>();
 	static AddressBook addressbook = new AddressBook();
 	static String originbook="/home/admin1/Tharun/Bridgelabs/programs/JavaPrograms/";
+	static private String bookName=null;
 	
-	
+	public static String getBookName() {
+		return bookName;
+	}
+	public static void setBookName(String bookName) {
+		AddressManager.bookName = bookName;
+	}
 	public static void createBook(String originbook) throws IOException {
 		//AddressDetails addressBook=null;
 		System.out.println("Enter the name of the book in (.json) extention (eg:file.json)");
@@ -42,6 +48,7 @@ public class AddressManager {
 			}
 		System.out.println("Choose the address book");
 		String book = ObjectOrientedPrograms.readString();
+		setBookName(book);
 		int flag=0;
 		for (File file : arrayOfFiles) {
 			String filename = file.getName();
@@ -66,14 +73,14 @@ public class AddressManager {
 	}
 
 	public static void saveBook() {
-        System.out.println("List of files");
-        for (File file : arrayOfFiles) {
-            if(file.getName().endsWith(".json"))
-                System.out.println(file.getName());
-        }
+//        System.out.println("List of files");
+//        for (File file : arrayOfFiles) {
+//            if(file.getName().endsWith(".json"))
+//                System.out.println(file.getName());
+//        }
         int flag=0;
-        System.out.println("Choose the address book to be saved");
-        String ch_book = ObjectOrientedPrograms.readString();
+//        System.out.println("Choose the address book to be saved");
+        String ch_book = getBookName();
         for (File file : arrayOfFiles) {
             String filename = file.getName();
             if (ch_book.equals(filename)) {

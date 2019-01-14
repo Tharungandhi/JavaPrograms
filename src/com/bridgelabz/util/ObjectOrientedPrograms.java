@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,6 +15,12 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.type.CollectionType;
 
 public class ObjectOrientedPrograms {
 	static Scanner scanner1=new Scanner(System.in); //scanner class declaration
@@ -181,9 +188,41 @@ public class ObjectOrientedPrograms {
 		bw.flush();
 	}
 
-	//public stat
+	public static Date printDate(String date){
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+		try{
+			return sdf.parse(date);
+		}
+		catch(ParseException pe){
+			return null;
+		}
+}
+	
+	public static <T extends Comparable<T>> T[] sortArray(T str[]) {
+	        int length = str.length;
+	        for (int i = 1; i < length; i++) {
+	            T key = str[i];
+	            int j = i - 1;
+	            while (j >= 0 && ((str[j].compareTo(key) > 0))) {
+	                str[j + 1] = str[j];
+	                j--;
+	            }
+	            str[j + 1] = key;
+	        }
+	        return str;
+	    }
+static ObjectMapper objectMapper=new ObjectMapper();
 
+	public static <T> List<T> userReadValue(String str, Class<?> cls)
+            throws JsonParseException, JsonMappingException, IOException {
+        CollectionType colletion = objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, cls);
+        return objectMapper.readValue(str, colletion);
+    }
 
+    public static <T> String userWriteValueAsString(List<T> list)
+            throws JsonGenerationException, JsonMappingException, IOException {
+        return objectMapper.writeValueAsString(list);
+    }
  
 }
 
