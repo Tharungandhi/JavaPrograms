@@ -3,7 +3,7 @@ package com.bridgelabz.util;
 public class StockList {
 private String stockName;
 private int stockPrice;
-private int numberShares;
+private double numberShares;
 
 public String getStockName() {
 	return stockName;
@@ -17,11 +17,11 @@ public int getStockPrice() {
 public void setStockPrice(int stockPrice) {
 	this.stockPrice = stockPrice;
 }
-public int getNumberShares() {
+public double getNumberShares() {
 	return numberShares;
 }
-public void setNumberShares(int numberShares) {
-	this.numberShares = numberShares;
+public void setNumberShares(double d) {
+	this.numberShares = d;
 }
 
 

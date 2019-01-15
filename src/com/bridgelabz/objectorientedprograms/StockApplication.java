@@ -1,15 +1,19 @@
 package com.bridgelabz.objectorientedprograms;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
 
 import com.bridgelabz.util.ObjectOrientedPrograms;
 import com.bridgelabz.util.StockList;
 import com.bridgelabz.util.StockReport;
 
 public class StockApplication {
- public static void main(String agrs[]) throws FileNotFoundException {
+ public static void main(String agrs[]) throws JsonGenerationException, JsonMappingException, IOException {
 	 int ch=0;
 do {
 	 System.out.println("1:Stock details");
@@ -26,22 +30,25 @@ do {
 	 }
 	 case 2:{
 		 StockReport.displayStock();
+		 break;
 	 }
 	 case 3:
 	 {
 		 StockReport.valueOfEachStock();
+		 break;
 	 }
 	 case 4:
 	 {
-		 StockReport.valueOfEachStock();
-	 }
+		 StockReport.totalStockValue();
+break;}
 	 case 5:{
 		 System.exit(0);
+		 break;
 	 }
 	 default:
 		 System.out.println("Pls eneter the proper choice");
 		 
 	 }
 	ch++;
-}while(ch>100);
+}while(ch<100);
 }}

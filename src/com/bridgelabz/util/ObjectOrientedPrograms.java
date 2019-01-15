@@ -2,6 +2,7 @@ package com.bridgelabz.util;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -219,10 +221,13 @@ static ObjectMapper objectMapper=new ObjectMapper();
         return objectMapper.readValue(str, colletion);
     }
 
-    public static <T> String userWriteValueAsString(List<T> list)
+    public static <T> String userWriteValueAsString(List<StockList> tempstocklist)
             throws JsonGenerationException, JsonMappingException, IOException {
-        return objectMapper.writeValueAsString(list);
+        return objectMapper.writeValueAsString(tempstocklist);
     }
- 
+    public static <T> T convertJsonToPOJO(String filePath, Class<?> target) throws JsonParseException, JsonMappingException, IOException, ClassNotFoundException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(new File(filePath), objectMapper .getTypeFactory().constructCollectionType(List.class, Class.forName(target.getName())));
+    }
 }
 
