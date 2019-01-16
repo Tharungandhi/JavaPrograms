@@ -10,7 +10,6 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import com.bridgelabz.util.AddressBook;
 import com.bridgelabz.util.DoctorDetails;
-import com.bridgelabz.util.DoctorManagement;
 import com.bridgelabz.util.ManagementDetail;
 import com.bridgelabz.util.ObjectOrientedPrograms;
 import com.bridgelabz.util.PatientDetails;
@@ -31,61 +30,53 @@ public class ClinicManagement {
 		System.out.println("1: Add Doctor");
 	    System.out.println("2: Add Patient");
 	    System.out.println("3: Take Appointment");
-	    System.out.println("4: Print Appointment");
-	    System.out.println("5: Do you want to search Doctor");
-	    System.out.println("6: Do you want to search patient");
-	    System.out.println("7: Do you want to known famous doctor");
-	    System.out.println("8: Display Doctorlist or Patientlist");
-	    System.out.println("5:Exit from the clinic");
+	    System.out.println("4: Search Doctor");
+	    System.out.println("5: Search patient");
+	    System.out.println("6: Famous doctor");
+	    System.out.println("7: Famous Specialist");
+	    System.out.println("8: Exit from the clinic");
 	    int choice=ObjectOrientedPrograms.readInteger();
 	    switch (choice)
 	    {
 	    case 1:{
-	    	 doctorlist1= (List<DoctorDetails>) ManagementDetail.addDoctor();
-	    	ManagementDetail.displayDoctor();
-	    	String json = objectmapper.writeValueAsString(doctorlist1);
-         	ManagementDetail.writelistDoctor(json);
+	    	ManagementDetail.addDoctor();
          	break;
 	    }
 	    case 2:
 	    {
-	    	 patientlist1=(List<PatientDetails>) ManagementDetail.addPatient();
-	    	ManagementDetail.displayPatient();
-	    	String json = objectmapper.writeValueAsString(patientlist1);
-         	ManagementDetail.writelistPatient(json);
+	    	 ManagementDetail.addPatient();
 	    	break;
 	    }
 	    case 3:
 	    {
-	    	doctorlist1=ManagementDetail.displayDoList();
-	    	ManagementDetail.takeAppointment(doctorlist1);
 	    	
+	    	ManagementDetail.takeAppointment();	
 	    	break;
 	    }
 	    case 4:
 	    {
-	    	ManagementDetail.printAppointment();
-	    break;
-	    }
-	    case 5:
-	    {
 	    	ManagementDetail.searchDoctor();
 	    	break;
 	    }
-	    case 6:
+	    case 5:
 	    {
 	    	ManagementDetail.searchpatient();
 	    	break;
 	    	
 	    }
+	    case 6:
+	    {
+	    	ManagementDetail.famousDoctor();
+	     break;
+	    }
 	    case 7:
 	    {
-	    	System.exit(0);
-	     break;
+	    	ManagementDetail.famousSpecialist();
 	    }
 	    case 8:
 	    {
-	    	
+	    	System.exit(0);
+	    	break;
 	    }
        default:
     	   System.out.println("Pls Enter the correct choice");

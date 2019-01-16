@@ -221,9 +221,19 @@ static ObjectMapper objectMapper=new ObjectMapper();
         return objectMapper.readValue(str, colletion);
     }
 
-    public static <T> String userWriteValueAsString(List<StockList> tempstocklist)
+    public static <T> String userWriteValueAsString(List<T> tempstocklist)
             throws JsonGenerationException, JsonMappingException, IOException {
         return objectMapper.writeValueAsString(tempstocklist);
+    }
+    public static <T> String userWriteValueAsString1(Set<T> set)
+            throws JsonGenerationException, JsonMappingException, IOException {
+        return objectMapper.writeValueAsString(set);
+    }
+
+	public static <T> List<T> userReadValue1(String str, Class<?> cls)
+            throws JsonParseException, JsonMappingException, IOException {
+        CollectionType colletion = objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, cls);
+        return objectMapper.readValue(str, colletion);
     }
     public static <T> T convertJsonToPOJO(String filePath, Class<?> target) throws JsonParseException, JsonMappingException, IOException, ClassNotFoundException {
         ObjectMapper objectMapper = new ObjectMapper();

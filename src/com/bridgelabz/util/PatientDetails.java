@@ -1,8 +1,5 @@
 package com.bridgelabz.util;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PatientDetails {
  private int patientid;
  private String patientname;
