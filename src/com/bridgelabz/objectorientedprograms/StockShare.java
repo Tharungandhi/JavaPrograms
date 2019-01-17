@@ -26,12 +26,6 @@ public class StockShare{
 			            break;
 			            case 4:StockCompanyShare.printStock();
 			            break;
-//			            case 5:System.out.println("Enter the fileName");
-//			            StringBuffer sb1=new StringBuffer("/home/admin1/Tharun/Filesforjava/StockFiles/");
-//			            String ss1=ObjectOrientedPrograms.readString();
-//			            sb1.append(ss1);
-//			            Example.displayStackQueueLinkedList(sb1.toString());
-//			            break;
 			            default:System.out.println("Please enter the valid option");
 			            break;
 			            }

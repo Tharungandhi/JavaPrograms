@@ -26,6 +26,8 @@ public class StockQueue {
             switch (opt)
             {
             case 1:
+//            	String fileArray[]=StockCompanyShare.listFilesInsideDirectory();
+//	        String accName=StockCompanyShare.searchFile(fileArray);
                 System.out.println("Enter the fileName");
                 StringBuffer sb1=new StringBuffer("/home/admin1/Tharun/Filesforjava/StockFiles/");
                 String ss1=ObjectOrientedPrograms.readString();
@@ -34,13 +36,22 @@ public class StockQueue {
                 for(StockList stock:list) {
                     queue.insert(stock.getDate());
                     queue.insert(stock.getStockName());
-
-                   
                 }
-                StockCompanyShare.displayStackQueueLinkedList(sb1.toString());
+                StockCompanyShare.displayQueueLinkedList(sb1.toString());
                 break;
-
-            default:
+            case 2:
+               {   System.out.println("Enter the fileName");
+               StringBuffer sb11=new StringBuffer("/home/admin1/Tharun/Filesforjava/StockFiles/");
+               String ss11=ObjectOrientedPrograms.readString();
+               sb11.append(ss11);
+               list=StockCompanyShare.displayStock1(sb11.toString());
+               for(StockList stock:list) {
+                   queue.insert(stock.getDate());
+                   queue.insert(stock.getStockName());
+                	}
+               StockCompanyShare.displayQueueLinkedList(sb11.toString());
+               break;}
+            default:System.out.println("pls enter proper choice");
                 break;
             }
             System.out.println("Do you want to continue? Y/N");

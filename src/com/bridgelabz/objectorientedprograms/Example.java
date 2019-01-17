@@ -36,6 +36,7 @@ public class Example {
 		        String fileArray[]=listFilesInsideDirectory();
 		        String accName=searchFile(fileArray);
 		        liOfStock=displayStock1("/home/admin1/Tharun/Filesforjava/StockFiles/CompanyStock.json");   
+		       // tempList=displayStock1("/home/admin1/Tharun/Filesforjava/StockFiles/PersonStock.json");
 		        System.out.println("Enter the name of the stock which you want to Buy");
 		        String s1=ObjectOrientedPrograms.readString();
 		        s.setStockName(s1);

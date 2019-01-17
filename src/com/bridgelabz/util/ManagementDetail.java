@@ -469,7 +469,7 @@ public class ManagementDetail {
 	            System.out.println("There are no doctors in the Hospital system.");
 	        }
 	    }
-	    public static void searchDoc(List<DoctorDetails> doctorList, PatientDetails patient) {
+	    public static void searchDoctor(List<DoctorDetails> doctorList, PatientDetails patient) {
 	        System.out.println("Enter id");
 	        int id = ObjectOrientedPrograms.readInteger();
 	        try {
@@ -609,17 +609,17 @@ public class ManagementDetail {
 	        case 1:
 	            List<DoctorDetails> doctorList = searchByName();
 	            displayDoctor(doctorList);
-	            searchDoc(doctorList, patient);
+	            searchDoctor(doctorList, patient);
 	            break;
 	        case 2:
 	            List<DoctorDetails> doctorList1 = searchBySpecialization();
 	            displayDoctor(doctorList1);
-	            searchDoc(doctorList1, patient);
+	            searchDoctor(doctorList1, patient);
 	            break;
 	        case 3:
 	            List<DoctorDetails> doctorList2 = searchByAvailability();
 	            displayDoctor(doctorList2);
-	            searchDoc(doctorList2, patient);
+	            searchDoctor(doctorList2, patient);
 	            break;
 	        }
 	    }
