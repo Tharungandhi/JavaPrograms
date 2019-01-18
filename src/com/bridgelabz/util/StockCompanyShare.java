@@ -21,7 +21,7 @@ import com.bridgelabz.util.StackLinkedList;
 import com.bridgelabz.util.StockList;
 
 public class StockCompanyShare {
-	static List<StockList> liOfStock = new ArrayList<StockList>();
+	static List<StockList> stockList = new ArrayList<StockList>();
 	static Set<StockList> set = new HashSet<StockList>();
 	//static Transactions transactions=new Transactions();
 	static List<StockList> tempList =new ArrayList<StockList>();
@@ -35,10 +35,10 @@ public class StockCompanyShare {
 
 	public static <T> void buyStock() throws JsonGenerationException, JsonMappingException, IOException, ClassNotFoundException {
 		StockList s=new StockList();
-		liOfStock = new ArrayList<StockList>();
+		stockList = new ArrayList<StockList>();
 		String fileArray[]=listFilesInsideDirectory();
 		String accName=searchFile(fileArray);
-		liOfStock=displayStock1("/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json");  
+		stockList=displayStock1("/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json");  
 		System.out.println("Enter the name of the stock which you want to Buy");
 		String s1=ObjectOrientedPrograms.readString();
 		s.setStockName(s1);
@@ -52,7 +52,7 @@ public class StockCompanyShare {
 		else {
 			System.out.println("Enter the amount of share you wish to buy");
 			//System.out.println(flag);
-			s=liOfStock.get(index);
+			s=stockList.get(index);
 			s.setDate("date Set");
 			//tempList.add(s);
 			double share=ObjectOrientedPrograms.readInteger();
@@ -74,9 +74,9 @@ public class StockCompanyShare {
 				ObjectOrientedPrograms.writeFile(json, sb11.toString());
 				System.out.println("Written successfully");               
 				s.setNumberShares(temp-share);               
-				liOfStock.add(s);
+				stockList.add(s);
 
-				set.addAll(liOfStock);
+				set.addAll(stockList);
 				String json1 = ObjectOrientedPrograms.userWriteValueAsString1( set);
 				ObjectOrientedPrograms.writeFile(json1, "/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json");
 				System.out.println("Written successfully");
@@ -87,7 +87,7 @@ public class StockCompanyShare {
 	}
 	public static int checkStockName(String s1) {
 		index=-1;
-		for(StockList ss:liOfStock)
+		for(StockList ss:stockList)
 		{
 			++index;
 			if(ss.getStockName().equals(s1)) {
@@ -102,7 +102,7 @@ public class StockCompanyShare {
 	public static void sellStock() throws JsonGenerationException, JsonMappingException, IOException {
 		StockList s=new StockList();
 		tempList=new ArrayList<StockList>();
-		//  liOfStock=displayStock1("/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json");   
+		//  stockList=displayStock1("/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json");   
 		String fileArray[]=listFilesInsideDirectory();
 		String accName=searchFile(fileArray);
 		// tempList=displayStock1(accName);
@@ -113,8 +113,8 @@ public class StockCompanyShare {
 		System.out.println(flag);
 		if(flag<0)System.out.println("Stoke name not found");
 		else {
-			double shareInCompany=liOfStock.get(flag).getNumberShares();
-			//liOfStock.remove(flag);
+			double shareInCompany=stockList.get(flag).getNumberShares();
+			//stockList.remove(flag);
 			// CompanyStock.displayStock();
 			System.out.println("Enter the amount of share you wish to sell");
 			s=tempList.get(0);
@@ -122,7 +122,7 @@ public class StockCompanyShare {
 			if(s.getNumberShares()>share1 && share1>0) {
 				System.out.println("Present shares=="+s.getNumberShares());
 				///s.getNumberOfShare();
-				//liOfStock.remove(s);
+				//stockList.remove(s);
 				double share=s.getNumberShares()-share1;
 				System.out.println("share=="+s.getNumberShares());
 				s.setNumberShares(share);
@@ -141,8 +141,8 @@ public class StockCompanyShare {
 				System.out.println("Written successfully");
 				s.setNumberShares(shareInCompany+share1);
 				System.out.println("Company Share = "+s.getNumberShares());
-				liOfStock.add(s);
-				String json1 = ObjectOrientedPrograms.userWriteValueAsString(liOfStock);
+				stockList.add(s);
+				String json1 = ObjectOrientedPrograms.userWriteValueAsString(stockList);
 				ObjectOrientedPrograms.writeFile(json1, "/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json");
 				System.out.println("Written successfully");
 			}
@@ -158,7 +158,7 @@ public class StockCompanyShare {
 	public static void printStock() throws FileNotFoundException {
 		try{
 			System.out.println("Share details of the company");
-			liOfStock=displayStock1("/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json");   
+			stockList=displayStock1("/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json");   
 			System.out.println("///////////////////////////////////////");
 			System.out.println("Shares details of the person");
 			tempList=displayStock1("/home/admin1/Tharun/Filesforjava/StockFiles/PersonStock.json");
@@ -169,24 +169,7 @@ public class StockCompanyShare {
 			System.out.println("Please enter the valid file name/path");
 		}
 	}
-	public static String creatAccount() {
-		System.out.println("Enter the account name to create");
-		StringBuffer sb=new StringBuffer("/home/admin1/Tharun/Filesforjava/StockFiles//");
-		String ffname=ObjectOrientedPrograms.readString();
-		sb.append(ffname);
-		File stockFile = new File(sb.toString());
-		boolean flag=false;
 
-		try {
-			flag = stockFile.createNewFile();
-
-		} catch (IOException ioe) {
-			System.out.println("Error while Creating File in Java" + ioe);
-		}
-
-		System.out.println("stock file" + stockFile.getPath() + " created ");
-		return ffname;
-	}
 
 	public static String[] listFilesInsideDirectory()
 	{
@@ -220,10 +203,10 @@ public class StockCompanyShare {
 	return str;
 }
 
-public static void displayQueueLinkedList(String fName) throws FileNotFoundException {
+public static void displayQueueLinkedList(String string) throws FileNotFoundException {
 	try {
 		linkedList.printNew();
-		System.out.println("Last Transaction Time/Date  : "+ queue.remove()+"Share Name  := " +queue.remove());
+		System.out.println("Last Transaction Time/Date  : "+ queue.remove());
 		System.out.println("-------------------------------------------------------");
 	}
 	catch(Exception e) {
@@ -243,11 +226,11 @@ public static void displayStackLinkedList(String fName) throws FileNotFoundExcep
 public static List<StockList> displayStock1(String fName) throws FileNotFoundException {
 
 	try {
-		liOfStock = ObjectOrientedPrograms.convertJsonToPOJO(fName,  StockList.class);
+		stockList = ObjectOrientedPrograms.convertJsonToPOJO(fName,  StockList.class);
 	} catch (Exception e) {
 		System.out.println("File is empty!!! Nothing in data to display");
 	}
-	for (StockList stock : liOfStock) {
+	for (StockList stock : stockList) {
 		System.out.println("Stock Name               : " + stock.getStockName());
 		System.out.println("Total number of Stock    : " + stock.getNumberShares());
 		System.out.println("Share Price              : " + stock.getStockPrice());
@@ -255,8 +238,26 @@ public static List<StockList> displayStock1(String fName) throws FileNotFoundExc
 		System.out.println("Last Transaction status     : " + stock.getTransaction());
 		System.out.println("-------------------------------------------------------");
 	}
-	return liOfStock;
+	return stockList;
 
+}
+public static String creatAccount() {
+    System.out.println("Enter the account name");
+    StringBuffer sb=new StringBuffer("/home/admin1/Tharun/Filesforjava/StockFiles//");
+    String ffname=ObjectOrientedPrograms.readString();
+    sb.append(ffname);
+    File stockFile = new File(sb.toString());
+    boolean flag=false;
+
+    try {
+        flag = stockFile.createNewFile();
+
+    } catch (IOException ioe) {
+        System.out.println("Error while Creating File in Java" + ioe);
+    }
+
+    System.out.println("stock file" + stockFile.getPath() + " created ");
+    return ffname;
 }
 }
 

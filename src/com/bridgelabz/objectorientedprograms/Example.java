@@ -165,7 +165,7 @@ public class Example {
 		    }
 		    public static String creatAccount() {
 		        System.out.println("Enter the account name");
-		        StringBuffer sb=new StringBuffer("/home/admin1/Tharun/Filesforjava/StockFiles");
+		        StringBuffer sb=new StringBuffer("/home/admin1/Tharun/Filesforjava/StockFiles//");
 		        String ffname=ObjectOrientedPrograms.readString();
 		        sb.append(ffname);
 		        File stockFile = new File(sb.toString());

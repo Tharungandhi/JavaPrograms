@@ -6,6 +6,7 @@ import org.codehaus.jackson.map.JsonMappingException;
 
 import com.bridgelabz.util.CompanyStock;
 import com.bridgelabz.util.ObjectOrientedPrograms;
+import com.bridgelabz.util.StockCompanyShare;
 
 public class StockAgency {
   static int ch=0;
@@ -19,16 +20,16 @@ public class StockAgency {
 		int choice=ObjectOrientedPrograms.readInteger();
 		switch(choice){
 		case 1:{
-			Example.creatAccount();
+			StockCompanyShare.creatAccount();
 			break;
 		}
 		case 2:{
-			Example.buy();
+			StockCompanyShare.buyStock();
 			break;
 			}
 
 		case 3:{
-			Example.sell();
+			StockCompanyShare.buyStock();
 		break;}
 		
 		case 4:

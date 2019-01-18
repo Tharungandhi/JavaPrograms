@@ -1,8 +1,12 @@
 package com.bridgelabz.objectorientedprograms;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
 
 import com.bridgelabz.util.ObjectOrientedPrograms;
 import com.bridgelabz.util.QueueLinkedList;
@@ -12,7 +16,7 @@ import com.bridgelabz.util.StockList;
 
 public class StockStack {
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws JsonGenerationException, JsonMappingException, ClassNotFoundException, IOException {
 		 String s=null;
 	        System.out.println("Select the option");
 	        System.out.println("1.Buy share\n2.Sell\n");
@@ -25,8 +29,7 @@ public class StockStack {
 	            switch (opt)
 	            {
 	            case 1:{
-//	            	String fileArray[]=StockCompanyShare.listFilesInsideDirectory();
-//			        String accName=StockCompanyShare.searchFile(fileArray);
+	            	StockCompanyShare.buyStock();
 	                System.out.println("Enter the fileName");
 	                StringBuffer sb1=new StringBuffer("/home/admin1/Tharun/Filesforjava/StockFiles/");
 	                String ss1=ObjectOrientedPrograms.readString();
@@ -40,8 +43,9 @@ public class StockStack {
 	                break;
 	            }
 	            case 2:
-	            {
-	            	 System.out.println("Enter the fileName");
+	            { 
+	            	    StockCompanyShare.sellStock();
+	                    System.out.println("Enter the fileName");
 		                StringBuffer sb1=new StringBuffer("/home/admin1/Tharun/Filesforjava/StockFiles/");
 		                String ss1=ObjectOrientedPrograms.readString();
 		                sb1.append(ss1);
