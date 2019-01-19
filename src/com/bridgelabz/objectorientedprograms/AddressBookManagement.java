@@ -2,7 +2,7 @@ package com.bridgelabz.objectorientedprograms;
 
 import java.io.IOException;
 
-import com.bridgelabz.util.AddressManager;
+import com.bridgelabz.util.AddressBookManager;
 import com.bridgelabz.util.ObjectOrientedPrograms;
 
 public class AddressBookManagement{
@@ -12,38 +12,36 @@ public class AddressBookManagement{
 		System.out.println("Address book Objective");
 		int ch=0;
 		do {
-		System.out.println("1: Do you want to Create book");
-		System.out.println("2: Do you Open book");
-		System.out.println("3:Do you want to Save book");
-		System.out.println("4:Do you want to close book");
-		System.out.println("5:Do you want to Save book as");
+		System.out.println("1:Create book");
+		System.out.println("2:Open book");
+		System.out.println("3:Save book");
+		System.out.println("4:Close book");
+		System.out.println("5:Save book as");
 		System.out.println("6:Do you want to Exit");
-		String originbook="/home/admin1/Tharun/Bridgelabs/programs/JavaPrograms/";
-		int choice=ObjectOrientedPrograms.readInteger();
-		switch (choice) {
+		switch (ObjectOrientedPrograms.readInteger()) {
 		case 1:
 		{
-			AddressManager.createBook(originbook);
+			AddressBookManager.createBook();
 			break;
 		}
 		case 2:
 		{
-			AddressManager.openBook();
+			AddressBookManager.openBook();
 			break;
 		}
 		case 3:
 		{
-			AddressManager.saveBook();
+			AddressBookManager.saveBook();
 			break;
 		}
 		case 4 :
 		{
-			AddressManager.closeBook();
+			AddressBookManager.closeBook();
 			break;
 		}
 		case 5:
 		{
-			AddressManager.saveAsBook();
+			AddressBookManager.saveAsBook();
 		    break;
 		}
 		case 6:

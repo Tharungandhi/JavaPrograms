@@ -28,7 +28,6 @@ public class AddressBook {
 		return address;
 	}
 
-	@SuppressWarnings("unchecked")
 	public static void personalDetails(List<PersonalDetails> persondetails2)
 	{
 		person=new PersonalDetails();
@@ -48,6 +47,7 @@ public class AddressBook {
 		long phoneno=ObjectOrientedPrograms.readlong();
 		person.setPhoneNumber(phoneno);
 		persondetails.add(person);
+		displayTheAddress();
 	}
 
 	public static void editPerson()
@@ -112,7 +112,9 @@ public class AddressBook {
 			}}
 		else
 			System.out.println("The book is empty");
-	}
+	}  
+	
+	
 	public static void deletePerson()
 	{
 		System.out.println("Enter the first name of a person which need to be deleted");

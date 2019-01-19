@@ -215,7 +215,7 @@ public class ObjectOrientedPrograms {
 	    }
 static ObjectMapper objectMapper=new ObjectMapper();
 
-	public static <T> List<T> userReadValue(String str, Class<?> cls)
+	public static <T> List<T> userReadValue(String str, Class<T> cls)
             throws JsonParseException, JsonMappingException, IOException {
         CollectionType colletion = objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, cls);
         return objectMapper.readValue(str, colletion);

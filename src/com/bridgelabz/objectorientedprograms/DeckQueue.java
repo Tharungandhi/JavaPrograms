@@ -1,6 +1,5 @@
 package com.bridgelabz.objectorientedprograms;
 
-import com.bridgelabz.util.Algorithmprograms;
 import com.bridgelabz.util.ObjectOrientedPrograms;
 import com.bridgelabz.util.QueueLinkedList;
 
@@ -8,7 +7,6 @@ public class DeckQueue {
 
 		public static void main(String[] args) {
 	        String[] Suits = { "Clubs", "Diamonds", "Hearts", "Spades" };
-	        int a=9+1;
 	       
 	        String[] Ranks = { "2", "3", "4", "5", "6", "7", "8", "9", ";10", "Jack", "Queen", "King", "Ace" };
 	        int n = Suits.length * Ranks.length;

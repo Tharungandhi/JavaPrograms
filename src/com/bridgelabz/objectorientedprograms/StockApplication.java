@@ -1,15 +1,10 @@
 package com.bridgelabz.objectorientedprograms;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 
 import com.bridgelabz.util.ObjectOrientedPrograms;
-import com.bridgelabz.util.StockList;
 import com.bridgelabz.util.StockReport;
 
 public class StockApplication {
