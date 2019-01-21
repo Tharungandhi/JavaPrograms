@@ -1,7 +1,6 @@
 
 package com.bridgelabz.objectorientedprograms;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +16,7 @@ import com.bridgelabz.util.StockList;
 
 public class StockQueue {
 
-    @SuppressWarnings("unchecked")
-	public static void main(String[] args) throws JsonGenerationException, JsonMappingException, ClassNotFoundException, IOException
+    public static void main(String[] args) throws JsonGenerationException, JsonMappingException, ClassNotFoundException, IOException
     {
         String s=null;
         LinkedList<String> linkedlist=new LinkedList<String>();

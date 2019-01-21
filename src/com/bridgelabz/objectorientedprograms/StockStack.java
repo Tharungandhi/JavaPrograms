@@ -1,6 +1,5 @@
 package com.bridgelabz.objectorientedprograms;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +8,6 @@ import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 
 import com.bridgelabz.util.ObjectOrientedPrograms;
-import com.bridgelabz.util.QueueLinkedList;
 import com.bridgelabz.util.StackLinkedList;
 import com.bridgelabz.util.StockCompanyShare;
 import com.bridgelabz.util.StockList;
@@ -21,7 +19,7 @@ public class StockStack {
 	        System.out.println("Select the option");
 	        System.out.println("1.Buy share\n2.Sell\n");
 	       StackLinkedList<String> stack=new StackLinkedList<String>();
-	       StackLinkedList stack1=new StackLinkedList();
+	       StackLinkedList<?> stack1=new StackLinkedList<Object>();
 	        List<StockList> list=new ArrayList<StockList>();
 	        int opt=ObjectOrientedPrograms.readInteger();
 	        do

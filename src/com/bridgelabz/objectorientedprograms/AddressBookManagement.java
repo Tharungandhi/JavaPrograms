@@ -9,8 +9,8 @@ public class AddressBookManagement{
 
 	public static void main(String[] args) throws IOException {
 		System.out.println("Welcome to Address Book Management System");
+		AddressBookManagement add=new AddressBookManagement();
 		System.out.println("Address book Objective");
-		int ch=0;
 		do {
 		System.out.println("1:Create book");
 		System.out.println("2:Open book");
@@ -47,10 +47,9 @@ public class AddressBookManagement{
 		case 6:
 		System.exit(0);
 		default :
-			System.out.println("Pls enter the proper option");
-	     ch++;
+			System.out.println("Pls enter the proper option"); 
 		}}
-	while(ch<50);
+	while(!(add==null));
 	
 	}}
 

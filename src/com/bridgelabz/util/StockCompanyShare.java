@@ -13,7 +13,6 @@ import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 
 import com.bridgelabz.objectorientedprograms.StockApplication;
-import com.bridgelabz.util.CompanyStock;
 import com.bridgelabz.util.LinkedList;
 import com.bridgelabz.util.ObjectOrientedPrograms;
 import com.bridgelabz.util.QueueLinkedList;
@@ -23,7 +22,6 @@ import com.bridgelabz.util.StockList;
 public class StockCompanyShare {
 	static List<StockList> stockList = new ArrayList<StockList>();
 	static Set<StockList> set = new HashSet<StockList>();
-	//static Transactions transactions=new Transactions();
 	static List<StockList> tempList =new ArrayList<StockList>();
 	static final String str = "/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json";
 	static StockList s=null;
@@ -31,11 +29,11 @@ public class StockCompanyShare {
 	static StackLinkedList<String> stack=new StackLinkedList<String>();
 	static QueueLinkedList<String> queue=new QueueLinkedList<String>();
 	static LinkedList<String> linkedList=new LinkedList<String>();   
-	@SuppressWarnings("unlikely-arg-type")
-
 	public static <T> void buyStock() throws JsonGenerationException, JsonMappingException, IOException, ClassNotFoundException {
 		StockList s=new StockList();
 		stockList = new ArrayList<StockList>();
+		System.out.println("Files/Persons present are ");
+		System.out.println();
 		String fileArray[]=listFilesInsideDirectory();
 		String accName=searchFile(fileArray);
 		stockList=displayStock1("/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json");  
@@ -51,10 +49,8 @@ public class StockCompanyShare {
 		}
 		else {
 			System.out.println("Enter the amount of share you wish to buy");
-			//System.out.println(flag);
 			s=stockList.get(index);
 			s.setDate("date Set");
-			//tempList.add(s);
 			double share=ObjectOrientedPrograms.readInteger();
 			if(s.getNumberShares()>share && share>0) {
 				System.out.println("Present share=="+s.getNumberShares());
@@ -66,7 +62,6 @@ public class StockCompanyShare {
 				linkedList.add(s.getStockName());
 				s.setNumberShares(share);
 				System.out.println("Company share=="+s.getNumberShares());
-				//s.setTransaction("daswd");
 				tempList.add(s);
 				String json = ObjectOrientedPrograms.userWriteValueAsString( tempList);
 				StringBuffer sb11=new StringBuffer("/home/admin1/Tharun/Filesforjava/StockFiles//");
@@ -75,7 +70,6 @@ public class StockCompanyShare {
 				System.out.println("Written successfully");               
 				s.setNumberShares(temp-share);               
 				stockList.add(s);
-
 				set.addAll(stockList);
 				String json1 = ObjectOrientedPrograms.userWriteValueAsString1( set);
 				ObjectOrientedPrograms.writeFile(json1, "/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json");
@@ -85,6 +79,7 @@ public class StockCompanyShare {
 				System.out.println("Please enter a stock less than "+s.getNumberShares());
 		}
 	}
+	
 	public static int checkStockName(String s1) {
 		index=-1;
 		for(StockList ss:stockList)
@@ -102,10 +97,8 @@ public class StockCompanyShare {
 	public static void sellStock() throws JsonGenerationException, JsonMappingException, IOException {
 		StockList s=new StockList();
 		tempList=new ArrayList<StockList>();
-		//  stockList=displayStock1("/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json");   
 		String fileArray[]=listFilesInsideDirectory();
 		String accName=searchFile(fileArray);
-		// tempList=displayStock1(accName);
 		System.out.println("Enter the name of the Stoke which you want to Sell");
 		String s1=ObjectOrientedPrograms.readString();
 		int flag=0;
@@ -114,15 +107,11 @@ public class StockCompanyShare {
 		if(flag<0)System.out.println("Stoke name not found");
 		else {
 			double shareInCompany=stockList.get(flag).getNumberShares();
-			//stockList.remove(flag);
-			// CompanyStock.displayStock();
 			System.out.println("Enter the amount of share you wish to sell");
 			s=tempList.get(0);
 			double share1=ObjectOrientedPrograms.readInteger();
 			if(s.getNumberShares()>share1 && share1>0) {
 				System.out.println("Present shares=="+s.getNumberShares());
-				///s.getNumberOfShare();
-				//stockList.remove(s);
 				double share=s.getNumberShares()-share1;
 				System.out.println("share=="+s.getNumberShares());
 				s.setNumberShares(share);
@@ -137,7 +126,6 @@ public class StockCompanyShare {
 				StringBuffer sb11=new StringBuffer("/home/admin1/Tharun/Filesforjava/StockFiles//");
 				sb11.append(accName);
 				ObjectOrientedPrograms.writeFile(json, sb11.toString());
-				// ObjectOrientedPrograms.writeFile(json, "/home/admin1/Tharun/Filesforjava/StockFiles/PersonStock.json");
 				System.out.println("Written successfully");
 				s.setNumberShares(shareInCompany+share1);
 				System.out.println("Company Share = "+s.getNumberShares());
@@ -186,20 +174,22 @@ public class StockCompanyShare {
 		}
 		return children;
 	}
-	public static String searchFile(String[] strings) {
+	public static String searchFile(String[] strings) throws FileNotFoundException {
 		System.out.println("Enter your account name to search");
 		String str=ObjectOrientedPrograms.readString();
 		int flag=0;
 		for(String s:strings) {
 			if(s.compareToIgnoreCase(str)==0) {
 				System.out.println("Account found");
+				displayStock1(str);
 				flag=1;
 				break;
 			}
 		}
 	
-	if (flag==0)
-		str=creatAccount();
+	if (flag==0) {
+		System.out.println("Account details doesnot exist pls create account first");
+		str=creatAccount();}
 	return str;
 }
 
@@ -242,12 +232,13 @@ public static List<StockList> displayStock1(String fName) throws FileNotFoundExc
 
 }
 public static String creatAccount() {
-    System.out.println("Enter the account name");
+    System.out.println("Enter the new  account name");
     StringBuffer sb=new StringBuffer("/home/admin1/Tharun/Filesforjava/StockFiles//");
     String ffname=ObjectOrientedPrograms.readString();
     sb.append(ffname);
     File stockFile = new File(sb.toString());
-    boolean flag=false;
+    @SuppressWarnings("unused")
+	boolean flag=false;
 
     try {
         flag = stockFile.createNewFile();

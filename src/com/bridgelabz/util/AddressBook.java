@@ -1,7 +1,6 @@
 package com.bridgelabz.util;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -122,6 +121,8 @@ public class AddressBook {
 		System.out.println("Enter the last name of a person which need to be deleted");
 		String lname=ObjectOrientedPrograms.readString();
 		int flag=0;
+//		  if (!persondetails.isEmpty())
+//		 boolean isDeleted = persondetails.removeIf(person -> fName.equals(person.getfName()) && lName.equals(person.getlName()));
 		for(PersonalDetails p:persondetails) {
 			if(fname.equals(p.getFirstname())&&(lname.equals(p.getLastname()))){
 				persondetails.remove(p);

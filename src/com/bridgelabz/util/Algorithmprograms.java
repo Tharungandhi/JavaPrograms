@@ -2,7 +2,7 @@
  *  Compilation:  javac -d bin Algorithmprograms.java
  *  Execution:    java -cp bin com.bridgelabz.util.Algorithmprograms n
  *  
- *  Purpose: To utilise the different methods present in  Algorithmprograms class
+ *  Purpose: To utilize the different methods present in  Algorithmprograms class
  *
  *  @author  Tharun Kumar
  *  @version 1.0

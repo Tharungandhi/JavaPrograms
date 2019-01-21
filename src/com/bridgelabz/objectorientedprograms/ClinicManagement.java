@@ -8,12 +8,10 @@ import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import com.bridgelabz.util.AddressBook;
 import com.bridgelabz.util.DoctorDetails;
 import com.bridgelabz.util.ManagementDetail;
 import com.bridgelabz.util.ObjectOrientedPrograms;
 import com.bridgelabz.util.PatientDetails;
-import com.bridgelabz.util.PatientManagement;
 
 public class ClinicManagement {
 	String originfile="/home/admin1/Tharun/Bridgelabs/programs/JavaPrograms/";

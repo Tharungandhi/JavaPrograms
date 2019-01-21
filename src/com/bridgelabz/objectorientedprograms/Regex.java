@@ -1,11 +1,7 @@
 package com.bridgelabz.objectorientedprograms;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 
-import com.bridgelabz.util.Algorithmprograms;
 import com.bridgelabz.util.ObjectOrientedPrograms;
 
 public class Regex {

@@ -14,7 +14,7 @@ import org.codehaus.jackson.map.JsonMappingException;
 import com.bridgelabz.objectorientedprograms.StockAgency;
 
 public class CompanyStock{
-	static String file="/home/admin1/Tharun/Filesforjava/StockFiles/CompanyStock.json";
+	static String file="/home/admin1/Tharun/Filesforjava/StockFiles/ComapnyStock.json";
 	static String file1="/home/admin1/Tharun/Filesforjava/StockFiles/PersonStock.json" ;
 	static List<StockList> stocklist=new ArrayList<StockList>();
 	static Set<StockList> set=new HashSet<StockList>();
@@ -65,6 +65,7 @@ public class CompanyStock{
        }
        for (StockList stock : stocklist) {
     	   System.out.println("Company Details");
+    	   System.out.println();
            System.out.println("Stock Name               : " + stock.getStockName());
            System.out.println("Total number of Stock    : " + stock.getNumberShares());
            System.out.println("Share Price              : " + stock.getStockPrice());
@@ -83,6 +84,7 @@ public class CompanyStock{
        }
        for (StockList stock : tempstocklist) {
     	   System.out.println("Person Details");
+    	   System.out.println();
            System.out.println("Stock Name               : " + stock.getStockName());
            System.out.println("Total number of Stock    : " + stock.getNumberShares());
            System.out.println("Share Price              : " + stock.getStockPrice());

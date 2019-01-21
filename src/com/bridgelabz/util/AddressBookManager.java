@@ -9,8 +9,7 @@ import com.bridgelabz.objectorientedprograms.AddressBookManagement;
 
 public class AddressBookManager { 
 	private static final String ADDRESS_BOOK_FILE_PATH="/home/admin1/Tharun/Bridgelabs/programs/JavaPrograms/";
-	private static AddressBook addressbook = null;
-    private static final AddressBookManager ADDRESS_BOOK_MANAGER = null;
+	private static final AddressBookManager ADDRESS_BOOK_MANAGER = null;
     private static String bookName=null;
 	private static List<PersonalDetails> persondetails=new ArrayList<PersonalDetails>();
 	
@@ -110,8 +109,13 @@ public class AddressBookManager {
 	
 	 public static void closeBook()
 	    {
-	        addressbook=null;
+	        System.out.println("Would you like to save the changes? Y / N");
+	        String answer = ObjectOrientedPrograms.readString();
+	        if (answer.equalsIgnoreCase("Y")) {
+	            saveBook();
+	        }
 	    }
+	    
 	
 	 
 	 
@@ -170,8 +174,11 @@ public class AddressBookManager {
 			default :
 				System.out.println("Enter the proper choice");
 		}}
+
+
 	public static void sortDetails()
 	{
+	
 		System.out.println("1:Sort by Last Name");
 		System.out.println("2:Sort by ZipCode");
 		switch(ObjectOrientedPrograms.readInteger()){
@@ -184,8 +191,7 @@ public class AddressBookManager {
 		default :
 			System.out.println("Enter the proper choice");
 			break;
-		}
-	}
+		}}
 }
 
 

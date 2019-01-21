@@ -13,7 +13,7 @@ public class InventoryList {
 		    }
 
 		    public void setInventoryName(String inventoryName) {
-		        this.inventoryName = inventoryName;
+		        InventoryList.inventoryName = inventoryName;
 		    }
 
 		    public List<Inventory> getListOfInventories() {

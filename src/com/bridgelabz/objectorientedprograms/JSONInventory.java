@@ -15,7 +15,6 @@ import com.bridgelabz.util.ObjectOrientedPrograms;
 
 public class JSONInventory {
 
-	@SuppressWarnings("static-access")
 	static
 	
 	String str = "/home/admin1/Desktop/JSONInventoryDataManagement.json";
@@ -50,7 +49,7 @@ public class JSONInventory {
 				
 				 
 					for (InventoryList nameList : originfile) {
-						if (arr[inventoryname].equals(nameList.getInventoryName())) {
+						if (arr[inventoryname].equals(InventoryList.getInventoryName())) {
 							listOFInventories = nameList.getListOfInventories();
 							Inventory inventory = ObjectOrientedPrograms.getInventories();
 							listOFInventories.add(inventory);

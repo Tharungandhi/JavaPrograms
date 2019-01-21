@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -136,7 +135,7 @@ public class ObjectOrientedPrograms {
 	{
 		for (int i = 0; i < list2.size(); i++) {
 			InventoryList it = list2.get(i);
-			System.out.println("Inventory name :" + it.getInventoryName());
+			System.out.println("Inventory name :" + InventoryList.getInventoryName());
 			for (int j = 0; j < it.getListOfInventories().size(); j++) {
 				System.out.println("name :" + it.getListOfInventories().get(j).getName());
 				System.out.println("price :" + it.getListOfInventories().get(j).getPrice());
@@ -185,6 +184,7 @@ public class ObjectOrientedPrograms {
 	public static void writeFile(String json,String fileName) throws IOException
 	{
 		FileWriter fw = new FileWriter(fileName);
+		@SuppressWarnings("resource")
 		BufferedWriter bw = new BufferedWriter(fw);
 		bw.write(json);
 		bw.flush();

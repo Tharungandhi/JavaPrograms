@@ -8,7 +8,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -269,7 +268,8 @@ public class ManagementDetail {
 		 case 2:
 		 {
 			 System.out.println("Searching by ID");
-		        List<PatientDetails> patient1 =  (List<PatientDetails>) searchByPhoneno();
+		        @SuppressWarnings("unchecked")
+				List<PatientDetails> patient1 =  (List<PatientDetails>) searchByPhoneno();
 		        if (!patient1.isEmpty())
 		            System.out.println("Doctor is present");
 		        else

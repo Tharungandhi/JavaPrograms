@@ -1,10 +1,5 @@
 package com.bridgelabz.util;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.codehaus.jackson.type.TypeReference;
-
 public class DoctorDetails {
 private int doctorid;
 private String doctorname;
